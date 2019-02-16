@@ -5,8 +5,10 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build-typescript": "rm -rf ./dest && tsc",
-        "build-site": "npm run build-typescript && rm -rf ./site && rsync -av ./html/ ./site/"
+        "build-typescript": "tsc",
+        "copy-html": "rsync -av --delete ./html/ ./site/",
+        "copy-js": "mkdir ./site/js/custom && rsync -av ./dest/ ./site/js/custom/",
+        "build-site": "npm run build-typescript && npm run copy-html && npm run copy-js"
     },
     "repository": {
         "type": "git",
