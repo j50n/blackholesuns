@@ -8,7 +8,8 @@
         "build-typescript": "tsc",
         "copy-html": "rsync -av --delete ./html/ ./site/",
         "copy-js": "mkdir ./site/js/custom && rsync -av ./dest/ ./site/js/custom/",
-        "build-site": "npm run build-typescript && npm run copy-html && npm run copy-js"
+        "build-site": "npm run build-typescript && npm run copy-html && npm run copy-js",
+        "build": "npm run build-site"
     },
     "repository": {
         "type": "git",
