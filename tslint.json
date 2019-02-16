@@ -1,0 +1,10 @@
+{
+    "extends": ["tslint:recommended"],
+    "rules": {
+        "max-line-length": [true, 200],
+        "no-console": false,
+        "trailing-comma": [false],
+        "arrow-parens": false,
+        "max-classes-per-file": [true, 5]
+    }
+}
