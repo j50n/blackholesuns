@@ -4,12 +4,9 @@
     "description": "NMS Black Hole Suns companion website",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build-typescript": "tsc",
-        "copy-html": "rsync -av --delete ./html/ ./site/",
-        "copy-js": "mkdir ./site/js/custom && rsync -av ./dest/ ./site/js/custom/",
-        "build-site": "npm run build-typescript && npm run copy-html && npm run copy-js",
-        "build": "npm run build-site"
+        "build": "parcel build src/index --out-dir ./prod src/index.html",
+        "dev": "parcel src/index.html",
+        "clean": "rm -rf ./.cache/ ./dist/ ./prod/"
     },
     "repository": {
         "type": "git",
@@ -32,10 +29,17 @@
     "homepage": "https://github.com/j50n/blackholesuns#readme",
     "dependencies": {
         "@types/deep-equal": "1.0.1",
+        "@types/foundation-sites": "6.4.3",
+        "@types/jquery": "3.3.29",
         "@types/node": "11.9.4",
         "commander": "2.19.0",
         "deep-equal": "1.0.1",
+        "foundation-sites": "6.5.3",
         "immutable": "4.0.0-rc.12",
-        "typescript": "3.3.3"
+        "jquery": "3.3.1",
+        "parcel-bundler": "1.11.0",
+        "sass": "1.17.0",
+        "typescript": "3.3.3",
+        "watch": "1.0.2"
     }
 }
