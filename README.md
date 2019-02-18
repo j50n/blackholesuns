@@ -18,11 +18,11 @@ take care of it next time I do a clean install.
 ### Setup
 
 -   Clone the repository:
-    `git clone git@github.com:j50n/blackholesuns.git`
-    _creates a project folder named `blackholesuns` in the current folder on your laptop_
+    -   `git clone git@github.com:j50n/blackholesuns.git`
+    -   _creates a project folder named `blackholesuns` in the current folder on your laptop_
 -   Setup node modules:
-    `npm install`
-    _creates a `node_modules` folder in the project folder with project depenendencies_
+    -   `npm install`
+    -   _creates a `node_modules` folder in the project folder with project depenendencies_
 
 ### Run in Development Mode
 
