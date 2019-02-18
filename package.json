@@ -4,7 +4,7 @@
     "description": "NMS Black Hole Suns companion website",
     "main": "index.js",
     "scripts": {
-        "build": "parcel build src/index --out-dir ./prod src/index.html",
+        "build": "parcel build src/index --out-dir ./docs src/index.html",
         "dev": "parcel src/index.html",
         "clean": "rm -rf ./.cache/ ./dist/ ./prod/"
     },
