@@ -29,17 +29,12 @@
     "homepage": "https://github.com/j50n/blackholesuns#readme",
     "dependencies": {
         "@types/deep-equal": "1.0.1",
-        "@types/foundation-sites": "6.4.3",
-        "@types/jquery": "3.3.29",
         "@types/node": "11.9.4",
         "commander": "2.19.0",
         "deep-equal": "1.0.1",
-        "foundation-sites": "6.5.3",
         "immutable": "4.0.0-rc.12",
-        "jquery": "3.3.1",
         "parcel-bundler": "1.11.0",
         "sass": "1.17.0",
-        "typescript": "3.3.3",
-        "watch": "1.0.2"
+        "typescript": "3.3.3"
     }
 }
