@@ -1,25 +1,46 @@
 # blackholesuns
 
-NMS Black Hole Suns website.
+NMS Black Hole Suns route-finder website.
 
 ## Installation
 
 ### Prerequisites
 
--   Build commands use `bash` syntax.
-    -   Linux or Mac should "just work."
-    -   For Windows 10, use WSL.
+-   Build scripts in `package.json` use `bash` syntax
+    -   Linux or Mac should "just work"
+    -   For Windows 10, use WSL
+-   Install `git`
+-   Install the latest LTR version of `node.js` (https://nodejs.org)
 
 This list is incomplete. If someone wants to help me complete this, let me know. Otherwise I will
 take care of it next time I do a clean install.
 
+### Setup
+
+-   Clone the repository:
+    `git clone git@github.com:j50n/blackholesuns.git`
+    _creates a project folder named `blackholesuns` in the current folder on your laptop_
+-   Setup node modules:
+    `npm install`
+    _creates a `node_modules` folder in the project folder with project depenendencies_
+
+### Run in Development Mode
+
+To run in development mode:
+
+```bash
+npm run dev
+```
+
+This runs a Parcel development server at `http://localhost:1234`. You can use `firefox`, `chromium`, or `chrome`
+to view the development site on your laptop.
+
 ### Build the Site
 
-Build is really simple at this point. The site, css, and scripts are unoptimized. The build does a TypeScript
-compile and then copies the files from that plus the files in `./html` into `./site`.
+To build the production site:
 
-`npm run build`
+```bash
+npm run build
+```
 
-### Run the Site
-
-Change directory to `./site` and run `firefox index.html` or equivalent with any browser.
+The site is created at `./site`. This needs to be manually be saved to branch `gh-pages`.
