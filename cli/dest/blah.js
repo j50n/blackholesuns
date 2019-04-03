@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const common_1 = require("common");
+let c = common_1.coordinates("0111:0080:0222:0079");
+console.log(c);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYmxhaC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3NyYy9ibGFoLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsbUNBQXFDO0FBRXJDLElBQUksQ0FBQyxHQUFHLG9CQUFXLENBQUMscUJBQXFCLENBQUMsQ0FBQztBQUMzQyxPQUFPLENBQUMsR0FBRyxDQUFDLENBQUMsQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgY29vcmRpbmF0ZXMgfSBmcm9tIFwiY29tbW9uXCI7XG5cbmxldCBjID0gY29vcmRpbmF0ZXMoXCIwMTExOjAwODA6MDIyMjowMDc5XCIpO1xuY29uc29sZS5sb2coYyk7XG4iXX0=

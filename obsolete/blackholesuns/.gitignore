@@ -63,5 +63,4 @@ typings/
 site/
 dist/
 prod/
-lib/
 .cache/
