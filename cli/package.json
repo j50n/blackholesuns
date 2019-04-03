@@ -1,19 +1,29 @@
 {
-  "name": "cli",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Jason Smith",
-  "license": "ISC",
-  "dependencies": {
-    "@types/node": "11.11.6",
-    "common": "file:../common"
-  },
-  "devDependencies": {
-    "typescript": "3.3.4000"
-  }
+    "name": "cli",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc",
+        "generate-blackhole-data": "npm run build && cat ../data/blackholes.csv | node ./dest/parse-bhs.js > ../common/src/blackholes.ts",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Jason Smith",
+    "license": "ISC",
+    "dependencies": {
+        "@types/event-stream": "3.3.34",
+        "@types/node": "11.11.6",
+        "common": "file:../common",
+        "csv-parse": "4.3.4",
+        "event-stream": "4.0.1"
+    },
+    "devDependencies": {
+        "typescript": "3.3.4000"
+    },
+    "prettier": {
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "semi": true,
+        "printWidth": 160
+    }
 }
