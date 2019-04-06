@@ -50,13 +50,18 @@ class SystemDef {
     }
 }
 
-function extractHop(row: string[]): Hop {
-    const platform: Platform = row[idxPlatform] as Platform;
-    const galaxy: string = row[idxGalaxy];
-    const blackHole: System = new SystemDef(blackHoleIdxs, row).system;
-    const exit: System = new SystemDef(exitIdxs, row).system;
+function extractHop(row: string[]): Hop | null {
+    try {
+        const platform: Platform = row[idxPlatform] as Platform;
+        const galaxy: string = row[idxGalaxy];
+        const blackHole: System = new SystemDef(blackHoleIdxs, row).system;
+        const exit: System = new SystemDef(exitIdxs, row).system;
 
-    return new Hop(platform, galaxy, blackHole, exit);
+        return new Hop(platform, galaxy, blackHole, exit);
+    } catch (e) {
+        console.warn(`failed to translate hop: ${e} ${row}`);
+        return null;
+    }
 }
 
 function isValidHop(hop: Hop): boolean {

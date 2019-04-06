@@ -15,7 +15,8 @@
         "@types/node": "11.11.6",
         "common": "file:../common",
         "csv-parse": "4.3.4",
-        "event-stream": "4.0.1"
+        "event-stream": "4.0.1",
+        "immutable": "4.0.0-rc.12"
     },
     "devDependencies": {
         "typescript": "3.3.4000"
