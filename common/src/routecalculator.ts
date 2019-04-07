@@ -1,7 +1,7 @@
 import { List } from "immutable";
 import { Coordinates, Hop } from "./coordinates";
 import { mapSeries } from "p-iteration";
-import { NumberLiteralType } from "typescript";
+import { ITripStatus, CancelledError } from "./tripstatus";
 
 type Route = [Coordinates, Coordinates];
 
@@ -44,9 +44,13 @@ class Decoupler {
     }
 }
 
-function routeCalculator(galacticHops: Hop[], maxJumpRange: number, jumpEfficiency: number = 0.95): (bounds: ISearchBounds) => RouteCalculator {
-    return function(bounds: ISearchBounds) {
-        return new RouteCalculator(galacticHops, maxJumpRange, jumpEfficiency, bounds);
+function routeCalculator(
+    galacticHops: Hop[],
+    maxJumpRange: number,
+    jumpEfficiency: number = 0.95
+): (status: ITripStatus, bounds: ISearchBounds) => RouteCalculator {
+    return function(status: ITripStatus, bounds: ISearchBounds) {
+        return new RouteCalculator(galacticHops, status, maxJumpRange, jumpEfficiency, bounds);
     };
 }
 
@@ -64,6 +68,7 @@ class RouteCalculator {
 
     constructor(
         public readonly galacticHops: Hop[],
+        public readonly status: ITripStatus,
         public readonly maxJumpRange: number = 2000,
         public readonly jumpEfficiency: number = 0.95,
         public readonly search: ISearchBounds = { width: 10, depth: 10 }
@@ -153,18 +158,18 @@ class RouteCalculator {
     public async findRoute(start: Coordinates, destination: Coordinates, bestScore: number = 99999): Promise<IRoute> {
         this.routesConsideredCounter = 0;
 
-        console.log("GOT 1");
         return await this.decoupler.decouple(() => {
-            console.log("GOT 1.1");
             return this.recFindRoute(start, destination, List<Hop>(), bestScore);
         });
     }
 
     protected async recFindRoute(start: Coordinates, destination: Coordinates, hops: List<Hop>, bestScore: number): Promise<IRoute> {
-        this.routesConsideredCounter += 1;
-        if (this.routesConsideredCounter % 1000 === 0) {
-            console.log(`routes considered: ${this.routesConsideredCounter} ${hops.size} ${bestScore}`);
+        this.status.tries += 1;
+        if (this.status.cancelled === true) {
+            throw new CancelledError("operation cancelled 1");
         }
+
+        this.routesConsideredCounter += 1;
 
         const current: IRoute = {
             destination,

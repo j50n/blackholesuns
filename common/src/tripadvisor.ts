@@ -1,5 +1,6 @@
-import { RouteCalculator, IRoute, ISearchBounds } from "./routecalculator";
+import { RouteCalculator, IRoute, ISearchBounds, Route } from "./routecalculator";
 import { Coordinates } from "./coordinates";
+import { ITripStatus, CancelledError } from "./tripstatus";
 import { lazily } from "./utils";
 import { List } from "immutable";
 
@@ -8,26 +9,46 @@ interface IEndPoint {
     coords: Coordinates;
 }
 
+interface ILegOfJourney {
+    index: number;
+    start: IEndPoint;
+    dest: IEndPoint;
+    description: string;
+}
+
 const DefaultBounds: ISearchBounds[] = [{ width: 10, depth: 6 }, { width: 4, depth: 10 }, { width: 64, depth: 3 }];
 
 class TripAdvisor {
     constructor(
-        public readonly rc: (bounds: ISearchBounds) => RouteCalculator,
+        public readonly rc: (status: ITripStatus, bounds: ISearchBounds) => RouteCalculator,
         public readonly start: IEndPoint,
         public readonly destination: IEndPoint,
+        public readonly status: ITripStatus,
         public readonly bounds: ISearchBounds[] = DefaultBounds
     ) {}
 
-    public route: () => Promise<IRoute> = lazily(async () => {
-        let bestRoute = await this.rc({ width: 0, depth: 0 }).findRoute(this.start.coords, this.destination.coords, 9999999);
+    /**
+     * True if this trip-advisor has a resolved route.
+     */
+    public hasRoute: boolean = false;
 
-        for (const bound of this.bounds) {
-            const route = await this.rc(bound).findRoute(this.start.coords, this.destination.coords, bestRoute.score);
-            if (route.score < bestRoute.score) {
-                bestRoute = route;
+    /**
+     * The best route. This can take a long time to complete, but it will not block the browser.
+     */
+    public route: () => Promise<IRoute> = lazily(async () => {
+        try {
+            let bestRoute = await this.rc(this.status, { width: 0, depth: 0 }).findRoute(this.start.coords, this.destination.coords, 9999999);
+
+            for (const bound of this.bounds) {
+                const route = await this.rc(this.status, bound).findRoute(this.start.coords, this.destination.coords, bestRoute.score);
+                if (route.score < bestRoute.score) {
+                    bestRoute = route;
+                }
             }
+            return bestRoute;
+        } finally {
+            this.hasRoute = true;
         }
-        return bestRoute;
     });
 
     public async getScore(): Promise<number> {
@@ -43,6 +64,10 @@ class TripAdvisor {
     }
 
     public async explain(): Promise<void> {
+        if (this.status.cancelled === true) {
+            throw new CancelledError("operation cancelled 2");
+        }
+
         const radialDist = Math.floor(Math.abs(this.start.coords.dist - this.destination.coords.dist) * 400);
 
         if (radialDist > 20000) {
@@ -63,25 +88,25 @@ class TripAdvisor {
 
         console.log();
 
-        const systems: List<IEndPoint> = ((await this.route()).hops.flatMap(hop => [hop.blackhole, hop.exit]) as List<IEndPoint>)
-            .unshift(this.start)
-            .push(this.destination);
+        // const systems: List<IEndPoint> = ((await this.route()).hops.flatMap(hop => [hop.blackhole, hop.exit]) as List<IEndPoint>)
+        //     .unshift(this.start)
+        //     .push(this.destination);
 
-        const left = systems.filter((v, i) => {
-            return i % 2 === 0;
-        });
+        // const left = systems.filter((v, i) => {
+        //     return i % 2 === 0;
+        // });
 
-        const right = systems.filter((v, i) => {
-            return i % 2 === 1;
-        });
+        // const right = systems.filter((v, i) => {
+        //     return i % 2 === 1;
+        // });
 
-        const jumps = left.zip(right);
+        const jumps = await this.journey();
 
         jumps.forEach((jump, i) => {
             const a = jump[0];
             const b = jump[1];
 
-            const rc = this.rc({ width: 0, depth: 0 });
+            const rc = this.rc(this.status, { width: 0, depth: 0 });
 
             if (rc.isSameStar(a.coords, b.coords)) {
                 console.log(`${i}. ${this.desc(a)} and ${this.desc(b)} are the same star!`);
@@ -102,6 +127,72 @@ class TripAdvisor {
             }
         });
     }
+
+    private async journey(): Promise<List<[IEndPoint, IEndPoint]>> {
+        const systems: List<IEndPoint> = ((await this.route()).hops.flatMap(hop => [hop.blackhole, hop.exit]) as List<IEndPoint>)
+            .unshift(this.start)
+            .push(this.destination);
+
+        const left = systems.filter((v, i) => {
+            return i % 2 === 0;
+        });
+
+        const right = systems.filter((v, i) => {
+            return i % 2 === 1;
+        });
+
+        return left.zip(right);
+    }
+
+    public async explanation(): Promise<Explanation> {
+        return new Explanation(this.rc({ cancelled: false, tries: 0 }, { width: 0, depth: 0 }), await this.journey());
+    }
 }
 
-export { TripAdvisor, IEndPoint };
+class Explanation {
+    constructor(public readonly rc: RouteCalculator, public readonly journey: List<[IEndPoint, IEndPoint]>) {}
+
+    public legs(): List<ILegOfJourney> {
+        return this.journey.map((leg, i) => {
+            const [a, b] = leg;
+
+            if (this.rc.isSameStar(a.coords, b.coords)) {
+                return { index: i, start: a, dest: b, description: `Same star!` };
+            } else if (this.rc.isSameRegion(a.coords, b.coords)) {
+                return { index: i, start: a, dest: b, description: `Same region.` };
+            } else if (this.rc.isAdjacentRegion(a.coords, b.coords)) {
+                if (b.coords.y - a.coords.y > 0) {
+                    return { index: i, start: a, dest: b, description: `Adjacent region, above current location.` };
+                } else if (b.coords.y - a.coords.y < 0) {
+                    return { index: i, start: a, dest: b, description: `Adjacent region, below current location.` };
+                } else {
+                    return {
+                        index: i,
+                        start: a,
+                        dest: b,
+                        description: `Adjacent region, same level as current location.`,
+                    };
+                }
+            } else {
+                const distance = Math.floor(a.coords.dist2(b.coords) * 400);
+                const expectedJumps = this.rc.calcExpectedJumps(a.coords, b.coords);
+                return {
+                    index: i,
+                    start: a,
+                    dest: b,
+                    description: `About ${distance} LY, or ${expectedJumps} jumps, away.`,
+                };
+            }
+        });
+    }
+
+    public desc(endpoint: IEndPoint): string {
+        if (endpoint.coords.system === 0x79) {
+            return `[BH] ${endpoint.label} (${endpoint.coords})`;
+        } else {
+            return `${endpoint.label} (${endpoint.coords})`;
+        }
+    }
+}
+
+export { TripAdvisor, IEndPoint, Explanation, ILegOfJourney };

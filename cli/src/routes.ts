@@ -1,6 +1,5 @@
 import { List } from "immutable";
-
-import { coordinates, Platform, routeCalculator, IEndPoint, TripAdvisor, validHops, Hop } from "common";
+import { coordinates, Platform, routeCalculator, IEndPoint, ITripStatus, TripAdvisor, validHops, Hop } from "common";
 
 /*
  * Demonstrates finding best route when there are multiple possible starting points.
@@ -48,7 +47,8 @@ const allHops: Hop[] = validHops()
     .filter(hop => hop.galaxy === galaxy);
 
 async function main(): Promise<void> {
-    const start = pilgrimStar;
+    //const start = pilgrimStar;
+    const start = { label: "an exit point", coords: coordinates("093E:007D:0966:006D") };
     //const start = { label: "Hermit's Home", coords: coordinates("0164:007E:0596:0021") };
 
     const dest = {
@@ -56,7 +56,10 @@ async function main(): Promise<void> {
         label: "New Lennon",
     };
     //const dest = dopeLordConfederacy;
-    const ta = new TripAdvisor(routeCalculator(allHops, 2000, 0.93), start, dest);
+
+    const status: ITripStatus = { cancelled: false, tries: 0 };
+
+    const ta = new TripAdvisor(routeCalculator(allHops, 2000, 0.93), start, dest, status);
 
     const r = await ta.route();
 
