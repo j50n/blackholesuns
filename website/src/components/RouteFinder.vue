@@ -1,8 +1,10 @@
 <template>
   <div class="outer-div">
-    <div v-if="ta === null || !ta.hasRoute">
-      <p>{{ start }}</p>
-      <p>{{ dest }}</p>
+    <div v-if="ta === null">&nbsp;</div>
+    <div v-else-if="!ta.hasRoute">
+      <!-- <p>{{ start }}</p>
+      <p>{{ dest }}</p>-->
+      <h4 style="text-align: center;">...thinking...</h4>
     </div>
     <div v-else>
       <table class="pure-table pure-table-horizontal" style="margin-left:auto; margin-right:auto;">

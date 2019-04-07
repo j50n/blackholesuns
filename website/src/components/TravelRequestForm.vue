@@ -9,14 +9,14 @@
         <fieldset>
           <div class="pure-controls" style="display: inline-block; margin-right: 10px;">
             <label for="platform">Platform</label>
-            <select id="platform" required v-model="platform">
+            <select id="platform" required v-model="formData.platform">
               <option value="ps4">PS4</option>
-              <option value="xbox">PC/XBox</option>
+              <option value="xbox">PC / XBox</option>
             </select>
           </div>
           <div class="pure-controls" style="display: inline-block;">
             <label for="galaxy">Galaxy</label>
-            <select id="galaxy" required v-model="galaxy">
+            <select id="galaxy" required v-model="formData.galaxy">
               <option v-for="g of allGalaxies()" v-bind:value="g">{{ g }}</option>
             </select>
           </div>
@@ -27,7 +27,7 @@
             <input
               id="starting-coordinates"
               type="text"
-              v-model="startVal"
+              v-model.trim="formData.startVal"
               :pattern="coordPattern"
               required
               placeholder="Start"
@@ -39,7 +39,7 @@
             <input
               id="destination-coordinates"
               type="text"
-              v-model="destVal"
+              v-model.trim="formData.destVal"
               :pattern="coordPattern"
               required
               placeholder="Destination"
@@ -64,19 +64,37 @@ export default Vue.extend({
     data() {
         return {
             coordPattern: "0?[0-9a-fA-F]{1,3}:0?0?[0-9a-fA-F]{1,2}:0?[0-9a-fA-F]{1,3}:0?[0-2]?0?[0-9a-fA-F]{1,3}",
-            startVal: "",
-            destVal: "",
-            galaxy: "",
-            platform: "",
+            formData: {
+                startVal: "",
+                destVal: "",
+                galaxy: "",
+                platform: "",
+            },
         };
     },
+
+    watch: {
+        formData: {
+            handler() {
+                window.localStorage.setItem("TravelRequestForm_FormData", JSON.stringify(this.formData));
+            },
+            deep: true,
+        },
+    },
+
+    mounted() {
+        if (window.localStorage.getItem("TravelRequestForm_FormData")) {
+            this.formData = JSON.parse(window.localStorage.getItem("TravelRequestForm_FormData")!);
+        }
+    },
+
     methods: {
         submitForm() {
             routeEvents.raiseRouteSubmit({
-                platform: this.platform,
-                galaxy: this.galaxy,
-                start: coordinates(this.startVal),
-                dest: coordinates(this.destVal),
+                platform: this.formData.platform,
+                galaxy: this.formData.galaxy,
+                start: coordinates(this.formData.startVal),
+                dest: coordinates(this.formData.destVal),
             });
         },
         allGalaxies(): List<String> {

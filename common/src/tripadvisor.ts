@@ -16,7 +16,7 @@ interface ILegOfJourney {
     description: string;
 }
 
-const DefaultBounds: ISearchBounds[] = [{ width: 10, depth: 6 }, { width: 4, depth: 10 }, { width: 64, depth: 3 }];
+const DefaultBounds: ISearchBounds[] = [{ width: 10, depth: 6 }, { width: 3, depth: 12 }, { width: 64, depth: 3 }];
 
 class TripAdvisor {
     constructor(
