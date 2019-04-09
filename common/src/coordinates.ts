@@ -54,7 +54,7 @@ class Coordinates {
 
     /** Distance to center. */
     public get dist(): number {
-        return Math.sqrt((this.x - 0x7ff) ** 2 + (this.y - 0x7ff) ** 2 + (this.z - 0x7ff) ** 2);
+        return Math.sqrt((this.x - 0x7ff) ** 2 + (this.y - 0x7f) ** 2 + (this.z - 0x7ff) ** 2);
     }
 
     /**

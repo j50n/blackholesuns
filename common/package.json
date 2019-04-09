@@ -7,14 +7,19 @@
     "scripts": {
         "install": "npm run build",
         "build": "rm -rf ./lib && tsc -p ./tsconfig.browser.json && tsc -p ./tsconfig.main.json",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "ts-node --project ./tsconfig.main.json ./node_modules/tape/bin/tape ./tests/**/*.ts"
     },
     "author": "Jason Smith",
     "license": "ISC",
     "devDependencies": {
+        "@types/tape": "4.2.33",
+        "tape": "4.10.1",
+        "ts-node": "8.0.3",
         "typescript": "3.3.4000"
     },
     "dependencies": {
+        "@types/deep-equal": "1.0.1",
+        "deep-equal": "1.0.1",
         "immutable": "4.0.0-rc.12",
         "p-iteration": "1.1.8"
     },
