@@ -11,8 +11,8 @@
         <thead>
           <tr>
             <th>&nbsp;</th>
-            <th>Start</th>
-            <th>Destination</th>
+            <th>Start / Exit</th>
+            <th>Black Hole / Destination</th>
             <th colspan="2">Directions</th>
           </tr>
         </thead>

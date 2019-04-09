@@ -188,9 +188,9 @@ class Explanation {
 
     public desc(endpoint: IEndPoint): string {
         if (endpoint.coords.system === 0x79) {
-            return `[BH] ${endpoint.label} (${endpoint.coords})`;
+            return `${endpoint.label}`; // (${endpoint.coords})`;
         } else {
-            return `${endpoint.label} (${endpoint.coords})`;
+            return `${endpoint.label}`; // (${endpoint.coords})`;
         }
     }
 }

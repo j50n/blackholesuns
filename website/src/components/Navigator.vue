@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>NMS Black Hole Suns DARC Web</h1>
+    <h4>(prototype)</h4>
+
     <!-- <form class="pure-form pure-form-aligned">
       <div>
         <input type="text">
@@ -108,6 +110,12 @@ export default Vue.extend({
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 h1 {
+    text-align: center;
+}
+h4 {
+    text-align: center;
+}
+h5 {
     text-align: center;
 }
 h3 {

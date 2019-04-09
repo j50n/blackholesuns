@@ -133,7 +133,7 @@ class System {
     constructor(public readonly region: string, public readonly system: string, public readonly coords: Coordinates, public readonly economy: Wealth) {}
 
     public get label(): string {
-        return `${this.system}@${this.region}`;
+        return `[${this.region}] ${this.system}`;
     }
 }
 
