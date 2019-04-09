@@ -13,7 +13,7 @@
             <th>&nbsp;</th>
             <th>Start</th>
             <th>Destination</th>
-            <th>Directions</th>
+            <th colspan="2">Directions</th>
           </tr>
         </thead>
         <tbody>
@@ -21,6 +21,13 @@
             <td>{{ leg.index }}</td>
             <td>{{ journey.desc(leg.start) }}</td>
             <td>{{ journey.desc(leg.dest) }}</td>
+            <td>
+              <span class="galactic-coordinates">
+                <big>
+                  <big>{{leg.dest.coords.galacticCoordinates(0).toUpperCase()}}</big>
+                </big>
+              </span>
+            </td>
             <td>{{ leg.description }}</td>
           </tr>
         </tbody>
@@ -132,5 +139,14 @@ div.outer-div {
     padding: 10px;
     //border: 1px solid #ccc;
     //box-shadow: 0px 3px 6px #ccc;
+}
+
+@font-face {
+    font-family: "nms-glyph-mono";
+    src: url("/blackholesuns/NMS-Glyphs-Mono.ttf") format("truetype");
+}
+
+span.galactic-coordinates {
+    font-family: "nms-glyph-mono";
 }
 </style>

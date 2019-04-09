@@ -25,3 +25,12 @@ test("equality", t => {
     t.false(deepEqual(coordinates("0FFF:007F:0FFF:0078"), coordinates("0FFF:007F:0FFF:0079")), "correctly detect these coordinates are different");
     t.end();
 });
+
+test("galactic coordinates", t => {
+    console.log(coordinates("0FFF:007F:0FFF:0079").galacticCoordinates(0));
+    t.equal(coordinates("0FFF:00FF:0FFF:0079").galacticCoordinates(0), "007980800800", "max coordinates are the same");
+    t.equal(coordinates("0000:0000:0000:0001").galacticCoordinates(0), "000181801801", "min coordinates are the same");
+    t.equal(coordinates("07FF:007F:07FF:0100").galacticCoordinates(0), "010000000000", "mid coordinates are the same");
+
+    t.end();
+});

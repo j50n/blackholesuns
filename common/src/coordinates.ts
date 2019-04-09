@@ -52,6 +52,37 @@ class Coordinates {
         return `${f(this.x)}:${f(this.y)}:${f(this.z)}:${f(this.system)}`;
     }
 
+    //[P][SSS][YY][ZZZ][XXX] – (P = Planet Index / S = Star System Index / Y = Height / Z = Width / X = Length)
+    public galacticCoordinates(planet: number): string {
+        if (planet < 0 || planet > 0x0f) {
+            throw new RangeError(`illegal planet code: ${planet.toString(16)}`);
+        }
+
+        function pad(text: string, len: number): string {
+            if (text.length >= len) {
+                return text;
+            } else {
+                return pad(`0${text}`, len);
+            }
+        }
+
+        function trunc(text: string, len: number): string {
+            if (text.length <= len) {
+                return pad(text, len);
+            } else {
+                return trunc(text.substring(1), len);
+            }
+        }
+
+        const p = planet.toString(16);
+        const s = trunc(this.system.toString(16), 3);
+        const y = trunc((this.y + 0x81).toString(16), 2);
+        const z = trunc((this.z + 0x801).toString(16), 3);
+        const x = trunc((this.x + 0x801).toString(16), 3);
+
+        return `${p}${s}${y}${z}${x}`;
+    }
+
     /** Distance to center. */
     public get dist(): number {
         return Math.sqrt((this.x - 0x7ff) ** 2 + (this.y - 0x7f) ** 2 + (this.z - 0x7ff) ** 2);
