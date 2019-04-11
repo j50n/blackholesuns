@@ -70,7 +70,7 @@ class RouteCalculator {
         public readonly galacticHops: Hop[],
         public readonly status: ITripStatus,
         public readonly maxJumpRange: number = 2000,
-        public readonly jumpEfficiency: number = 0.95,
+        public readonly jumpEfficiency: number = 1.0,
         public readonly search: ISearchBounds = { width: 10, depth: 10 }
     ) {}
 

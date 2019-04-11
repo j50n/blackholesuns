@@ -10,7 +10,7 @@
     </div>
     <template v-else>
       <div class="pure-g">
-        <div class="pure-u-1">
+        <div class="pure-u-1" style="text-align: right;">
           <button @click="toggleShowCoordinates" class="pure-button">
             <template v-if="showCoordinates">Show Glyphs</template>
             <template v-else>Show Coordinates</template>

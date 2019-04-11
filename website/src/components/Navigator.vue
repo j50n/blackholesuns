@@ -1,7 +1,6 @@
 <template>
   <div class="hello">
-    <h1>NMS Black Hole Suns DARC Web</h1>
-    <h4>(prototype)</h4>
+    <h1>DARC Web Navigator</h1>
 
     <!-- <form class="pure-form pure-form-aligned">
       <div>
