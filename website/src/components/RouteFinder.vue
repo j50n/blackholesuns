@@ -1,38 +1,60 @@
 <template>
-  <div class="outer-div">
-    <div v-if="ta === null">&nbsp;</div>
-    <div v-else-if="!ta.hasRoute">
-      <!-- <p>{{ start }}</p>
-      <p>{{ dest }}</p>-->
-      <h4 style="text-align: center;">...thinking...</h4>
+  <div>
+    <div v-if="ta === null" class="pure-g">
+      <div class="pure-u-1">&nbsp;</div>
     </div>
-    <div v-else>
-      <table class="pure-table pure-table-horizontal" style="margin-left:auto; margin-right:auto;">
-        <thead>
-          <tr>
-            <th>&nbsp;</th>
-            <th>Start / Exit</th>
-            <th>Black Hole / Destination</th>
-            <th colspan="2">Directions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="leg of journey.legs()" :class="{'pure-table-odd': isOdd(leg.index) }">
-            <td>{{ leg.index }}</td>
-            <td>{{ journey.desc(leg.start) }}</td>
-            <td>{{ journey.desc(leg.dest) }}</td>
-            <td>
-              <span class="galactic-coordinates">
-                <big>
-                  <big>{{leg.dest.coords.galacticCoordinates(0).toUpperCase()}}</big>
-                </big>
-              </span>
-            </td>
-            <td>{{ leg.description }}</td>
-          </tr>
-        </tbody>
-      </table>
+    <div v-else-if="!ta.hasRoute" class="pure-g">
+      <div class="pure-u-1">
+        <h4 style="text-align: center;">...thinking...</h4>
+      </div>
     </div>
+    <template v-else>
+      <div class="pure-g">
+        <div class="pure-u-1">
+          <button @click="toggleShowCoordinates" class="pure-button">
+            <template v-if="showCoordinates">Show Glyphs</template>
+            <template v-else>Show Coordinates</template>
+          </button>
+        </div>
+        <div class="pure-u-1">
+          <table
+            class="pure-table pure-table-horizontal"
+            style="margin-left:auto; margin-right:auto; width: 100%;"
+          >
+            <thead>
+              <tr>
+                <th>&nbsp;</th>
+                <th>Start / Exit</th>
+                <th>Black Hole / Destination</th>
+                <th colspan="2">Directions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="leg of journey.legs()" :class="{'pure-table-odd': isOdd(leg.index) }">
+                <td>{{ leg.index }}</td>
+                <td>{{ journey.desc(leg.start) }}</td>
+                <td>{{ journey.desc(leg.dest) }}</td>
+                <td>{{ leg.description }}</td>
+                <td style="text-align: center;">
+                  <template v-if="showCoordinates">{{ leg.dest.coords }}</template>
+                  <template v-else>
+                    <span class="galactic-coordinates">
+                      <big>
+                        <big>
+                          <big>{{leg.dest.coords.galacticCoordinates(0).toUpperCase()}}</big>
+                        </big>
+                      </big>
+                    </span>
+                  </template>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- </div>
+        <div class="pure-g">-->
+      </div>
+    </template>
   </div>
 </template>
 
@@ -54,15 +76,19 @@ import {
 } from "common";
 
 export default Vue.extend({
-    data(): { route: IRouteSubmit | null; ta: TripAdvisor | null; journey: Explanation | null } {
+    data(): { route: IRouteSubmit | null; ta: TripAdvisor | null; journey: Explanation | null; showCoordinates: Boolean } {
         console.log("getting DATA!!!!!!!!!!!");
         return {
             route: null,
             ta: null,
             journey: null,
+            showCoordinates: false,
         };
     },
     methods: {
+        toggleShowCoordinates() {
+            this.showCoordinates = !this.showCoordinates;
+        },
         onRouteSubmit(event: IRouteSubmit) {
             console.log("on route submit");
             this.route = event;
@@ -142,11 +168,11 @@ div.outer-div {
 }
 
 @font-face {
-    font-family: "nms-glyph-mono";
-    src: url("/blackholesuns/NMS-Glyphs-Mono.ttf") format("truetype");
+    font-family: "nms-glyph-tight";
+    src: url("/blackholesuns/NMS-Glyphs-Tight.ttf") format("truetype");
 }
 
 span.galactic-coordinates {
-    font-family: "nms-glyph-mono";
+    font-family: "nms-glyph-tight";
 }
 </style>
