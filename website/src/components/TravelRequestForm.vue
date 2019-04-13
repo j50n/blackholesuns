@@ -6,48 +6,94 @@
         style="text-align: left;"
         @submit.prevent="submitForm"
       >
-        <fieldset>
-          <div class="pure-controls" style="display: inline-block; margin-right: 10px;">
-            <label for="platform">Platform</label>
-            <select id="platform" required v-model="formData.platform">
-              <option value="ps4">PS4</option>
-              <option value="xbox">PC / XBox</option>
-            </select>
-          </div>
-          <div class="pure-controls" style="display: inline-block;">
-            <label for="galaxy">Galaxy</label>
-            <select id="galaxy" required v-model="formData.galaxy">
-              <option v-for="g of allGalaxies()" v-bind:value="g">{{ g }}</option>
-            </select>
-          </div>
-        </fieldset>
-        <fieldset>
-          <div class="pure-control-group">
-            <label for="starting-coordinates">Start</label>
-            <input
-              id="starting-coordinates"
-              type="text"
-              v-model.trim="formData.startVal"
-              :pattern="coordPattern"
-              required
-              placeholder="Start"
-            >
-            <!-- <span class="pure-form-message-inline">This is a required field. BLAH</span> -->
-          </div>
-          <div class="pure-control-group">
-            <label for="destination-coordinates">Destination</label>
-            <input
-              id="destination-coordinates"
-              type="text"
-              v-model.trim="formData.destVal"
-              :pattern="coordPattern"
-              required
-              placeholder="Destination"
-            >
-          </div>
-        </fieldset>
-        <div class="pure-controls">
-          <button button="pure-button pure-button-primary">Go!</button>
+        <div class="pure-g">
+          <fieldset class="pure-u-1-2">
+            <div class="pure-control-group">
+              <label for="starting-coordinates">Start</label>
+              <input
+                id="starting-coordinates"
+                class="pure-input-rounded"
+                type="text"
+                v-model.trim="formData.startVal"
+                :pattern="coordPattern"
+                required
+                placeholder="Start"
+              >
+              <!-- <span class="pure-form-message-inline">This is a required field. BLAH</span> -->
+            </div>
+            <div class="pure-control-group">
+              <label for="destination-coordinates">Destination</label>
+              <input
+                id="destination-coordinates"
+                type="text"
+                class="pure-input-rounded"
+                v-model.trim="formData.destVal"
+                :pattern="coordPattern"
+                required
+                placeholder="Destination"
+              >
+            </div>
+          </fieldset>
+          <fieldset class="pure-u-1-2">
+            <div class="pure-controls" style="display: inline-block;">
+              <label for="platform">Platform</label>
+              <select id="platform" required v-model="formData.platform">
+                <option value="ps4">PS4</option>
+                <option value="xbox">PC / XBox</option>
+              </select>
+            </div>
+            <div class="pure-controls" style="display: inline-block;">
+              <label for="galaxy">Galaxy</label>
+              <select id="galaxy" required v-model="formData.galaxy">
+                <option v-for="g of allGalaxies()" v-bind:value="g">{{ g }}</option>
+              </select>
+            </div>
+            <div class="pure-control-group">
+              <label for="maximum-jump-range">Jump Range</label>
+              <input
+                id="maximum-jump-range"
+                type="number"
+                v-model.trim="formData.maxJump"
+                required
+                min="200"
+                max="3000"
+                placeholder="Jump Range"
+              >
+            </div>
+            <div class="pure-control-group">
+              <label for="optimize-time" class="pure-radio">
+                <input
+                  id="optimize-time"
+                  type="radio"
+                  name="options-optimization"
+                  value="time"
+                  v-model="formData.optimization"
+                  required
+                >
+                Time
+              </label>
+
+              <label for="optimize-fuel" class="pure-radio">
+                <input
+                  id="optimize-fuel"
+                  type="radio"
+                  name="options-optimization"
+                  value="fuel"
+                  v-model="formData.optimization"
+                  required
+                >
+                Fuel
+              </label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="pure-g">
+          <fieldset class="pure-u-1-2">
+            <div class="pure-controls" style="text-align: right">
+              <button button="pure-button-primary pure-button ">Go!</button>
+            </div>
+          </fieldset>
+          <fieldset class="pure-u-1-2">&nbsp;</fieldset>
         </div>
       </form>
     </div>
@@ -67,8 +113,10 @@ export default Vue.extend({
             formData: {
                 startVal: "",
                 destVal: "",
-                galaxy: "",
-                platform: "",
+                galaxy: "01 Euclid",
+                platform: "ps4",
+                maxJump: "2000",
+                optimization: "time",
             },
         };
     },
@@ -93,11 +141,13 @@ export default Vue.extend({
             routeEvents.raiseRouteSubmit({
                 platform: this.formData.platform,
                 galaxy: this.formData.galaxy,
+                maxJump: parseInt(this.formData.maxJump, 10),
+                optimization: this.formData.optimization,
                 start: coordinates(this.formData.startVal),
                 dest: coordinates(this.formData.destVal),
             });
         },
-        allGalaxies(): List<String> {
+        allGalaxies(): List<string> {
             return List(validHops().map(hop => hop.galaxy))
                 .toSet()
                 .toList()
@@ -115,5 +165,9 @@ div.outer-div {
     padding: 10px;
     //border: 1px solid #ccc;
     //box-shadow: 0px 3px 6px #ccc;
+}
+
+button.button-secondary {
+    background: rgb(66, 184, 221) !important; /* this is a light blue */
 }
 </style>

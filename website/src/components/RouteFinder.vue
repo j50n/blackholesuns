@@ -77,7 +77,6 @@ import {
 
 export default Vue.extend({
     data(): { route: IRouteSubmit | null; ta: TripAdvisor | null; journey: Explanation | null; showCoordinates: Boolean } {
-        console.log("getting DATA!!!!!!!!!!!");
         return {
             route: null,
             ta: null,
@@ -90,7 +89,6 @@ export default Vue.extend({
             this.showCoordinates = !this.showCoordinates;
         },
         onRouteSubmit(event: IRouteSubmit) {
-            console.log("on route submit");
             this.route = event;
         },
 
@@ -126,7 +124,7 @@ export default Vue.extend({
 
                 const status: ITripStatus = { cancelled: false, tries: 0 };
                 this.ta = new TripAdvisor(
-                    routeCalculator(allHops, 2000, 0.93),
+                    routeCalculator(allHops, route.maxJump, route.optimization, 1.0),
                     { label: "start", coords: route.start },
                     { label: "destination", coords: route.dest },
                     status

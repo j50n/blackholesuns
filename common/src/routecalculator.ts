@@ -47,20 +47,41 @@ class Decoupler {
 function routeCalculator(
     galacticHops: Hop[],
     maxJumpRange: number,
+    optimization: string,
     jumpEfficiency: number = 0.95
 ): (status: ITripStatus, bounds: ISearchBounds) => RouteCalculator {
-    return function(status: ITripStatus, bounds: ISearchBounds) {
-        return new RouteCalculator(galacticHops, status, maxJumpRange, jumpEfficiency, bounds);
-    };
+    if (optimization === "fuel") {
+        return function(status: ITripStatus, bounds: ISearchBounds) {
+            console.log("FUEL OPTIMIZED ROUTE CALCULATOR");
+            return new FuelOptimizedRouteCalculator(galacticHops, status, maxJumpRange, jumpEfficiency, bounds);
+        };
+    } else if (optimization === "time") {
+        return function(status: ITripStatus, bounds: ISearchBounds) {
+            console.log("TIME OPTIMIZED ROUTE CALCULATOR");
+            return new RouteCalculator(galacticHops, status, maxJumpRange, jumpEfficiency, bounds);
+        };
+    } else throw new Error(`unknown optimization value: ${optimization}`);
 }
 
 /**
  * Calculate best route using black-holes based on lowest trip difficulty.
  */
 class RouteCalculator {
-    protected readonly waypointPenalty = 4;
+    waypointCost() {
+        return 4;
+    }
 
-    protected readonly adjacentPenalty = 1;
+    adjacentCost() {
+        return 1;
+    }
+
+    blackholeCost() {
+        return 1;
+    }
+
+    jumpCost() {
+        return 1;
+    }
 
     protected routesConsideredCounter = 0;
 
@@ -85,7 +106,7 @@ class RouteCalculator {
     public closestByExit(target: Coordinates): Hop[] {
         type DistTuple = [number, Hop];
         const hs: DistTuple[] = this.galacticHops
-            .filter(h => Math.abs(target.x - h.exit.coords.x) < 200000 / 400 && Math.abs(target.z - h.exit.coords.z) < 200000 / 400)
+            .filter(h => Math.abs(target.x - h.exit.coords.x) < 200000 / 400 && Math.abs(target.z - h.exit.coords.z) < 100000 / 400)
             .map(h => [target.dist2Sq(h.exit.coords), h] as DistTuple);
         return hs.sort((a, b) => a[0] - b[0]).map(a => a[1]);
     }
@@ -135,15 +156,15 @@ class RouteCalculator {
             if (this.isSameStar(a, b)) {
                 return 0;
             } else if (this.isSameRegion(a, b) && b.system === 0x79) {
-                return 1;
+                return this.jumpCost();
             } else if (this.isAdjacentRegion(a, b) && b.system === 0x79) {
-                return 1 + this.adjacentPenalty;
+                return this.jumpCost() + this.adjacentCost();
             } else {
-                return this.calcExpectedJumps(a, b) + this.waypointPenalty;
+                return this.calcExpectedJumps(a, b) * this.jumpCost() + this.waypointCost();
             }
         });
 
-        return scores.reduce((a, b) => a + b, 0) + hops.size;
+        return scores.reduce((a, b) => a + b, 0) + hops.size * this.blackholeCost();
     }
 
     public calculateRunningScore(destination: Coordinates, hops: List<Hop>): number {
@@ -158,8 +179,10 @@ class RouteCalculator {
     public async findRoute(start: Coordinates, destination: Coordinates, bestScore: number = 99999): Promise<IRoute> {
         this.routesConsideredCounter = 0;
 
-        return await this.decoupler.decouple(() => {
-            return this.recFindRoute(start, destination, List<Hop>(), bestScore);
+        return await this.decoupler.decouple(async () => {
+            const result = await this.recFindRoute(start, destination, List<Hop>(), bestScore);
+            console.log(`FINAL SCORE IS: ${result.score}`);
+            return result;
         });
     }
 
@@ -182,11 +205,18 @@ class RouteCalculator {
 
         if (hops.size < this.search.depth && this.calculateRunningScore(destination, hops) < bs) {
             const closest: Hop[] = (() => {
+                let width = this.search.width;
                 let dest = destination;
-                if (!hops.isEmpty()) {
+
+                if (hops.isEmpty()) {
+                    //width = 60;
+                } else {
                     dest = (hops.first() as Hop).blackhole.coords;
                 }
-                return this.closestByExit(dest).slice(0, this.search.width);
+
+                const cbe = this.closestByExit(dest);
+
+                return cbe.slice(0, width);
             })();
 
             const potentialRoutes: IRoute[] = await mapSeries(
@@ -209,4 +239,32 @@ class RouteCalculator {
     }
 }
 
-export { routeCalculator, RouteCalculator, Route, IRoute, ISearchBounds };
+class FuelOptimizedRouteCalculator extends RouteCalculator {
+    constructor(
+        public readonly galacticHops: Hop[],
+        public readonly status: ITripStatus,
+        public readonly maxJumpRange: number = 2000,
+        public readonly jumpEfficiency: number = 1.0,
+        public readonly search: ISearchBounds = { width: 10, depth: 10 }
+    ) {
+        super(galacticHops, status, maxJumpRange, jumpEfficiency, search);
+    }
+
+    waypointCost() {
+        return 0;
+    }
+
+    adjacentCost() {
+        return 0;
+    }
+
+    blackholeCost() {
+        return 0;
+    }
+
+    jumpCost() {
+        return 1;
+    }
+}
+
+export { routeCalculator, RouteCalculator, FuelOptimizedRouteCalculator, Route, IRoute, ISearchBounds };

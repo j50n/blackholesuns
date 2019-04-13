@@ -4,6 +4,8 @@ import Vue from "vue";
 interface IRouteSubmit {
     platform: string;
     galaxy: string;
+    maxJump: number;
+    optimization: string;
     start: Coordinates;
     dest: Coordinates;
 }

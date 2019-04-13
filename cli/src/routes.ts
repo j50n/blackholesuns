@@ -59,7 +59,7 @@ async function main(): Promise<void> {
 
     const status: ITripStatus = { cancelled: false, tries: 0 };
 
-    const ta = new TripAdvisor(routeCalculator(allHops, 2000, 0.93), start, dest, status);
+    const ta = new TripAdvisor(routeCalculator(allHops, 2000, "time", 0.93), start, dest, status);
 
     const r = await ta.route();
 
