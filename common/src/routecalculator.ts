@@ -57,12 +57,10 @@ function routeCalculator(
 ): (status: ITripStatus, bounds: ISearchBounds) => RouteCalculator {
     if (optimization === "fuel") {
         return function(status: ITripStatus, bounds: ISearchBounds) {
-            console.log("FUEL OPTIMIZED ROUTE CALCULATOR");
             return new FuelOptimizedRouteCalculator(galacticHops, status, maxJumpRange, jumpEfficiency, bounds);
         };
     } else if (optimization === "time") {
         return function(status: ITripStatus, bounds: ISearchBounds) {
-            console.log("TIME OPTIMIZED ROUTE CALCULATOR");
             return new RouteCalculator(galacticHops, status, maxJumpRange, jumpEfficiency, bounds);
         };
     } else throw new Error(`unknown optimization value: ${optimization}`);
@@ -186,7 +184,7 @@ class RouteCalculator {
 
         return await this.decoupler.decouple(async () => {
             const result = await this.recFindRoute(start, destination, List<Hop>(), bestScore);
-            console.log(`FINAL SCORE IS: ${result.score}`);
+            console.log(`calculated score: ${result.score}`);
             return result;
         });
     }
@@ -213,9 +211,7 @@ class RouteCalculator {
                 let width = this.search.width;
                 let dest = destination;
 
-                if (hops.isEmpty()) {
-                    //width = 60;
-                } else {
+                if (!hops.isEmpty()) {
                     dest = (hops.first() as Hop).blackhole.coords;
                 }
 

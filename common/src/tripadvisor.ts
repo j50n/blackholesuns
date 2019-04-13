@@ -18,6 +18,57 @@ interface ILegOfJourney {
 
 const DefaultBounds: ISearchBounds[] = [searchBounds(10, 6), searchBounds(4, 12), searchBounds(64, 3), searchBounds(40, 75, 75)];
 
+function hops4Route(route: IRoute): List<IEndPoint> {
+    return route.hops.flatMap(hop => [hop.blackhole, hop.exit]) as List<IEndPoint>;
+}
+
+function journey(start: IEndPoint, dest: IEndPoint, hops: List<IEndPoint>): List<[IEndPoint, IEndPoint]> {
+    const systems: List<IEndPoint> = hops.unshift(start).push(dest);
+
+    const left = systems.filter((v, i) => {
+        return i % 2 === 0;
+    });
+
+    const right = systems.filter((v, i) => {
+        return i % 2 === 1;
+    });
+
+    return left.zip(right);
+}
+
+function logJourney(jumps: List<[IEndPoint, IEndPoint]>, rc: RouteCalculator) {
+    function desc(endpoint: IEndPoint): string {
+        if (endpoint.coords.system === 0x79) {
+            return `[BH] ${endpoint.label} (${endpoint.coords})`;
+        } else {
+            return `${endpoint.label} (${endpoint.coords})`;
+        }
+    }
+
+    jumps.forEach((jump, i) => {
+        const a = jump[0];
+        const b = jump[1];
+
+        if (rc.isSameStar(a.coords, b.coords)) {
+            console.log(`${i}. ${desc(a)} and ${desc(b)} are the same star!`);
+        } else if (rc.isSameRegion(a.coords, b.coords)) {
+            console.log(`${i}. ${desc(a)} -> ${desc(b)} Same region.`);
+        } else if (rc.isAdjacentRegion(a.coords, b.coords)) {
+            if (b.coords.y - a.coords.y > 0) {
+                console.log(`${i}. ${desc(a)} -> ${desc(b)} Adjacent region, above current location.`);
+            } else if (b.coords.y - a.coords.y < 0) {
+                console.log(`${i}. ${desc(a)} -> ${desc(b)} Adjacent region, below current location.`);
+            } else {
+                console.log(`${i}. ${desc(a)} -> ${desc(b)} Adjacent region, same level as current location.`);
+            }
+        } else {
+            const distance = Math.floor(a.coords.dist2(b.coords) * 400);
+            const expectedJumps = rc.calcExpectedJumps(a.coords, b.coords);
+            console.log(`${i}. ${desc(a)} -> ${desc(b)} About ${distance} LY, or ${expectedJumps} jumps, away.`);
+        }
+    });
+}
+
 class TripAdvisor {
     constructor(
         public readonly rc: (status: ITripStatus, bounds: ISearchBounds) => RouteCalculator,
@@ -58,14 +109,6 @@ class TripAdvisor {
         return (await this.route()).score;
     }
 
-    public desc(endpoint: IEndPoint): string {
-        if (endpoint.coords.system === 0x79) {
-            return `[BH] ${endpoint.label} (${endpoint.coords})`;
-        } else {
-            return `${endpoint.label} (${endpoint.coords})`;
-        }
-    }
-
     public async explain(): Promise<void> {
         if (this.status.cancelled === true) {
             throw new CancelledError("operation cancelled 2");
@@ -89,66 +132,16 @@ class TripAdvisor {
             console.log(`WARNING! High difficulty. You may want to explore other starting points or use another strategy.`);
         }
 
-        console.log();
+        const jumps = journey(this.start, this.destination, hops4Route(await this.route()));
 
-        // const systems: List<IEndPoint> = ((await this.route()).hops.flatMap(hop => [hop.blackhole, hop.exit]) as List<IEndPoint>)
-        //     .unshift(this.start)
-        //     .push(this.destination);
-
-        // const left = systems.filter((v, i) => {
-        //     return i % 2 === 0;
-        // });
-
-        // const right = systems.filter((v, i) => {
-        //     return i % 2 === 1;
-        // });
-
-        const jumps = await this.journey();
-
-        jumps.forEach((jump, i) => {
-            const a = jump[0];
-            const b = jump[1];
-
-            const rc = this.rc(this.status, searchBounds(0, 0));
-
-            if (rc.isSameStar(a.coords, b.coords)) {
-                console.log(`${i}. ${this.desc(a)} and ${this.desc(b)} are the same star!`);
-            } else if (rc.isSameRegion(a.coords, b.coords)) {
-                console.log(`${i}. ${this.desc(a)} -> ${this.desc(b)} Same region.`);
-            } else if (rc.isAdjacentRegion(a.coords, b.coords)) {
-                if (b.coords.y - a.coords.y > 0) {
-                    console.log(`${i}. ${this.desc(a)} -> ${this.desc(b)} Adjacent region, above current location.`);
-                } else if (b.coords.y - a.coords.y < 0) {
-                    console.log(`${i}. ${this.desc(a)} -> ${this.desc(b)} Adjacent region, below current location.`);
-                } else {
-                    console.log(`${i}. ${this.desc(a)} -> ${this.desc(b)} Adjacent region, same level as current location.`);
-                }
-            } else {
-                const distance = Math.floor(a.coords.dist2(b.coords) * 400);
-                const expectedJumps = rc.calcExpectedJumps(a.coords, b.coords);
-                console.log(`${i}. ${this.desc(a)} -> ${this.desc(b)} About ${distance} LY, or ${expectedJumps} jumps, away.`);
-            }
-        });
-    }
-
-    private async journey(): Promise<List<[IEndPoint, IEndPoint]>> {
-        const systems: List<IEndPoint> = ((await this.route()).hops.flatMap(hop => [hop.blackhole, hop.exit]) as List<IEndPoint>)
-            .unshift(this.start)
-            .push(this.destination);
-
-        const left = systems.filter((v, i) => {
-            return i % 2 === 0;
-        });
-
-        const right = systems.filter((v, i) => {
-            return i % 2 === 1;
-        });
-
-        return left.zip(right);
+        logJourney(jumps, this.rc(this.status, searchBounds(0, 0)));
     }
 
     public async explanation(): Promise<Explanation> {
-        return new Explanation(this.rc({ cancelled: false, tries: 0 }, searchBounds(0, 0)), await this.journey());
+        return new Explanation(
+            this.rc({ cancelled: false, tries: 0 }, searchBounds(0, 0)),
+            journey(this.start, this.destination, hops4Route(await this.route()))
+        );
     }
 }
 
@@ -198,4 +191,4 @@ class Explanation {
     }
 }
 
-export { TripAdvisor, IEndPoint, Explanation, ILegOfJourney };
+export { TripAdvisor, IEndPoint, Explanation, ILegOfJourney, logJourney, journey, hops4Route };
