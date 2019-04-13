@@ -12,9 +12,14 @@ interface IRoute {
     hops: List<Hop>;
 }
 
+function SearchBounds(width: number, depth: number, ifScore: number | null = null) {
+    return { width, depth, ifScore };
+}
+
 interface ISearchBounds {
     width: number;
     depth: number;
+    ifScore: number | null;
 }
 
 class Decoupler {
@@ -92,7 +97,7 @@ class RouteCalculator {
         public readonly status: ITripStatus,
         public readonly maxJumpRange: number = 2000,
         public readonly jumpEfficiency: number = 1.0,
-        public readonly search: ISearchBounds = { width: 10, depth: 10 }
+        public readonly search: ISearchBounds = SearchBounds(10, 10)
     ) {}
 
     public get routesConsidered(): number {
@@ -245,7 +250,7 @@ class FuelOptimizedRouteCalculator extends RouteCalculator {
         public readonly status: ITripStatus,
         public readonly maxJumpRange: number = 2000,
         public readonly jumpEfficiency: number = 1.0,
-        public readonly search: ISearchBounds = { width: 10, depth: 10 }
+        public readonly search: ISearchBounds = SearchBounds(10, 10)
     ) {
         super(galacticHops, status, maxJumpRange, jumpEfficiency, search);
     }
@@ -267,4 +272,4 @@ class FuelOptimizedRouteCalculator extends RouteCalculator {
     }
 }
 
-export { routeCalculator, RouteCalculator, FuelOptimizedRouteCalculator, Route, IRoute, ISearchBounds };
+export { routeCalculator, RouteCalculator, FuelOptimizedRouteCalculator, Route, IRoute, ISearchBounds, SearchBounds as searchBounds };

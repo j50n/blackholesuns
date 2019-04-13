@@ -1,4 +1,4 @@
-import { RouteCalculator, IRoute, ISearchBounds, Route } from "./routecalculator";
+import { RouteCalculator, IRoute, ISearchBounds, searchBounds } from "./routecalculator";
 import { Coordinates } from "./coordinates";
 import { ITripStatus, CancelledError } from "./tripstatus";
 import { lazily } from "./utils";
@@ -16,7 +16,7 @@ interface ILegOfJourney {
     description: string;
 }
 
-const DefaultBounds: ISearchBounds[] = [{ width: 10, depth: 6 }, { width: 4, depth: 12 }, { width: 64, depth: 3 }];
+const DefaultBounds: ISearchBounds[] = [searchBounds(10, 6), searchBounds(4, 12), searchBounds(64, 3), searchBounds(40, 75, 75)];
 
 class TripAdvisor {
     constructor(
@@ -37,12 +37,15 @@ class TripAdvisor {
      */
     public route: () => Promise<IRoute> = lazily(async () => {
         try {
-            let bestRoute = await this.rc(this.status, { width: 0, depth: 0 }).findRoute(this.start.coords, this.destination.coords, 9999999);
+            let bestRoute = await this.rc(this.status, searchBounds(0, 0)).findRoute(this.start.coords, this.destination.coords, 9999999);
 
             for (const bound of this.bounds) {
-                const route = await this.rc(this.status, bound).findRoute(this.start.coords, this.destination.coords, bestRoute.score);
-                if (route.score < bestRoute.score) {
-                    bestRoute = route;
+                if (bound.ifScore === null || bound.ifScore > bestRoute.score) {
+                    console.log(`calculating route with bounds width=${bound.width} and depth=${bound.depth}; best so far is ${bestRoute.score}.`);
+                    const route = await this.rc(this.status, bound).findRoute(this.start.coords, this.destination.coords, bestRoute.score);
+                    if (route.score < bestRoute.score) {
+                        bestRoute = route;
+                    }
                 }
             }
             return bestRoute;
@@ -106,7 +109,7 @@ class TripAdvisor {
             const a = jump[0];
             const b = jump[1];
 
-            const rc = this.rc(this.status, { width: 0, depth: 0 });
+            const rc = this.rc(this.status, searchBounds(0, 0));
 
             if (rc.isSameStar(a.coords, b.coords)) {
                 console.log(`${i}. ${this.desc(a)} and ${this.desc(b)} are the same star!`);
@@ -145,7 +148,7 @@ class TripAdvisor {
     }
 
     public async explanation(): Promise<Explanation> {
-        return new Explanation(this.rc({ cancelled: false, tries: 0 }, { width: 0, depth: 0 }), await this.journey());
+        return new Explanation(this.rc({ cancelled: false, tries: 0 }, searchBounds(0, 0)), await this.journey());
     }
 }
 
