@@ -12,7 +12,7 @@ You press _Go!_ and the site gets stuck thinking. If you wait about 20 minutes i
 
 The "hanging" part of this is a known issue. We're working on a fix.
 
-The "terrible awful no-good very bad route" happens because there is no good route. In other words, the best route from start to destination is really long. To fix this, you need to start from a better place.
+The terrible awful no-good very bad route happens because there is no good route. In other words, the best route from start to destination is really long. To fix this, you need to start from a better place.
 
 "How do I do that?" Funny you should ask.
 
@@ -36,6 +36,21 @@ Before you travel, make sure you've packed the essentials and your travel plans 
   - upgrades in normal inventory slots are damaged by black hole travel, but technology slots are safe
   - alternative is to use a junker
 - **16 Glyphs** (required): You can't set a waypoint if you can use a portal
+- **A Portal Base** (optional): Really speeds up setting up waypoints
 - **Access to Black Holes** (required): This one should be obvious
 - **Freighter** (optional): Highly recommended
 - **A Good Start Point** (required): See section above.
+
+## Optimizations
+
+Short on time? Low on fuel? Either way, we've got you covered!
+
+### Time
+
+You can choose a route that is optimized for time. This takes into account incidentals like black hole jumps, teleportation, and trips through a portal.
+
+### Fuel
+
+You can choose a route that is optimized for fuel. Specifically, this will minimize the number of fuel-expending jumps to help conserve you hyper-fuel.
+
+Routes that are optimized for fuel consumption can take considerably longer to travel than the equivalent time-optimized route in some cases.
