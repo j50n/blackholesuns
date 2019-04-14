@@ -180,12 +180,12 @@ div.outer-div {
 }
 
 @font-face {
-    font-family: "nms-glyph-tight";
-    src: url("/blackholesuns/NMS-Glyphs-Tight.ttf") format("truetype");
+    font-family: "nms-glyph";
+    src: url("/blackholesuns/NMS-Glyphs-Mono.ttf") format("truetype");
 }
 
 span.galactic-coordinates {
-    font-family: "nms-glyph-tight";
+    font-family: "nms-glyph";
 }
 
 .message {
