@@ -36,7 +36,7 @@ Before you travel, make sure you've packed the essentials and your travel plans 
   - upgrades in normal inventory slots are damaged by black hole travel, but technology slots are safe
   - alternative is to use a junker
 - **16 Glyphs** (required): You can't set a waypoint if you can use a portal
-- **A Portal Base** (optional): Really speeds up setting up waypoints
+- **A Portal Base** (optional): Really speeds up setting up waypoints - just a teleport away
 - **Access to Black Holes** (required): This one should be obvious
 - **Freighter** (optional): Highly recommended
 - **A Good Start Point** (required): See section above.
