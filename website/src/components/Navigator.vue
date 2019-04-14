@@ -16,12 +16,11 @@
     <route-finder/>
 
     <p style="text-align: center;">
-      Visit the
       <a
-        href="https://www.reddit.com/r/NMSBlackHoleSuns/"
+        href="https://github.com/j50n/blackholesuns/"
         target="_blank"
         rel="noopener"
-      >NMSBlackHoleSuns on Reddit</a>.
+      >Project on Github</a>
     </p>
     <!-- <h3>Installed CLI Plugins</h3>
     <ul>
@@ -39,26 +38,27 @@
           rel="noopener"
         >typescript</a>
       </li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li>
-        <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
-      </li>
-      <li>
-        <a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a>
-      </li>
-      <li>
-        <a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a>
-      </li>
-      <li>
-        <a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a>
-      </li>
-    </ul>
-    <h3>Ecosystem</h3>
+    </ul>-->
+    <div style="text-align: center;">
+      <h3>NMS Black Hole Suns</h3>
+      <ul>
+        <li>
+          <a
+            href="https://www.reddit.com/r/NMSBlackHoleSuns/"
+            target="_blank"
+            rel="noopener"
+          >Read on Reddit</a>
+        </li>
+        <li>
+          <a
+            href="https://discord.blackholesuns.com"
+            target="_blank"
+            rel="noopener"
+          >Discuss on Discord</a>
+        </li>
+      </ul>
+    </div>
+    <!-- <h3>Ecosystem</h3>
     <ul>
       <li>
         <a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a>

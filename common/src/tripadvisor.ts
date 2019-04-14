@@ -176,7 +176,7 @@ class Explanation {
                     index: i,
                     start: a,
                     dest: b,
-                    description: `About ${distance} LY, or ${expectedJumps} jumps, away.`,
+                    description: `About ${distance.toLocaleString()} LY, or ${expectedJumps} jumps, away.`,
                 };
             }
         });

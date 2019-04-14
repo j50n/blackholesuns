@@ -55,6 +55,12 @@
         <div class="pure-g">-->
       </div>
     </template>
+    <div class="pure-g">
+      <div
+        v-for="message of messages"
+        :class="[message.type, 'message', 'pure-u-1-1']"
+      >{{message.text}}</div>
+    </div>
   </div>
 </template>
 
@@ -75,13 +81,21 @@ import {
     ILegOfJourney,
 } from "common";
 
+interface IMessage {
+    type: string;
+    text: string;
+}
+
 export default Vue.extend({
-    data(): { route: IRouteSubmit | null; ta: TripAdvisor | null; journey: Explanation | null; showCoordinates: Boolean } {
+    data(): { route: IRouteSubmit | null; ta: TripAdvisor | null; journey: Explanation | null; showCoordinates: Boolean; messages: IMessage[] } {
         return {
             route: null,
             ta: null,
             journey: null,
             showCoordinates: false,
+            messages: [
+                /* { type: "warning", text: "This is dynamically generated." }*/
+            ],
         };
     },
     methods: {
@@ -172,5 +186,19 @@ div.outer-div {
 
 span.galactic-coordinates {
     font-family: "nms-glyph-tight";
+}
+
+.message {
+    text-align: center;
+    padding: 10px;
+}
+.information {
+    color: blue;
+    background-color: #e4e8ff;
+}
+
+.warning {
+    color: red;
+    background-color: #ffc0c1;
 }
 </style>
