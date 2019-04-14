@@ -16,7 +16,35 @@ interface ILegOfJourney {
     description: string;
 }
 
-const DefaultBounds: ISearchBounds[] = [searchBounds(10, 6), searchBounds(4, 12), searchBounds(64, 3), searchBounds(40, 75, 75)];
+/*
+ * First two searches together take about 30 seconds if there is not an okay solution to be found.
+ * If there is not an okay solution, then the best solution is almost certainly going to be a bad
+ * solution in any case.
+ *
+ * If we find an "okay" solution in the first two, then that will limit the search space of the
+ * remaining bounds so that we can attempt what look like enormous searches without taking too much
+ * time.
+ *
+ * Bottom line: If we find an okay solution early, we can find the best solution. If we don't find
+ * an okay solution early, we can't find the best solution - but the best solution is going to be
+ * a very bad solution regardless.
+ *
+ * Why? Black hole travel takes you 6,200LY toward center on average, but this takes 2 jumps. So
+ * really you are getting 3,100LY per jump if you are chaining black holes. The best hyperdrives can
+ * get you 2,900LY per jump. Moving toward or away from center is about the same cost whether you
+ * user hyperdrive or black holes. Going *around* center can be much more efficient using black
+ * holes - if you know which ones to take.
+ *
+ * This is why start needs to be near (just outside of) the destination for these trips. That is
+ * what makes for a path that can be optimized.
+ */
+const DefaultBounds: ISearchBounds[] = [
+    searchBounds(10, 5), // 100,000
+    searchBounds(3, 10), // about 100,000
+    searchBounds(10, 10, 100), // progress to 10 billion - limit 100
+    searchBounds(20, 30, 75), // 20 ^^ 30 - limit 75
+    searchBounds(40, 50, 50), // 40 ^^ 50 - wider with limit of 50
+];
 
 function hops4Route(route: IRoute): List<IEndPoint> {
     return route.hops.flatMap(hop => [hop.blackhole, hop.exit]) as List<IEndPoint>;
