@@ -54,3 +54,23 @@ You can choose a route that is optimized for time. This takes into account incid
 You can choose a route that is optimized for fuel. Specifically, this will minimize the number of fuel-expending jumps to help conserve you hyper-fuel.
 
 Routes that are optimized for fuel consumption can take considerably longer to travel than the equivalent time-optimized route in some cases.
+
+# How to Travel
+
+Okay, let's assume you know where you are starting from and where you want to go. Now what? If you are still unsure what to do, this list should get you going.
+
+- Teleport to your start
+- Travel to the black hole (or destination)
+  - If same or adjacent sector, poke around until you find it
+  - If longer:
+    - Go to space station
+    - Teleport to your portal base
+    - Set glyphs on portal to target system
+    - Travel to target system using portal
+    - Set a waypoint now that you have visited the system
+    - Portal back to base
+    - Teleport back to space station
+    - Use waypoint to travel to target
+- If you have arrived at destination, sweet! All done
+- Else jump through the black hole (use special black hole starship)
+- Repeat
