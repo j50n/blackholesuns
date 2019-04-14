@@ -12,7 +12,7 @@ You press _Go!_ and the site gets stuck thinking. If you wait about 20 minutes i
 
 The "hanging" part of this is a known issue. We're working on a fix.
 
-The terrible awful no-good very bad route happens because there is no good route. In other words, the best route from start to destination is really long. To fix this, you need to start from a better place.
+The terrible awful no-good very bad route happens because there is no good route. In other words, the best route from start to destination is just really long. To fix this, you need to start from a better place.
 
 "How do I do that?" Funny you should ask.
 
