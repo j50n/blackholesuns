@@ -59,8 +59,8 @@ Routes that are optimized for fuel consumption can take considerably longer to t
 
 Okay, let's assume you know where you are starting from and where you want to go. Now what? If you are still unsure what to do, this list should get you going.
 
-- Teleport to your start
-- Travel to the black hole (or destination)
+- Teleport to start
+- Travel to the black hole (or destination) using hyperdrive
   - If same or adjacent sector, poke around until you find it
   - If longer:
     - Go to space station
@@ -70,7 +70,7 @@ Okay, let's assume you know where you are starting from and where you want to go
     - Set a waypoint now that you have visited the system
     - Portal back to base
     - Teleport back to space station
-    - Use waypoint to travel to target
+    - Use waypoint to travel to target using hyperdrive
 - If you have arrived at destination, sweet! All done
 - Else jump through the black hole (use special black hole starship)
 - Repeat
