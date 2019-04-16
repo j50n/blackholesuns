@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
-    <h1>DARC Web Navigator</h1>
-
+    <h1 style="margin-bottom: 0px; padding-bottom: 0px;">Black&nbsp;Hole&nbsp;Suns DARC&nbsp;Web</h1>
+    <div style="text-align: center;">
+      <sub>Distance and Route Calculator</sub>
+    </div>
     <!-- <form class="pure-form pure-form-aligned">
       <div>
         <input type="text">

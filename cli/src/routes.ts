@@ -51,11 +51,15 @@ async function main(): Promise<void> {
     const start = { label: "an exit point", coords: coordinates("093E:007D:0966:006D") };
     //const start = { label: "Hermit's Home", coords: coordinates("0164:007E:0596:0021") };
 
-    const dest = {
-        coords: coordinates("042F:0079:0D55:006A"),
-        label: "New Lennon",
-    };
+    // const dest = {
+    //     coords: coordinates("042F:0079:0D55:006A"),
+    //     label: "New Lennon",
+    // };
     //const dest = dopeLordConfederacy;
+    const dest = {
+        coords: coordinates("0643:0081:01A1:0079"),
+        label: "Durs Sigma",
+    };
 
     const status: ITripStatus = { cancelled: false, tries: 0 };
 

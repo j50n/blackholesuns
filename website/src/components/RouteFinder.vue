@@ -1,5 +1,12 @@
 <template>
   <div>
+    <div class="pure-g">
+      <div
+        v-for="message of messages"
+        :class="[message.type, 'message', 'pure-u-1-1']"
+      >{{message.text}}</div>
+    </div>
+    <br>
     <div v-if="ta === null" class="pure-g">
       <div class="pure-u-1">&nbsp;</div>
     </div>
@@ -55,12 +62,6 @@
         <div class="pure-g">-->
       </div>
     </template>
-    <div class="pure-g">
-      <div
-        v-for="message of messages"
-        :class="[message.type, 'message', 'pure-u-1-1']"
-      >{{message.text}}</div>
-    </div>
   </div>
 </template>
 
@@ -104,6 +105,7 @@ export default Vue.extend({
         },
         onRouteSubmit(event: IRouteSubmit) {
             this.route = event;
+            this.messages = [];
         },
 
         isOdd(v: number): boolean {
@@ -149,6 +151,17 @@ export default Vue.extend({
                 for (const leg of this.journey.legs()) {
                     console.log(leg.description);
                 }
+
+                const fuelCalc = routeCalculator(allHops, route.maxJump, "fuel", 1.0);
+                const timeCalc = routeCalculator(allHops, route.maxJump, "time", 1.0);
+
+                const hyperjumps = fuelCalc(status, { width: 0, depth: 0, ifScore: null }).calculateScore(r.start, r.destination, r.hops);
+                const timeCost = timeCalc(status, { width: 0, depth: 0, ifScore: null }).calculateScore(r.start, r.destination, r.hops);
+
+                this.messages.unshift({
+                    type: "information",
+                    text: `Estimated ${hyperjumps.toLocaleString()} hyperspace jumps in ${Math.ceil((62 / 38) * timeCost).toLocaleString()} minutes.`,
+                });
             } catch (e) {
                 if (!(e instanceof CancelledError)) {
                     console.log(e);

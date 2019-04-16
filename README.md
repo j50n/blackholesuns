@@ -49,6 +49,8 @@ Short on time? Low on fuel? Either way, we've got you covered!
 
 You can choose a route that is optimized for time. This takes into account incidentals like black hole jumps, teleportation, and trips through a portal.
 
+A time-optimized route may include more fuel-using jumps, but it will be the fastest way to get where you are going.
+
 ### Fuel
 
 You can choose a route that is optimized for fuel. Specifically, this will minimize the number of fuel-expending jumps to help conserve you hyper-fuel.
