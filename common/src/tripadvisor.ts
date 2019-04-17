@@ -39,11 +39,11 @@ interface ILegOfJourney {
  * what makes for a path that can be optimized.
  */
 const DefaultBounds: ISearchBounds[] = [
-    searchBounds(10, 5), // 100,000
-    searchBounds(3, 10), // about 100,000
-    searchBounds(10, 10, 100), // progress to 10 billion - limit 100
-    searchBounds(20, 30, 75), // 20 ^^ 30 - limit 75
-    searchBounds(40, 50, 50), // 40 ^^ 50 - wider with limit of 50
+    searchBounds(10, 6), // 100,000
+    searchBounds(4, 10), // about 100,000
+    searchBounds(8, 10, 70), // progress to 10 billion - limit 100
+    searchBounds(10, 8, 70), // 20 ^^ 30 - limit 75
+    //searchBounds(20, 20, ), // 40 ^^ 50 - wider with limit of 50
 ];
 
 function hops4Route(route: IRoute): List<IEndPoint> {
