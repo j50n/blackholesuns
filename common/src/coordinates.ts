@@ -1,8 +1,13 @@
 type Coords = [number, number, number, number];
 const reCoord = /^([0-9a-f]{1,4}):([0-9a-f]{1,4}):([0-9a-f]{1,4}):([0-9a-f]{1,4})$/i;
+const reCoord2 = /^([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})$/i;
 
 function coordinates(text: string): Coordinates {
-    const parts = reCoord.exec(text);
+    let parts = reCoord.exec(text);
+    if (parts == null) {
+        parts = reCoord2.exec(text);
+    }
+
     if (parts == null) {
         throw new SyntaxError(`not valid galactic coordinates: '${text}'`);
     } else {

@@ -17,7 +17,8 @@
                 v-model.trim="formData.startVal"
                 :pattern="coordPattern"
                 required
-                placeholder="Start"
+                placeholder="07FF:007F:07FF:017F"
+                @blur="formatCoordinates"
               >
               <!-- <span class="pure-form-message-inline">This is a required field. BLAH</span> -->
             </div>
@@ -30,7 +31,8 @@
                 v-model.trim="formData.destVal"
                 :pattern="coordPattern"
                 required
-                placeholder="Destination"
+                placeholder="07FF:007F:07FF:017F"
+                @blur="formatCoordinates"
               >
             </div>
           </fieldset>
@@ -45,7 +47,7 @@
             <div class="pure-controls" style="display: inline-block;">
               <label for="galaxy">Galaxy</label>
               <select id="galaxy" required v-model="formData.galaxy">
-                <option v-for="g of allGalaxies()" v-bind:value="g">{{ g }}</option>
+                <option v-for="g of allGalaxies()" :value="g">{{ g }}</option>
               </select>
             </div>
             <div class="pure-control-group">
@@ -109,7 +111,7 @@ import { List } from "immutable";
 export default Vue.extend({
     data() {
         return {
-            coordPattern: "0?[0-9a-fA-F]{1,3}:0?0?[0-9a-fA-F]{1,2}:0?[0-9a-fA-F]{1,3}:0?[0-2]?0?[0-9a-fA-F]{1,3}",
+            coordPattern: "(0?[0-9a-fA-F]{1,3}:0?0?[0-9a-fA-F]{1,2}:0?[0-9a-fA-F]{1,3}:0?[0-2]?0?[0-9a-fA-F]{1,3})|([0-9a-fA-F]{16})",
             formData: {
                 startVal: "",
                 destVal: "",
@@ -137,7 +139,23 @@ export default Vue.extend({
     },
 
     methods: {
+        formatCoordinates() {
+            function fc(coor: string): string | null {
+                try {
+                    const c = coordinates(coor);
+                    return c.toString();
+                } catch (e) {
+                    return null;
+                }
+            }
+
+            this.formData.startVal = fc(this.formData.startVal) || this.formData.startVal;
+            this.formData.destVal = fc(this.formData.destVal) || this.formData.destVal;
+        },
+
         submitForm() {
+            this.formatCoordinates();
+
             routeEvents.raiseRouteSubmit({
                 platform: this.formData.platform,
                 galaxy: this.formData.galaxy,
