@@ -5,6 +5,15 @@ import { coordinates, Hop, Platform } from "../src/coordinates";
 import { FuelOptimizedRouteCalculator, IRoute } from "../src/routecalculator";
 import { validHops } from "../src/utils";
 
+/*
+ * JSS as of 0.3.1:
+ *
+ * This route performs really badly if you open up the bounds.
+ * Euclid PS4 0EBC:0085:0682:0079 -> 0DC7:007B:083A:007A 1500 LY
+ * Good argument that depth-first search isn't doing the trick.
+ * Need to switch algorithms.
+ */
+
 function f(c: string): Hop {
     const result = allHops.find(hop => {
         return hop.blackhole.coords.toString() === c;
