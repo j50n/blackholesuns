@@ -8,7 +8,7 @@ Welcome, Interloper! If you are having trouble finding a route to your favorite 
 
 ### Site Hangs When I Press Go!
 
-You press _Go!_ and the site gets stuck thinking. If you wait about 30 seconds it finishes with a route that no one would ever want to travel.
+You press _Go!_ and the site gets stuck thinking. If you wait a while (should be less than 10 minutes), it finishes with a route that leaves a lot to be desired.
 
 The "hanging" part of this is a known issue. We're working on a fix.
 
