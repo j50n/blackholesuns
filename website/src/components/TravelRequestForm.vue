@@ -104,14 +104,14 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { coordinates, Platform, validHops } from "common";
+import { coordinates, Platform, validHops, reCoordInput } from "common";
 import { routeEvents } from "../bus/RouteEvents";
 import { List } from "immutable";
 
 export default Vue.extend({
     data() {
         return {
-            coordPattern: "(0?[0-9a-fA-F]{1,3}:0?0?[0-9a-fA-F]{1,2}:0?[0-9a-fA-F]{1,3}:0?[0-2]?0?[0-9a-fA-F]{1,3})|([0-9a-fA-F]{16})",
+            coordPattern: reCoordInput,
             formData: {
                 startVal: "",
                 destVal: "",

@@ -1,18 +1,47 @@
 type Coords = [number, number, number, number];
-const reCoord = /^([0-9a-f]{1,4}):([0-9a-f]{1,4}):([0-9a-f]{1,4}):([0-9a-f]{1,4})$/i;
-const reCoord2 = /^([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})$/i;
+
+const reCoord3Pattern = `([0-9a-f]{1,4})[\\:\\s]([0-9a-f]{1,4})[\\:\\s]([0-9a-f]{1,4})`;
+const reCoord4Pattern = `([0-9a-f]{1,4})[\\:\\s]([0-9a-f]{1,4})[\\:\\s]([0-9a-f]{1,4})[\\:\\s]([0-9a-f]{1,4})`;
+const reCoordFlat3Pattern = `([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})`;
+const reCoordFlat4Pattern = `([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})`;
+
+const reCoord3 = new RegExp(`^${reCoord3Pattern}$`, "i"); ///^([0-9a-f]{1,4})[\:\s]([0-9a-f]{1,4})[\:\s]([0-9a-f]{1,4})$/i;
+const reCoord4 = new RegExp(`^${reCoord4Pattern}$`, "i"); ///^([0-9a-f]{1,4})[\:\s]([0-9a-f]{1,4})[\:\s]([0-9a-f]{1,4})[\:\s]([0-9a-f]{1,4})$/i;
+const reCoordFlat3 = new RegExp(`^${reCoordFlat3Pattern}$`, "i"); ///^([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})$/i;
+const reCoordFlat4 = new RegExp(`^${reCoordFlat4Pattern}$`, "i"); ///^([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})$/i;
+
+const reCoordInput = `^(${reCoord3Pattern})|(${reCoord4Pattern})|(${reCoordFlat3Pattern})|(${reCoordFlat4Pattern})$`.replace(/a-f/g, "a-fA-F");
 
 function coordinates(text: string): Coordinates {
-    let parts = reCoord.exec(text);
+    function interpret(parts: string[] | null): Coords | null {
+        if (parts === null) {
+            return null;
+        } else {
+            let ps = parts.slice(1, 5).map(i => parseInt(i, 16));
+            if (ps.length === 3) {
+                ps.push(0x0000);
+            }
+            return ps as Coords;
+        }
+    }
+
+    const t = text.trim();
+
+    let parts = interpret(reCoord3.exec(t));
     if (parts == null) {
-        parts = reCoord2.exec(text);
+        parts = interpret(reCoord4.exec(t));
+    }
+    if (parts == null) {
+        parts = interpret(reCoordFlat3.exec(t));
+    }
+    if (parts == null) {
+        parts = interpret(reCoordFlat4.exec(t));
     }
 
     if (parts == null) {
-        throw new SyntaxError(`not valid galactic coordinates: '${text}'`);
+        throw new SyntaxError(`not valid galactic coordinates: '${t}'`);
     } else {
-        const args = parts.slice(1, 5).map(i => parseInt(i, 16)) as Coords;
-        return new Coordinates(...args);
+        return new Coordinates(...parts);
     }
 }
 
@@ -189,4 +218,4 @@ class Hop {
     }
 }
 
-export { coordinates, Coordinates, Hop, System, Wealth, Platform };
+export { coordinates, Coordinates, Hop, System, Wealth, Platform, reCoordInput };
