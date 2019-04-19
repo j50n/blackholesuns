@@ -1,7 +1,7 @@
 type Coords = [number, number, number, number];
 
-const reCoord3Pattern = `([0-9a-f]{1,4})[\\:\\s]([0-9a-f]{1,4})[\\:\\s]([0-9a-f]{1,4})`;
-const reCoord4Pattern = `([0-9a-f]{1,4})[\\:\\s]([0-9a-f]{1,4})[\\:\\s]([0-9a-f]{1,4})[\\:\\s]([0-9a-f]{1,4})`;
+const reCoord3Pattern = `([0-9a-f]{1,4})[:\\s]([0-9a-f]{1,4})[:\\s]([0-9a-f]{1,4})`;
+const reCoord4Pattern = `([0-9a-f]{1,4})[:\\s]([0-9a-f]{1,4})[:\\s]([0-9a-f]{1,4})[:\\s]([0-9a-f]{1,4})`;
 const reCoordFlat3Pattern = `([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})`;
 const reCoordFlat4Pattern = `([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})`;
 
@@ -167,7 +167,7 @@ class System {
     constructor(public readonly region: string, public readonly system: string, public readonly coords: Coordinates, public readonly economy: Wealth) {}
 
     public get label(): string {
-        return `[${this.region}] ${this.system}`;
+        return `[${this.region.replace(/ /g, "\xA0")}] ${this.system.replace(/-/g, "‑").replace(/ /g, "\xA0")}`;
     }
 }
 

@@ -23,41 +23,94 @@
             <template v-else>Show Coordinates</template>
           </button>
         </div>
-        <div class="pure-u-1">
-          <table
-            class="pure-table pure-table-horizontal"
-            style="margin-left:auto; margin-right:auto; width: 100%;"
-          >
-            <thead>
-              <tr>
-                <th>&nbsp;</th>
-                <th>Start / Exit</th>
-                <th>Black Hole / Destination</th>
-                <th colspan="2">Directions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="leg of journey.legs()" :class="{'pure-table-odd': isOdd(leg.index) }">
-                <td>{{ leg.index }}</td>
-                <td>{{ journey.desc(leg.start) }}</td>
-                <td>{{ journey.desc(leg.dest) }}</td>
-                <td>{{ leg.description }}</td>
-                <td style="text-align: center;">
-                  <template v-if="showCoordinates">{{ leg.dest.coords }}</template>
-                  <template v-else>
-                    <span class="galactic-coordinates">
-                      <big>
+        <template v-if="this.windowWidth >= 639">
+          <div class="pure-u-1">
+            <table
+              class="pure-table pure-table-horizontal"
+              style="margin-left:auto; margin-right:auto; width: 100%;"
+            >
+              <thead>
+                <tr>
+                  <th>&nbsp;</th>
+                  <th>Start / Exit</th>
+                  <th>Black Hole / Destination</th>
+                  <th>Directions</th>
+                  <th>Waypoint</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="leg of journey.legs()" :class="{'pure-table-odd': isOdd(leg.index) }">
+                  <td>{{ leg.index }}</td>
+                  <td>{{ journey.desc(leg.start) }}</td>
+                  <td>{{ journey.desc(leg.dest) }}</td>
+                  <td>{{ leg.description }}</td>
+                  <td>
+                    <template v-if="showCoordinates">{{ leg.dest.coords }}</template>
+                    <template v-else>
+                      <span class="galactic-coordinates">
                         <big>
-                          <big>{{leg.dest.coords.galacticCoordinates(0).toUpperCase()}}</big>
+                          <big>
+                            <big>{{leg.dest.coords.galacticCoordinates(0).toUpperCase()}}</big>
+                          </big>
                         </big>
-                      </big>
-                    </span>
-                  </template>
+                      </span>
+                    </template>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </template>
+        <template v-else>
+          <div class="pure-u-1">
+            <table class="pure-table no-border" style=" width: 100%;">
+              <tr v-for="leg of journey.legs()" :class="{'pure-table-odd': isOdd(leg.index) }">
+                <td class="no-padding no-border">
+                  <table class="pure-table no-border">
+                    <tr>
+                      <td class="key-cell">Flight</td>
+                      <td class="value-cell">{{ leg.index + 1 }}</td>
+                    </tr>
+                    <tr>
+                      <td class="key-cell">
+                        <template v-if="leg.index === 0">Start</template>
+                        <template v-else>Exit</template>
+                      </td>
+                      <td class="value-cell">{{ journey.desc(leg.start) }}</td>
+                    </tr>
+                    <tr>
+                      <td class="key-cell">
+                        <template v-if="leg.index >= journey.legs().last().index">Destination</template>
+                        <template v-else>Black&nbsp;Hole</template>
+                      </td>
+                      <td class="value-cell">{{ journey.desc(leg.dest) }}</td>
+                    </tr>
+                    <tr>
+                      <td class="key-cell">Directions</td>
+                      <td class="value-cell">{{ leg.description }}</td>
+                    </tr>
+
+                    <tr>
+                      <td class="key-cell">Waypoint</td>
+                      <td class="value-cell">
+                        <template v-if="showCoordinates">{{ leg.dest.coords }}</template>
+                        <template v-else>
+                          <span
+                            class="galactic-coordinates-mobile"
+                          >{{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(0,6)}}</span>
+                          <br>
+                          <span
+                            class="galactic-coordinates-mobile"
+                          >{{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(6,12)}}</span>
+                        </template>
+                      </td>
+                    </tr>
+                  </table>
                 </td>
               </tr>
-            </tbody>
-          </table>
-        </div>
+            </table>
+          </div>
+        </template>
         <!-- </div>
         <div class="pure-g">-->
       </div>
@@ -88,7 +141,14 @@ interface IMessage {
 }
 
 export default Vue.extend({
-    data(): { route: IRouteSubmit | null; ta: TripAdvisor | null; journey: Explanation | null; showCoordinates: Boolean; messages: IMessage[] } {
+    data(): {
+        route: IRouteSubmit | null;
+        ta: TripAdvisor | null;
+        journey: Explanation | null;
+        showCoordinates: Boolean;
+        messages: IMessage[];
+        windowWidth: number;
+    } {
         return {
             route: null,
             ta: null,
@@ -97,6 +157,7 @@ export default Vue.extend({
             messages: [
                 /* { type: "warning", text: "This is dynamically generated." }*/
             ],
+            windowWidth: -1,
         };
     },
     methods: {
@@ -168,6 +229,10 @@ export default Vue.extend({
                 }
             }
         },
+
+        windowResizeEvent(ev: UIEvent) {
+            this.windowWidth = window.innerWidth;
+        },
     },
     watch: {
         route() {
@@ -179,6 +244,13 @@ export default Vue.extend({
     mounted() {
         console.log("MOUNTED");
         routeEvents.listenRouteSubmit(this.onRouteSubmit);
+
+        this.windowWidth = window.innerWidth;
+        window.addEventListener("resize", this.windowResizeEvent);
+    },
+
+    beforeDestroy() {
+        window.removeEventListener("resize", this.windowResizeEvent);
     },
 });
 </script>
@@ -199,6 +271,12 @@ div.outer-div {
 
 span.galactic-coordinates {
     font-family: "nms-glyph";
+    font-size: large;
+}
+
+span.galactic-coordinates-mobile {
+    font-family: "nms-glyph";
+    font-size: x-large;
 }
 
 .message {
@@ -214,4 +292,59 @@ span.galactic-coordinates {
     color: red;
     background-color: #ffc0c1;
 }
+
+.no-padding {
+    padding: 0px;
+}
+
+.no-border {
+    border-style: none;
+}
+
+td.key-cell {
+    font-weight: bold;
+    //text-transform: uppercase;
+    text-align: right;
+    border-style: none;
+    vertical-align: text-top;
+}
+
+td.value-cell {
+    text-align: left;
+    border-style: none;
+    vertical-align: text-top;
+}
+
+// @media screen and (max-width: 12000px) {
+//     table {
+//         border: 0;
+//     }
+
+//     table thead {
+//         display: none;
+//     }
+
+//     table tr {
+//         border-bottom: 3px solid #ddd;
+//         display: block;
+//         margin-bottom: 0.625em;
+//     }
+
+//     table td {
+//         border-bottom: 1px solid #ddd;
+//         display: block;
+//         font-size: 0.8em;
+//         text-align: right;
+//     }
+
+//     table td:before {
+//         content: attr(data-label);
+//         float: left;
+//         font-weight: bold;
+//         text-transform: uppercase;
+//     }
+//     table td:last-child {
+//         border-bottom: 0;
+//     }
+// }
 </style>

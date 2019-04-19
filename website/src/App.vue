@@ -29,4 +29,13 @@ export default Vue.extend({
     margin-left: 40px;
     margin-right: 40px;
 }
+
+@media screen and (max-width: 639px) {
+    #app {
+        margin-top: 16px;
+        margin-bottom: 16px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
 </style>
