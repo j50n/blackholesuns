@@ -70,6 +70,10 @@ function routeCalculator(
  * Calculate best route using black-holes based on lowest trip difficulty.
  */
 class RouteCalculator {
+    optimizedFor() {
+        return "TIME";
+    }
+
     waypointCost() {
         return 4;
     }
@@ -249,6 +253,10 @@ class FuelOptimizedRouteCalculator extends RouteCalculator {
         public readonly search: ISearchBounds = SearchBounds(10, 10)
     ) {
         super(galacticHops, status, maxJumpRange, jumpEfficiency, search);
+    }
+
+    optimizedFor() {
+        return "FUEL";
     }
 
     waypointCost() {

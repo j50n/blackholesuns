@@ -117,7 +117,7 @@ class Coordinates {
         return `${p}${s}${y}${z}${x}`;
     }
 
-    /** Distance to center. */
+    /** Distance to center (regions). */
     public get dist(): number {
         return Math.sqrt((this.x - 0x7ff) ** 2 + (this.y - 0x7f) ** 2 + (this.z - 0x7ff) ** 2);
     }

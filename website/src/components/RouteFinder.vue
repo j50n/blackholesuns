@@ -3,6 +3,7 @@
     <div class="pure-g">
       <div
         v-for="message of messages"
+        :key="`${message.text}:${message.type}`"
         :class="[message.type, 'message', 'pure-u-1-1']"
       >{{message.text}}</div>
     </div>
@@ -39,10 +40,14 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="leg of journey.legs()" :class="{'pure-table-odd': isOdd(leg.index) }">
-                  <td>{{ leg.index }}</td>
-                  <td>{{ journey.desc(leg.start) }}</td>
-                  <td>{{ journey.desc(leg.dest) }}</td>
+                <tr
+                  v-for="leg of journey.legs()"
+                  :key="leg.index"
+                  :class="{'pure-table-odd': isOdd(leg.index) }"
+                >
+                  <td>{{ leg.index + 1 }}</td>
+                  <td class="notranslate">{{ journey.desc(leg.start) }}</td>
+                  <td class="notranslate">{{ journey.desc(leg.dest) }}</td>
                   <td>{{ leg.description }}</td>
                   <td>
                     <template v-if="showCoordinates">{{ leg.dest.coords }}</template>
@@ -64,7 +69,11 @@
         <template v-else>
           <div class="pure-u-1">
             <table class="pure-table no-border" style=" width: 100%;">
-              <tr v-for="leg of journey.legs()" :class="{'pure-table-odd': isOdd(leg.index) }">
+              <tr
+                v-for="leg of journey.legs()"
+                :key="leg.index"
+                :class="{'pure-table-odd': isOdd(leg.index) }"
+              >
                 <td class="no-padding no-border">
                   <table class="pure-table no-border">
                     <tr>
@@ -76,14 +85,14 @@
                         <template v-if="leg.index === 0">Start</template>
                         <template v-else>Exit</template>
                       </td>
-                      <td class="value-cell">{{ journey.desc(leg.start) }}</td>
+                      <td class="value-cell notranslate">{{ journey.desc(leg.start) }}</td>
                     </tr>
                     <tr>
                       <td class="key-cell">
                         <template v-if="leg.index >= journey.legs().last().index">Destination</template>
                         <template v-else>Black&nbsp;Hole</template>
                       </td>
-                      <td class="value-cell">{{ journey.desc(leg.dest) }}</td>
+                      <td class="value-cell notranslate">{{ journey.desc(leg.dest) }}</td>
                     </tr>
                     <tr>
                       <td class="key-cell">Directions</td>
@@ -175,6 +184,21 @@ export default Vue.extend({
 
         async calculateTrip(route: IRouteSubmit) {
             try {
+                const startDist = Math.floor(route.start.dist * 400);
+                const destDist = Math.floor(route.dest.dist * 400);
+                const delta = Math.abs(startDist - (destDist + 20000));
+
+                if (delta >= 30000) {
+                    this.messages.unshift({
+                        type: "warning",
+                        text:
+                            `Start is ${startDist.toLocaleString()} LY from center. ` +
+                            `Destination is ${destDist.toLocaleString()} LY from center. ` +
+                            `For best results, find a start location that is about ${(destDist + 20000).toLocaleString()} LY from center, ` +
+                            `plus or minus about ${(20000).toLocaleString()} LY.`,
+                    });
+                }
+
                 if (this.ta !== null) {
                     if (!this.ta.hasRoute) {
                         this.ta!.status.cancelled = true;
@@ -206,6 +230,7 @@ export default Vue.extend({
                     { label: "destination", coords: route.dest },
                     status
                 );
+
                 const r = await this.ta!.route();
                 this.journey = await this.ta.explanation();
 

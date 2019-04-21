@@ -116,7 +116,9 @@ class TripAdvisor {
      */
     public route: () => Promise<IRoute> = lazily(async () => {
         try {
-            let bestRoute = await this.rc(this.status, searchBounds(0, 0)).findRoute(this.start.coords, this.destination.coords, 9999999);
+            const calc = this.rc(this.status, searchBounds(0, 0));
+            console.log(`route optimized for ${calc.optimizedFor()}`);
+            let bestRoute = await calc.findRoute(this.start.coords, this.destination.coords, 9999999);
 
             for (const bound of this.bounds) {
                 if (bound.ifScore === null || bound.ifScore > bestRoute.score) {
