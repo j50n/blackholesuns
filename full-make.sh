@@ -27,7 +27,7 @@ cd "$HERE/common" && (
 cd "$HERE/website" && (
     rm -rf "$HERE/website/node_modules/" 
     npm update 
-    npm run build
+    npm run build || npm run build
 )
 
 
