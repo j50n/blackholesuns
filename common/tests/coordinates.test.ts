@@ -16,7 +16,7 @@ test("radial", t => {
 });
 
 test("distance", t => {
-    t.true(Math.abs(coordinates("0FFF:007F:0FFF:0079").dist - 2896.3) < 1, "calculates the correct distance from center");
+    t.true(Math.abs(coordinates("0FFF:007F:0FFF:0079").dist2Center() - 2896.3) < 1, "calculates the correct distance from center");
     t.end();
 });
 

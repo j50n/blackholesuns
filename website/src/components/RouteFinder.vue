@@ -77,7 +77,7 @@
                 <td class="no-padding no-border">
                   <table class="pure-table no-border">
                     <tr>
-                      <td class="key-cell">Flight</td>
+                      <td class="key-cell">Route</td>
                       <td class="value-cell">{{ leg.index + 1 }}</td>
                     </tr>
                     <tr>
@@ -184,17 +184,18 @@ export default Vue.extend({
 
         async calculateTrip(route: IRouteSubmit) {
             try {
-                const startDist = Math.floor(route.start.dist * 400);
-                const destDist = Math.floor(route.dest.dist * 400);
+                const startDist = Math.floor(route.start.dist2Center() * 400);
+                const destDist = Math.floor(route.dest.dist2Center() * 400);
                 const delta = Math.abs(startDist - (destDist + 20000));
 
-                if (delta >= 30000) {
+                if (delta >= 0 /* 30000 */) {
                     this.messages.unshift({
                         type: "warning",
                         text:
                             `Start is ${startDist.toLocaleString()} LY from center. ` +
                             `Destination is ${destDist.toLocaleString()} LY from center. ` +
-                            `For best results, find a start location that is about ${(destDist + 20000).toLocaleString()} LY from center, ` +
+                            `For best results, find a start location that is about ${(Math.max(destDist + 20000),
+                            coordinates("0000:0000:0000:0001").dist2Center()).toLocaleString()} LY from center, ` +
                             `plus or minus about ${(20000).toLocaleString()} LY.`,
                     });
                 }

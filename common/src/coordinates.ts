@@ -1,50 +1,5 @@
 type Coords = [number, number, number, number];
 
-const reCoord3Pattern = `([0-9a-f]{1,4})[:\\s]([0-9a-f]{1,4})[:\\s]([0-9a-f]{1,4})`;
-const reCoord4Pattern = `([0-9a-f]{1,4})[:\\s]([0-9a-f]{1,4})[:\\s]([0-9a-f]{1,4})[:\\s]([0-9a-f]{1,4})`;
-const reCoordFlat3Pattern = `([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})`;
-const reCoordFlat4Pattern = `([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})`;
-
-const reCoord3 = new RegExp(`^${reCoord3Pattern}$`, "i"); ///^([0-9a-f]{1,4})[\:\s]([0-9a-f]{1,4})[\:\s]([0-9a-f]{1,4})$/i;
-const reCoord4 = new RegExp(`^${reCoord4Pattern}$`, "i"); ///^([0-9a-f]{1,4})[\:\s]([0-9a-f]{1,4})[\:\s]([0-9a-f]{1,4})[\:\s]([0-9a-f]{1,4})$/i;
-const reCoordFlat3 = new RegExp(`^${reCoordFlat3Pattern}$`, "i"); ///^([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})$/i;
-const reCoordFlat4 = new RegExp(`^${reCoordFlat4Pattern}$`, "i"); ///^([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})$/i;
-
-const reCoordInput = `^(${reCoord3Pattern})|(${reCoord4Pattern})|(${reCoordFlat3Pattern})|(${reCoordFlat4Pattern})$`.replace(/a-f/g, "a-fA-F");
-
-function coordinates(text: string): Coordinates {
-    function interpret(parts: string[] | null): Coords | null {
-        if (parts === null) {
-            return null;
-        } else {
-            let ps = parts.slice(1, 5).map(i => parseInt(i, 16));
-            if (ps.length === 3) {
-                ps.push(0x0000);
-            }
-            return ps as Coords;
-        }
-    }
-
-    const t = text.trim();
-
-    let parts = interpret(reCoord3.exec(t));
-    if (parts == null) {
-        parts = interpret(reCoord4.exec(t));
-    }
-    if (parts == null) {
-        parts = interpret(reCoordFlat3.exec(t));
-    }
-    if (parts == null) {
-        parts = interpret(reCoordFlat4.exec(t));
-    }
-
-    if (parts == null) {
-        throw new SyntaxError(`not valid galactic coordinates: '${t}'`);
-    } else {
-        return new Coordinates(...parts);
-    }
-}
-
 class Coordinates {
     constructor(public readonly x: number, public readonly y: number, public readonly z: number, public readonly system: number) {
         if (!Number.isInteger(x)) {
@@ -118,8 +73,8 @@ class Coordinates {
     }
 
     /** Distance to center (regions). */
-    public get dist(): number {
-        return Math.sqrt((this.x - 0x7ff) ** 2 + (this.y - 0x7f) ** 2 + (this.z - 0x7ff) ** 2);
+    public dist2Center(): number {
+        return this.dist2(GalacticCenter);
     }
 
     /**
@@ -151,6 +106,53 @@ class Coordinates {
     }
 }
 
+const reCoord3Pattern = `([0-9a-f]{1,4})[:\\s]([0-9a-f]{1,4})[:\\s]([0-9a-f]{1,4})`;
+const reCoord4Pattern = `([0-9a-f]{1,4})[:\\s]([0-9a-f]{1,4})[:\\s]([0-9a-f]{1,4})[:\\s]([0-9a-f]{1,4})`;
+const reCoordFlat3Pattern = `([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})`;
+const reCoordFlat4Pattern = `([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})`;
+
+const reCoord3 = new RegExp(`^${reCoord3Pattern}$`, "i"); ///^([0-9a-f]{1,4})[\:\s]([0-9a-f]{1,4})[\:\s]([0-9a-f]{1,4})$/i;
+const reCoord4 = new RegExp(`^${reCoord4Pattern}$`, "i"); ///^([0-9a-f]{1,4})[\:\s]([0-9a-f]{1,4})[\:\s]([0-9a-f]{1,4})[\:\s]([0-9a-f]{1,4})$/i;
+const reCoordFlat3 = new RegExp(`^${reCoordFlat3Pattern}$`, "i"); ///^([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})$/i;
+const reCoordFlat4 = new RegExp(`^${reCoordFlat4Pattern}$`, "i"); ///^([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})([0-9a-f]{4})$/i;
+
+const reCoordInput = `^(${reCoord3Pattern})|(${reCoord4Pattern})|(${reCoordFlat3Pattern})|(${reCoordFlat4Pattern})$`.replace(/a-f/g, "a-fA-F");
+
+function coordinates(text: string): Coordinates {
+    function interpret(parts: string[] | null): Coords | null {
+        if (parts === null) {
+            return null;
+        } else {
+            let ps = parts.slice(1, 5).map(i => parseInt(i, 16));
+            if (ps.length === 3) {
+                ps.push(0x0000);
+            }
+            return ps as Coords;
+        }
+    }
+
+    const t = text.trim();
+
+    let parts = interpret(reCoord3.exec(t));
+    if (parts == null) {
+        parts = interpret(reCoord4.exec(t));
+    }
+    if (parts == null) {
+        parts = interpret(reCoordFlat3.exec(t));
+    }
+    if (parts == null) {
+        parts = interpret(reCoordFlat4.exec(t));
+    }
+
+    if (parts == null) {
+        throw new SyntaxError(`not valid galactic coordinates: '${t}'`);
+    } else {
+        return new Coordinates(...parts);
+    }
+}
+
+const GalacticCenter = coordinates("07FF:007F:07FF:0000");
+
 enum Platform {
     PS4 = "PS4",
     PC = "PC",
@@ -178,8 +180,8 @@ class Hop {
      * Absolute distance moved toward the center from the black-hole to the exit.
      */
     public get radialDist(): number {
-        const bd = this.blackhole.coords.dist;
-        const ed = this.exit.coords.dist;
+        const bd = this.blackhole.coords.dist2Center();
+        const ed = this.exit.coords.dist2Center();
 
         return Math.abs(bd - ed);
     }
@@ -218,4 +220,4 @@ class Hop {
     }
 }
 
-export { coordinates, Coordinates, Hop, System, Wealth, Platform, reCoordInput };
+export { coordinates, Coordinates, Hop, System, Wealth, Platform, reCoordInput, GalacticCenter };

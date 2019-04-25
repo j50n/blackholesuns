@@ -47,7 +47,7 @@
             <div class="pure-controls" style="display: inline-block;">
               <label for="galaxy">Galaxy</label>
               <select id="galaxy" required v-model="formData.galaxy">
-                <option v-for="g of allGalaxies()" :value="g">{{ g }}</option>
+                <option v-for="g of allGalaxies()" :key="g" :value="g">{{ g }}</option>
               </select>
             </div>
             <div class="pure-control-group">

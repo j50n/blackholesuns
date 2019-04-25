@@ -144,11 +144,11 @@ class TripAdvisor {
             throw new CancelledError("operation cancelled 2");
         }
 
-        const radialDist = Math.floor(Math.abs(this.start.coords.dist - this.destination.coords.dist) * 400);
+        const radialDist = Math.floor(Math.abs(this.start.coords.dist2Center() - this.destination.coords.dist2Center()) * 400);
 
         if (radialDist > 20000) {
-            const startDist = Math.floor(this.start.coords.dist * 400);
-            const destDist = Math.floor(this.destination.coords.dist * 400);
+            const startDist = Math.floor(this.start.coords.dist2Center() * 400);
+            const destDist = Math.floor(this.destination.coords.dist2Center() * 400);
 
             console.log(
                 `Start is ${startDist} LY from center. Destination is ${destDist} from center.` +

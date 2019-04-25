@@ -6,7 +6,10 @@
     "browser": "./lib/browser/index.js",
     "scripts": {
         "install": "npm run build",
-        "build": "rm -rf ./lib && tsc -p ./tsconfig.browser.json && tsc -p ./tsconfig.main.json",
+        "clean": "rm -rf ./lib",
+        "build-for-browser": "tsc -p ./tsconfig.browser.json",
+        "build-for-node": "tsc -p ./tsconfig.main.json",
+        "build": "npm run clean && npm run test && npm run build-for-browser && npm run build-for-node",
         "test": "ts-node --project ./tsconfig.main.json ./node_modules/tape/bin/tape ./tests/**/*.ts"
     },
     "author": "Jason Smith",
@@ -21,7 +24,8 @@
         "@types/deep-equal": "1.0.1",
         "deep-equal": "1.0.1",
         "immutable": "4.0.0-rc.12",
-        "p-iteration": "1.1.8"
+        "p-iteration": "1.1.8",
+        "tinyqueue": "2.0.2"
     },
     "prettier": {
         "trailingComma": "es5",

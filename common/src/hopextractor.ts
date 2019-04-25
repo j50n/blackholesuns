@@ -65,8 +65,8 @@ function extractHop(row: string[]): Hop | null {
 }
 
 function isValidHop(hop: Hop): boolean {
-    const movesTowardCenter = hop.blackhole.coords.dist > hop.exit.coords.dist;
-    const isInsideGalacticCircle = hop.blackhole.coords.dist <= 0x7ff;
+    const movesTowardCenter = hop.blackhole.coords.dist2Center() > hop.exit.coords.dist2Center();
+    const isInsideGalacticCircle = hop.blackhole.coords.dist2Center() <= 0x7ff;
     const traveledANormalDistance = hop.radialDist * 400 <= 16000;
 
     return movesTowardCenter && (isInsideGalacticCircle ? traveledANormalDistance : true);
