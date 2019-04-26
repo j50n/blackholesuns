@@ -2,6 +2,16 @@
 
 Be warned! Here there be spoilers. This is the last thing you should be doing in No Man's Sky, not the first.
 
+## Coming Soon!
+
+Stuff we are working on.
+
+- Near-instant path searches
+- Optimal path every time
+- Route map - track your journey!
+- Support for multiple starting points - we will pick the best one for you!
+- Profiles for your settings - because we know one galaxy is never enough!
+
 ## Troubleshooting
 
 Welcome, Interloper! If you are having trouble finding a route to your favorite destination, there is help. Ask a question on [the BlackHoleSun's discord server](https://discord.blackholesuns.com).
