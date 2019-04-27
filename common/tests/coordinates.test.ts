@@ -21,7 +21,12 @@ test("distance", t => {
 });
 
 test("equality", t => {
-    t.true(deepEqual(coordinates("0FFF:007F:0FFF:0079"), coordinates("0FFF:007F:0FFF:0079")), "correctly detect these coordinates are the same");
+    console.log(JSON.stringify(coordinates("0FFF:007F:0FFF:0079")));
+
+    t.true(
+        deepEqual(coordinates("0FFF:007F:0FFF:0079"), coordinates("0FFF:007F:0FFF:0079"), { strict: true }),
+        "correctly detect these coordinates are the same"
+    );
     t.false(deepEqual(coordinates("0FFF:007F:0FFF:0078"), coordinates("0FFF:007F:0FFF:0079")), "correctly detect these coordinates are different");
     t.end();
 });

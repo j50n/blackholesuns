@@ -1,5 +1,6 @@
 import TinyQueue from "tinyqueue";
-import { Coordinates, Hop } from "./coordinates";
+import { Coordinates, Hop, GalacticCenter } from "./coordinates";
+import { segmentIntersectsSphere as segmentIntersectsSphere } from "./intersection";
 
 interface IEdge {
     node: number;
@@ -201,13 +202,19 @@ abstract class DijkstraCalculator {
     }
 
     findRoute(starts: ISystem[], destination: ISystem): Route[] {
+        /* All nodes; this is the indexed array. */
         const nodes: ISystemIndex[] = [];
 
+        /* Just the black holes. */
         const bhs: ISystemIndex[] = [];
+        /* Just the exits. */
         const exits: ISystemIndex[] = [];
+        /* Starts/bases. */
         const sts: ISystemIndex[] = [];
 
+        /* Destination. */
         const dest: ISystemIndex = { index: -1, system: destination, edges: [] };
+
         nodes.push(dest);
 
         for (const start of starts) {
@@ -229,6 +236,16 @@ abstract class DijkstraCalculator {
 
         for (const [i, node] of nodes.entries()) {
             node.index = i;
+
+            /*
+             * Edges have minimal non-zero weight.
+             * This prevents ties between shorter and longer paths when edge weights can be 0.
+             */
+            node.edges.forEach(e => {
+                if (e.weight == 0) {
+                    e.weight += 0.000001;
+                }
+            });
         }
 
         for (const bh of bhs) {
@@ -236,16 +253,21 @@ abstract class DijkstraCalculator {
                 return { node: s.index, weight: this.routeWeight(bh.system.coords, s.system.coords) };
             });
 
-            const stEdges = sts.map(s => {
-                return { node: s.index, weight: this.routeWeight(bh.system.coords, s.system.coords) };
-            });
+            const stEdges = sts
+                .filter(s => !segmentIntersectsSphere(s.system.coords, bh.system.coords, GalacticCenter, 7))
+                .map(s => {
+                    return { node: s.index, weight: this.routeWeight(bh.system.coords, s.system.coords) };
+                });
 
             bh.edges = exitEdges.concat(stEdges);
         }
 
-        dest.edges = exits.concat(sts).map(s => {
-            return { node: s.index, weight: this.routeWeight(dest.system.coords, s.system.coords) };
-        });
+        dest.edges = exits
+            .concat(sts)
+            .filter(s => !segmentIntersectsSphere(s.system.coords, dest.system.coords, GalacticCenter, 7))
+            .map(s => {
+                return { node: s.index, weight: this.routeWeight(dest.system.coords, s.system.coords) };
+            });
 
         const g = new DijkstraShortestPathSolver(nodes.length);
         for (const node of nodes) {
@@ -260,7 +282,7 @@ abstract class DijkstraCalculator {
 
         return sts.map(st => {
             return new Route(
-                shortest.totalWeight(st.index),
+                Math.round(shortest.totalWeight(st.index)),
                 shortest
                     .shortestPathTo(st.index)
                     .map(node => nodes[node])
@@ -279,15 +301,11 @@ abstract class DijkstraCalculator {
     }
 
     protected closest(target: Coordinates, systems: ISystemIndex[]): ISystemIndex[] {
-        interface IDist {
-            dist: number;
-            system: ISystemIndex;
-        }
-
         const range = this.maxTravelRangeLY() / 400;
 
         const syss = systems
             .filter(s => Math.abs(target.x - s.system.coords.x) <= range && Math.abs(target.z - s.system.coords.z) <= range)
+            .filter(s => !segmentIntersectsSphere(s.system.coords, target, GalacticCenter, 7))
             .map(s => {
                 return {
                     system: s,
@@ -305,13 +323,13 @@ abstract class DijkstraCalculator {
      * Find the closest stars to the target system, limiting the search to 200,000 ly.
      * @param target The target system.
      */
-    protected closestByExit(target: Coordinates): Hop[] {
-        type DistTuple = [number, Hop];
-        const hs: DistTuple[] = this.galacticHops
-            .filter(h => Math.abs(target.x - h.exit.coords.x) < 200000 / 400 && Math.abs(target.z - h.exit.coords.z) < 100000 / 400)
-            .map(h => [target.dist2Sq(h.exit.coords), h] as DistTuple);
-        return hs.sort((a, b) => a[0] - b[0]).map(a => a[1]);
-    }
+    // protected closestByExit(target: Coordinates): Hop[] {
+    //     type DistTuple = [number, Hop];
+    //     const hs: DistTuple[] = this.galacticHops
+    //         .filter(h => Math.abs(target.x - h.exit.coords.x) < 200000 / 400 && Math.abs(target.z - h.exit.coords.z) < 100000 / 400)
+    //         .map(h => [target.dist2Sq(h.exit.coords), h] as DistTuple);
+    //     return hs.sort((a, b) => a[0] - b[0]).map(a => a[1]);
+    // }
 }
 
 class DijkstraCalculator4Time extends DijkstraCalculator {

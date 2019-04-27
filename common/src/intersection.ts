@@ -73,7 +73,7 @@ function isOnSegment(p1: IPoint3D, p2: IPoint3D, q: IPoint3D): boolean {
  * @param q Center of the sphere.
  * @param r Radius of the sphere.
  */
-function doesSegmentIntersectSphere(p1: IPoint3D, p2: IPoint3D, q: IPoint3D, r: number): boolean {
+function segmentIntersectsSphere(p1: IPoint3D, p2: IPoint3D, q: IPoint3D, r: number): boolean {
     const perp = perpPt(p1, p2, q);
 
     if (isOnSegment(p1, p2, perp)) {
@@ -83,4 +83,4 @@ function doesSegmentIntersectSphere(p1: IPoint3D, p2: IPoint3D, q: IPoint3D, r: 
     }
 }
 
-export { IPoint3D, doesSegmentIntersectSphere };
+export { IPoint3D, segmentIntersectsSphere };
