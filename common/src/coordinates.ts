@@ -1,3 +1,5 @@
+import { lazily } from "./utils";
+
 type Coords = [number, number, number, number];
 
 class Coordinates {
@@ -73,9 +75,9 @@ class Coordinates {
     }
 
     /** Distance to center (regions). */
-    public dist2Center(): number {
+    public dist2Center = lazily(() => {
         return this.dist2(GalacticCenter);
-    }
+    });
 
     /**
      * Distance between two coordinates.

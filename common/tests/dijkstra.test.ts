@@ -1,5 +1,5 @@
 import test from "tape";
-import { DijkstraSP, IEdge, dijkstraCalculator, DijkstraCalculator } from "../src/dijkstra";
+import { dijkstraCalculator, DijkstraCalculator, DijkstraSP } from "../src/dijkstra";
 import { validHops } from "../src/utils";
 import { Hop, Platform, coordinates } from "../src/coordinates";
 
@@ -50,13 +50,17 @@ test("Dijkstra Multipath", t => {
         label: "New Lennon",
     };
 
-    for (const i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) {
-        const t0 = Date.now();
-        dijkstraCalculator(allHops, 2000, "time").findRoute(starts, dest);
-        const t1 = Date.now();
+    //for (const i of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]) {
+    const t0 = Date.now();
+    dijkstraCalculator(allHops, 2000, "time")
+        .findRoute(starts, dest)
+        .forEach(rt => {
+            console.log(JSON.stringify(rt));
+        });
+    const t1 = Date.now();
 
-        console.log(`${t1 - t0} milliseconds`);
-    }
+    console.log(`${t1 - t0} milliseconds`);
+    //}
 
     t.end();
 });

@@ -11,19 +11,34 @@ interface IPath {
     weight: number;
 }
 
-class DijkstraSP {
+/**
+ * Implementation of Dijkstra's Shortest Path algorithm.
+ *
+ * Nodes are numbered from 0 to n-1.
+ *
+ * Adapted from https://medium.com/@adriennetjohnson/a-walkthrough-of-dijkstras-algorithm-in-javascript-e94b74192026
+ * This has been made more lightweight by treating nodes as an index rather than a string (name). We use `tinyqueue`
+ * as our priority queue. All map-likes have been eliminated, but there are still object references in here, so
+ * not as fast as possible, but should be fast enough and not too heavy on memory.
+ */
+class DijkstraShortestPathSolver {
     public adjacencyList: IEdge[][];
 
     constructor(public nodes: number) {
         this.adjacencyList = new Array(nodes).fill(null).map(v => new Array(0));
-        //console.log(this.adjacencyList);
     }
 
     addEdge(fromNode: number, toNode: number, weight: number): void {
+        if (weight < 0) {
+            throw new RangeError("weight must be >= 0");
+        }
         this.adjacencyList[fromNode].push({ node: toNode, weight });
     }
 
     addBidirEdge(fromNode: number, toNode: number, weight: number): void {
+        if (weight < 0) {
+            throw new RangeError("weight must be >= 0");
+        }
         this.adjacencyList[fromNode].push({ node: toNode, weight });
         this.adjacencyList[toNode].push({ node: fromNode, weight });
     }
@@ -95,7 +110,18 @@ interface IRoute {
     start: Coordinates;
     destination: Coordinates;
     score: number;
-    hops: Hop[];
+}
+
+class Route implements IRoute {
+    constructor(public readonly score: number, public readonly route: ISystem[]) {}
+
+    public get start(): Coordinates {
+        return this.route[0].coords;
+    }
+
+    public get destination(): Coordinates {
+        return this.route[this.route.length - 1].coords;
+    }
 }
 
 function isSameRegion(a: Coordinates, b: Coordinates): boolean {
@@ -131,15 +157,6 @@ function calcExpectedJumps(maxJumpRange: number, a: Coordinates, b: Coordinates)
 }
 
 function dijkstraCalculator(galacticHops: Hop[], maxJumpRange: number, optimization: string): DijkstraCalculator {
-    // if (optimization === "fuel") {
-    //     return function(status: ITripStatus, bounds: ISearchBounds) {
-    //         return new FuelOptimizedRouteCalculator(galacticHops, status, maxJumpRange, jumpEfficiency, bounds);
-    //     };
-    // } else if (optimization === "time") {
-    //     return function(status: ITripStatus, bounds: ISearchBounds) {
-    //         return new RouteCalculator(galacticHops, status, maxJumpRange, jumpEfficiency, bounds);
-    //     };
-    // } else throw new Error(`unknown optimization value: ${optimization}`);
     if (optimization === "fuel") {
         return new DijkstraCalculator4Fuel(galacticHops, maxJumpRange);
     } else if (optimization === "time") {
@@ -183,7 +200,7 @@ abstract class DijkstraCalculator {
         }
     }
 
-    findRoute(starts: ISystem[], destination: ISystem): void /*IRoute*/ {
+    findRoute(starts: ISystem[], destination: ISystem): Route[] {
         const nodes: ISystemIndex[] = [];
 
         const bhs: ISystemIndex[] = [];
@@ -230,7 +247,7 @@ abstract class DijkstraCalculator {
             return { node: s.index, weight: this.routeWeight(dest.system.coords, s.system.coords) };
         });
 
-        const g = new DijkstraSP(nodes.length);
+        const g = new DijkstraShortestPathSolver(nodes.length);
         for (const node of nodes) {
             g.setEdges(node.index, node.edges);
         }
@@ -240,6 +257,17 @@ abstract class DijkstraCalculator {
         for (const st of sts) {
             console.log(`${JSON.stringify(st.system)} scored ${shortest.totalWeight(st.index)}; ${shortest.shortestPathTo(st.index)}`);
         }
+
+        return sts.map(st => {
+            return new Route(
+                shortest.totalWeight(st.index),
+                shortest
+                    .shortestPathTo(st.index)
+                    .map(node => nodes[node])
+                    .map(node => node.system)
+                    .reverse()
+            );
+        });
     }
 
     protected maxTravelRangeLY() {
@@ -330,4 +358,4 @@ class DijkstraCalculator4Fuel extends DijkstraCalculator {
     }
 }
 
-export { DijkstraSP, IEdge, DijkstraCalculator4Fuel, DijkstraCalculator4Time, DijkstraCalculator, dijkstraCalculator };
+export { IEdge, DijkstraCalculator, dijkstraCalculator, DijkstraShortestPathSolver as DijkstraSP };
