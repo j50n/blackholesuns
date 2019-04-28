@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1 style="margin-bottom: 0px; padding-bottom: 0px;">Black&nbsp;Hole&nbsp;Suns DARC&nbsp;Web</h1>
+    <h1 style="margin-bottom: 0px; padding-bottom: 0px;">Black&nbsp;Hole&nbsp;Suns DaRC&nbsp;Web</h1>
     <div style="text-align: center;">
       <sub>Distance and Route Calculator</sub>
     </div>
