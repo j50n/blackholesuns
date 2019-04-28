@@ -74,14 +74,9 @@ class Coordinates {
         return `${p}${s}${y}${z}${x}`;
     }
 
-    private _dist2Center: number | null = null;
-
     /** Distance to center (regions). */
     dist2Center(): number {
-        if (this._dist2Center == null) {
-            this._dist2Center = this.dist2(GalacticCenter);
-        }
-        return this._dist2Center!;
+        return this.dist2(GalacticCenter);
     }
 
     /**

@@ -1,0 +1,19 @@
+{
+    "score": 53,
+    "route": [
+        { "label": "Xenu's Start", "coords": { "x": 908, "y": 126, "z": 926, "system": 121 } },
+        { "region": "Egfrino Conflux", "system": "Ompain-Qenz XII", "coords": { "x": 908, "y": 126, "z": 926, "system": 121 }, "economy": 2 },
+        { "region": "Clevossfi Fringe", "system": "Lomgarnumr", "coords": { "x": 1254, "y": 130, "z": 677, "system": 66 }, "economy": 1 },
+        { "region": "Suhtipi Terminus", "system": "Ahokus-Nevoi", "coords": { "x": 1312, "y": 128, "z": 752, "system": 121 }, "economy": 1 },
+        { "region": "Itsankar Terminus", "system": "Rurylan-Rapukh IV", "coords": { "x": 3509, "y": 127, "z": 2222, "system": 95 }, "economy": 3 },
+        { "region": "Itsankar Terminus", "system": "Avlopo", "coords": { "x": 3509, "y": 127, "z": 2222, "system": 121 }, "economy": 2 },
+        { "region": "Sea of Oljawa", "system": "Masuhch", "coords": { "x": 3335, "y": 130, "z": 2726, "system": 102 }, "economy": 2 },
+        { "region": "Sea of Oljawa", "system": "Adrino-Into", "coords": { "x": 3335, "y": 130, "z": 2726, "system": 121 }, "economy": 1 },
+        { "region": "Uggeven Quadrant", "system": "Lulforu-Goty", "coords": { "x": 3487, "y": 130, "z": 2118, "system": 29 }, "economy": 2 },
+        { "region": "Uggeven Quadrant", "system": "Luheid", "coords": { "x": 3487, "y": 130, "z": 2118, "system": 121 }, "economy": 2 },
+        { "region": "Habast Mass", "system": "Izhevoye", "coords": { "x": 619, "y": 130, "z": 2035, "system": 7 }, "economy": 2 },
+        { "region": "Habast Mass", "system": "Rekhtins", "coords": { "x": 619, "y": 130, "z": 2035, "system": 121 }, "economy": 2 },
+        { "region": "Jiusheff Fringe", "system": "Icrosso-Gino", "coords": { "x": 1390, "y": 126, "z": 795, "system": 32 }, "economy": 3 },
+        { "coords": { "x": 1446, "y": 125, "z": 846, "system": 121 }, "label": "Xenu's Dest" }
+    ]
+}

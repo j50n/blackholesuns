@@ -1,6 +1,6 @@
 import TinyQueue from "tinyqueue";
 import { Coordinates, Hop, GalacticCenter } from "./coordinates";
-import { segmentIntersectsSphere as segmentIntersectsSphere } from "./intersection";
+import { segmentIntersectsSphere } from "./intersection";
 
 interface IEdge {
     node: number;
@@ -376,4 +376,4 @@ class DijkstraCalculator4Fuel extends DijkstraCalculator {
     }
 }
 
-export { IEdge, DijkstraCalculator, dijkstraCalculator, DijkstraShortestPathSolver as DijkstraSP };
+export { IEdge, ISystem, DijkstraCalculator, dijkstraCalculator, DijkstraShortestPathSolver, isSameRegion, isSameStar, isAdjacentRegion, calcExpectedJumps };

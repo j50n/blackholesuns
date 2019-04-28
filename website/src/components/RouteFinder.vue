@@ -8,14 +8,14 @@
       >{{message.text}}</div>
     </div>
     <br>
-    <div v-if="ta === null" class="pure-g">
+    <div v-if="journey === null" class="pure-g">
       <div class="pure-u-1">&nbsp;</div>
     </div>
-    <div v-else-if="!ta.hasRoute" class="pure-g">
+    <!-- <div v-else-if="!ta.hasRoute" class="pure-g">
       <div class="pure-u-1">
         <h4 style="text-align: center;">...thinking...</h4>
       </div>
-    </div>
+    </div>-->
     <template v-else>
       <div class="pure-g">
         <div class="pure-u-1" style="text-align: right;">
@@ -129,20 +129,10 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { List } from "immutable";
 import { routeEvents, IRouteSubmit } from "../bus/RouteEvents";
-import {
-    coordinates,
-    Coordinates,
-    TripAdvisor,
-    ITripStatus,
-    routeCalculator,
-    Hop,
-    validHops,
-    Platform,
-    CancelledError,
-    Explanation,
-    ILegOfJourney,
-} from "common";
+import { Explanation, toJourney, IEndPoint } from "../utility/explanation";
+import { coordinates, Coordinates, Hop, validHops, Platform, dijkstraCalculator, DijkstraCalculator } from "common";
 
 interface IMessage {
     type: string;
@@ -152,7 +142,6 @@ interface IMessage {
 export default Vue.extend({
     data(): {
         route: IRouteSubmit | null;
-        ta: TripAdvisor | null;
         journey: Explanation | null;
         showCoordinates: Boolean;
         messages: IMessage[];
@@ -160,12 +149,10 @@ export default Vue.extend({
     } {
         return {
             route: null,
-            ta: null,
+            // ta: null,
             journey: null,
             showCoordinates: false,
-            messages: [
-                /* { type: "warning", text: "This is dynamically generated." }*/
-            ],
+            messages: [],
             windowWidth: -1,
         };
     },
@@ -182,78 +169,111 @@ export default Vue.extend({
             return v % 2 !== 0;
         },
 
-        async calculateTrip(route: IRouteSubmit) {
-            try {
-                const startDist = Math.floor(route.start.dist2Center() * 400);
-                const destDist = Math.floor(route.dest.dist2Center() * 400);
-                const delta = Math.abs(startDist - (destDist + 20000));
+        calculateTrip(route: IRouteSubmit) {
+            this.journey = null;
 
-                if (delta >= 0 /* 30000 */) {
-                    this.messages.unshift({
-                        type: "warning",
-                        text:
-                            `Start is ${startDist.toLocaleString()} LY from center. ` +
-                            `Destination is ${destDist.toLocaleString()} LY from center. ` +
-                            `For best results, find a start location that is about ${(Math.max(destDist + 20000),
-                            coordinates("0000:0000:0000:0001").dist2Center()).toLocaleString()} LY from center, ` +
-                            `plus or minus about ${(20000).toLocaleString()} LY.`,
-                    });
+            if (route.start.dist2Center() * 400 < 3000) {
+                this.messages.unshift({
+                    type: "warning",
+                    text: "Start appears to be invalid. That point is in the void at the center of the galaxy.",
+                });
+                return;
+            }
+
+            if (route.dest.dist2Center() * 400 < 3000) {
+                this.messages.unshift({
+                    type: "warning",
+                    text: "Destination appears to be invalid. That point is in the void at the center of the galaxy.",
+                });
+                return;
+            }
+
+            const startDist = Math.floor(route.start.dist2Center() * 400);
+            const destDist = Math.floor(route.dest.dist2Center() * 400);
+            const delta = Math.abs(startDist - (destDist + 20000));
+
+            if (delta >= 30000) {
+                this.messages.unshift({
+                    type: "warning",
+                    text:
+                        `Start is ${startDist.toLocaleString()} LY from center. ` +
+                        `Destination is ${destDist.toLocaleString()} LY from center. ` +
+                        `For best results, find a start location that is ` +
+                        `just a little further away from center than the destination.`,
+                });
+            }
+
+            // if (this.ta !== null) {
+            //     if (!this.ta.hasRoute) {
+            //         this.ta!.status.cancelled = true;
+            //     }
+            //     this.ta = null;
+            //     this.$forceUpdate();
+            // }
+
+            const platformFilter: (hop: Hop) => boolean = (function() {
+                if (route.platform == "ps4") {
+                    return (hop: Hop) => {
+                        return hop.platform === Platform.PS4;
+                    };
+                } else {
+                    return (hop: Hop) => {
+                        return hop.platform === Platform.PC || hop.platform === Platform.XBOX;
+                    };
                 }
+            })();
 
-                if (this.ta !== null) {
-                    if (!this.ta.hasRoute) {
-                        this.ta!.status.cancelled = true;
-                    }
-                    this.ta = null;
-                    this.$forceUpdate();
-                }
+            const allHops: Hop[] = validHops()
+                .filter(platformFilter)
+                .filter(hop => hop.galaxy === route.galaxy);
 
-                const platformFilter: (hop: Hop) => boolean = (function() {
-                    if (route.platform == "ps4") {
-                        return (hop: Hop) => {
-                            return hop.platform === Platform.PS4;
-                        };
-                    } else {
-                        return (hop: Hop) => {
-                            return hop.platform === Platform.PC || hop.platform === Platform.XBOX;
-                        };
-                    }
-                })();
+            const shortest = dijkstraCalculator(allHops, route.maxJump, route.optimization).findRoute([{ label: "start", coords: route.start }], {
+                label: "destination",
+                coords: route.dest,
+            })[0];
 
-                const allHops: Hop[] = validHops()
-                    .filter(platformFilter)
-                    .filter(hop => hop.galaxy === route.galaxy);
+            this.journey = new Explanation(route.maxJump, toJourney(List(shortest.route)));
 
-                const status: ITripStatus = { cancelled: false, tries: 0 };
-                this.ta = new TripAdvisor(
-                    routeCalculator(allHops, route.maxJump, route.optimization, 1.0),
-                    { label: "start", coords: route.start },
-                    { label: "destination", coords: route.dest },
-                    status
-                );
+            for (const leg of this.journey.legs()) {
+                console.log(leg.description);
+            }
 
-                const r = await this.ta!.route();
-                this.journey = await this.ta.explanation();
-
-                for (const leg of this.journey.legs()) {
-                    console.log(leg.description);
-                }
-
-                const fuelCalc = routeCalculator(allHops, route.maxJump, "fuel", 1.0);
-                const timeCalc = routeCalculator(allHops, route.maxJump, "time", 1.0);
-
-                const hyperjumps = fuelCalc(status, { width: 0, depth: 0, ifScore: null }).calculateScore(r.start, r.destination, r.hops);
-                const timeCost = timeCalc(status, { width: 0, depth: 0, ifScore: null }).calculateScore(r.start, r.destination, r.hops);
+            const direct = dijkstraCalculator([], route.maxJump, route.optimization).findRoute([{ label: "start", coords: route.start }], {
+                label: "destination",
+                coords: route.dest,
+            })[0];
+            if (route.optimization === "fuel") {
+                this.messages.unshift({
+                    type: "information",
+                    text: `Estimate: This route uses ${shortest.score} fuel. The direct route would use ${direct.score} fuel.`,
+                });
+            } else {
+                const MinutesPerPoint = 62 / 38;
 
                 this.messages.unshift({
                     type: "information",
-                    text: `Estimated ${hyperjumps.toLocaleString()} hyperspace jumps in ${Math.ceil((62 / 38) * timeCost).toLocaleString()} minutes.`,
+                    text:
+                        `Estimate: ` +
+                        `This route will take ${Math.round(MinutesPerPoint * shortest.score).toLocaleString()} minutes. ` +
+                        `The direct route would take ${Math.round(MinutesPerPoint * direct.score).toLocaleString()} minutes.`,
                 });
-            } catch (e) {
-                if (!(e instanceof CancelledError)) {
-                    console.log(e);
-                }
             }
+
+            // const fuelCalc = routeCalculator(allHops, route.maxJump, "fuel", 1.0);
+            // const timeCalc = routeCalculator(allHops, route.maxJump, "time", 1.0);
+
+            // const hyperjumps = fuelCalc(status, { width: 0, depth: 0, ifScore: null }).calculateScore(r.start, r.destination, r.hops);
+            // const timeCost = timeCalc(status, { width: 0, depth: 0, ifScore: null }).calculateScore(r.start, r.destination, r.hops);
+
+            // this.messages.unshift({
+            //     type: "information",
+            //     text: `Estimated ${hyperjumps.toLocaleString()} hyperspace jumps in ${Math.ceil((62 / 38) * timeCost).toLocaleString()} minutes.`,
+            // });
+            // } catch (e) {
+            //     if (!(e instanceof CancelledError)) {
+            //         console.log(e);
+            //     }
+            // }
         },
 
         windowResizeEvent(ev: UIEvent) {

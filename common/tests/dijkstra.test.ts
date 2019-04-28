@@ -1,5 +1,5 @@
 import test from "tape";
-import { dijkstraCalculator, DijkstraCalculator, DijkstraSP } from "../src/dijkstra";
+import { dijkstraCalculator, DijkstraCalculator, DijkstraShortestPathSolver } from "../src/dijkstra";
 import { validHops } from "../src/utils";
 import { Hop, Platform, coordinates } from "../src/coordinates";
 
@@ -10,8 +10,8 @@ const DigInn = 4;
 const FullStack = 5;
 const Dubliner = 0;
 
-function testGraph(): DijkstraSP {
-    const g = new DijkstraSP(6);
+function testGraph(): DijkstraShortestPathSolver {
+    const g = new DijkstraShortestPathSolver(6);
 
     g.addBidirEdge(DigInn, FullStack, 7);
     g.addBidirEdge(DigInn, CafeGrumpy, 9);
@@ -61,6 +61,31 @@ test("Dijkstra Multipath", t => {
 
     console.log(`${t1 - t0} milliseconds`);
     //}
+
+    t.end();
+});
+
+test("Dijkstra Multipath", t => {
+    const allHops = validHops()
+        .filter(hop => hop.platform === Platform.PS4)
+        .filter(hop => hop.galaxy === "01 Euclid");
+
+    const starts = [{ label: "Xenu's Start", coords: coordinates("038C:007E:039E:0079") }];
+
+    const dest = {
+        coords: coordinates("05A6:007D:034E:0079"),
+        label: "Xenu's Dest",
+    };
+
+    const t0 = Date.now();
+    dijkstraCalculator(allHops, 2000, "time")
+        .findRoute(starts, dest)
+        .forEach(rt => {
+            console.log(JSON.stringify(rt));
+        });
+    const t1 = Date.now();
+
+    console.log(`${t1 - t0} milliseconds`);
 
     t.end();
 });
