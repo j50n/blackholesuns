@@ -39,8 +39,9 @@ Being further away than the ideal will definitely increase the length of your ro
 For best results:
 
 - Travel bases should be in black hole systems. This gives you an extra (cheap) routing alternative for every base.
-- Bases should be in systems that are mapped into BlackHoleSuns data. We can't use a route that we don't know about.
+- Travel bases should be in systems that are mapped into BlackHoleSuns data. We can't use a route that we don't know about.
 - If you are up for it, set up bases every 33K or so from center (3 per 100K). This will give slightly better results, on average.
+- Travel bases can be tiny. I like to make mine just big enough to be uploadable, but that isn't strictly necessary.
 
 ## Traveler's Checklist
 
