@@ -36,6 +36,12 @@ Being further away than the ideal will definitely increase the length of your ro
 
 **Tip:** As you explore the galaxy, set up small bases at 50,000 LY intervals from center. If you do this, a good path is just a teleport away!
 
+For best results:
+
+- Travel bases should be in black hole systems. This gives you an extra (cheap) routing alternative for every base.
+- Bases should be in systems that are mapped into BlackHoleSuns data. We can't use a route that we don't know about.
+- If you are up for it, set up bases every 33K or so from center (3 per 100K). This will give slightly better results, on average.
+
 ## Traveler's Checklist
 
 Before you travel, make sure you've packed the essentials and your travel plans are in order. Here is a list of what you'll need.
