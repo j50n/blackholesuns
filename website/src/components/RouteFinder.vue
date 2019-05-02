@@ -132,7 +132,9 @@ import Vue from "vue";
 import { List } from "immutable";
 import { routeEvents, IRouteSubmit } from "../bus/RouteEvents";
 import { Explanation, toJourney, IEndPoint } from "../utility/explanation";
-import { coordinates, Coordinates, Hop, validHops, Platform, dijkstraCalculator, DijkstraCalculator } from "common";
+import { coordinates, Coordinates, Hop, Platform, dijkstraCalculator, DijkstraCalculator } from "common";
+import { download } from "../utility/download";
+import { blackholes } from "../utility/blackholes";
 
 interface IMessage {
     type: string;
@@ -169,7 +171,7 @@ export default Vue.extend({
             return v % 2 !== 0;
         },
 
-        calculateTrip(route: IRouteSubmit) {
+        async calculateTrip(route: IRouteSubmit) {
             this.journey = null;
 
             if (route.start.dist2Center() * 400 < 3000) {
@@ -218,14 +220,15 @@ export default Vue.extend({
                     };
                 } else {
                     return (hop: Hop) => {
-                        return hop.platform === Platform.PC || hop.platform === Platform.XBOX;
+                        return hop.platform === Platform.PC;
                     };
                 }
             })();
 
-            const allHops: Hop[] = validHops()
+            const allHops: Hop[] = (await blackholes())
                 .filter(platformFilter)
-                .filter(hop => hop.galaxy === route.galaxy);
+                .filter(hop => hop.galaxy === route.galaxy)
+                .toArray();
 
             const shortest = dijkstraCalculator(allHops, route.maxJump, route.optimization).findRoute([{ label: "start", coords: route.start }], {
                 label: "destination",

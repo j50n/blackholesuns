@@ -1,4 +1,4 @@
-import { Coordinates, coordinates as systemCoords, Hop, Platform, System, Wealth } from "./coordinates";
+import { Coordinates, coordinates as systemCoords, Hop, Platform, System } from "./coordinates";
 
 interface ISystemIndexes {
     idxRegion: number;
@@ -41,26 +41,8 @@ class SystemDef {
         return systemCoords(this.row[this.indexes.idxCoords]);
     }
 
-    public get economy(): Wealth {
-        return parseInt(this.row[this.indexes.idxEconomy], 10);
-    }
-
     public get system(): System {
-        return new System(this.regionName, this.systemName, this.coordinates, this.economy);
-    }
-}
-
-function extractHop(row: string[]): Hop | null {
-    try {
-        const platform: Platform = row[idxPlatform] as Platform;
-        const galaxy: string = row[idxGalaxy];
-        const blackHole: System = new SystemDef(blackHoleIdxs, row).system;
-        const exit: System = new SystemDef(exitIdxs, row).system;
-
-        return new Hop(platform, galaxy, blackHole, exit);
-    } catch (e) {
-        console.warn(`failed to translate hop: ${e} ${row}`);
-        return null;
+        return new System(this.regionName, this.systemName, this.coordinates);
     }
 }
 
@@ -72,4 +54,12 @@ function isValidHop(hop: Hop): boolean {
     return movesTowardCenter && (isInsideGalacticCircle ? traveledANormalDistance : true);
 }
 
-export { extractHop, isValidHop };
+type GALAXY_INDEX = number;
+type COORDS = string;
+type REGION = string;
+type SYSTEM = string;
+
+type HOP = [GALAXY_INDEX, Platform, COORDS, REGION, SYSTEM, COORDS, REGION, SYSTEM];
+
+
+export { isValidHop, HOP, GALAXY_INDEX, COORDS, REGION, SYSTEM };

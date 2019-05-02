@@ -1,6 +1,6 @@
 import deepEqual from "deep-equal";
 import test from "tape";
-import { coordinates, Coordinates, reCoordInput } from "../src/coordinates";
+import { coordinates, reCoordInput } from "../src/coordinates";
 
 test("coordinates parse", t => {
     t.equal(coordinates("07FF:007F:07FE:0079").x, 0x07ff, "parses x");

@@ -47,7 +47,7 @@
             <div class="pure-controls" style="display: inline-block;">
               <label for="galaxy">Galaxy</label>
               <select id="galaxy" required v-model="formData.galaxy">
-                <option v-for="g of allGalaxies()" :key="g" :value="g">{{ g }}</option>
+                <option v-for="g of galaxies" :key="g[0]" :value="g[1]">{{ g[1] }}</option>
               </select>
             </div>
             <div class="pure-control-group">
@@ -104,14 +104,17 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { coordinates, Platform, validHops, reCoordInput } from "common";
+import { coordinates, Platform, reCoordInput } from "common";
 import { routeEvents } from "../bus/RouteEvents";
 import { List } from "immutable";
+import { blackholes } from "../utility/blackholes";
+import { inputGalaxies } from "../utility/generated";
 
 export default Vue.extend({
     data() {
         return {
             coordPattern: reCoordInput,
+            galaxies: inputGalaxies,
             formData: {
                 startVal: "",
                 destVal: "",
@@ -133,6 +136,8 @@ export default Vue.extend({
     },
 
     mounted() {
+        console.log("TravelRequestForm mounted");
+
         if (window.localStorage.getItem("TravelRequestForm_FormData")) {
             this.formData = JSON.parse(window.localStorage.getItem("TravelRequestForm_FormData")!);
         }
@@ -164,12 +169,6 @@ export default Vue.extend({
                 start: coordinates(this.formData.startVal),
                 dest: coordinates(this.formData.destVal),
             });
-        },
-        allGalaxies(): List<string> {
-            return List(validHops().map(hop => hop.galaxy))
-                .toSet()
-                .toList()
-                .sort();
         },
     },
 });

@@ -262,9 +262,10 @@ abstract class DijkstraCalculator {
             bh.edges = exitEdges.concat(stEdges);
         }
 
+        /* Intentional. Edges for starts to dest may pass through center. Avoids a no-answer scenario. */
         dest.edges = exits
-            .concat(sts)
             .filter(s => !segmentIntersectsSphere(s.system.coords, dest.system.coords, GalacticCenter, 7))
+            .concat(sts)
             .map(s => {
                 return { node: s.index, weight: this.routeWeight(dest.system.coords, s.system.coords) };
             });

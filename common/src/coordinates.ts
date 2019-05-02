@@ -158,17 +158,10 @@ const GalacticCenter = coordinates("07FF:007F:07FF:0000");
 enum Platform {
     PS4 = "PS4",
     PC = "PC",
-    XBOX = "XBox",
-}
-
-enum Wealth {
-    Low = 1,
-    Middle = 2,
-    High = 3,
 }
 
 class System {
-    constructor(public readonly region: string, public readonly system: string, public readonly coords: Coordinates, public readonly economy: Wealth) {}
+    constructor(public readonly region: string, public readonly system: string, public readonly coords: Coordinates) {}
 
     public get label(): string {
         return `[${this.region.replace(/ /g, "\xA0")}] ${this.system.replace(/-/g, "‑").replace(/ /g, "\xA0")}`;
@@ -222,4 +215,4 @@ class Hop {
     }
 }
 
-export { coordinates, Coordinates, Hop, System, Wealth, Platform, reCoordInput, GalacticCenter };
+export { coordinates, Coordinates, Hop, System, Platform, reCoordInput, GalacticCenter };

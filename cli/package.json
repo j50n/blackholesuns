@@ -5,21 +5,25 @@
     "main": "index.js",
     "scripts": {
         "build": "tsc",
-        "generate-blackhole-data": "npm run build && cat ../data/blackholes.csv | node ./dest/parse-bhs.js > ../common/src/blackholes.ts",
+        "get-hops": "npm run build && mkdir -p ./work && node ./dist/firebase.js > ./work/blackholes.txt && cp work/blackholes.txt ../website/public/blackholes.txt",
+        "generate-code": "npm run build && node dist/rollup.js < work/blackholes.txt > ../website/src/utility/generated.ts",
+        "all": "npm run get-hops && npm run generate-code && echo \"There are $(cat work/blackholes.txt | wc -l) hops.\"",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Jason Smith",
     "license": "ISC",
     "dependencies": {
         "@types/event-stream": "3.3.34",
-        "@types/node": "11.11.6",
+        "@types/node": "11.13.8",
         "common": "file:../common",
-        "csv-parse": "4.3.4",
+        "csv-parse": "4.4.1",
         "event-stream": "4.0.1",
+        "firebase": "5.11.0",
+        "grpc": "1.20.2",
         "immutable": "4.0.0-rc.12"
     },
     "devDependencies": {
-        "typescript": "3.3.4000"
+        "typescript": "3.4.5"
     },
     "prettier": {
         "trailingComma": "es5",
