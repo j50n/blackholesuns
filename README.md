@@ -50,8 +50,8 @@ For best results:
 
 Before you travel, make sure you've packed the essentials and your travel plans are in order. Here is a list of what you'll need.
 
-- **Hyperspace Starship** (required): A 38x12 S-class explorer maxed out on hyperspace upgrades
-  - 2000 LY jump range minimum recommended
+- **Hyperspace Starship** (required): A 38x12 S-class explorer or 20x6 exotic maxed out on hyperspace upgrades
+  - 2,000 LY jump range minimum recommended (just over 2,900 is possible)
 - **Black Hole Starship** (optional): A 32x12 S-class fighter or explorer, technology slots maxed out
   - upgrades in normal inventory slots are damaged by black hole travel, but technology slots are safe
   - alternative is to use a junker
