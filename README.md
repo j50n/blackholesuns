@@ -6,8 +6,6 @@ Be warned! Here there be spoilers. This is the last thing you should be doing in
 
 Stuff we are working on.
 
-- Near-instant path searches
-- Optimal path every time
 - Route map - track your journey!
 - Support for multiple starting points - we will pick the best one for you!
 - Profiles for your settings - because we know one galaxy is never enough!
@@ -39,9 +37,14 @@ Being further away than the ideal will definitely increase the length of your ro
 For best results:
 
 - Travel bases should be in black hole systems. This gives you an extra (cheap) routing alternative for every base.
-- Travel bases should be in systems that are mapped into BlackHoleSuns data. We can't use a route that we don't know about.
-- If you are up for it, set up bases every 33K or so from center (3 per 100K). This will give slightly better results, on average.
+- Travel bases that have multiple black holes mapped nearby or are on chains are more effective.
+  - Did you know that there are potentially 26 regions with black holes directly adjacent to (most) travel bases? That's a lot of decision points!
+- Travel bases should be in systems that are mapped into BlackHoleSuns data. We can't optimize with data we don't have.
+- If you are up for it, set up bases every 33K or so from center (3 per 100K). This will give slightly better results than 50K intervals, on average.
 - Travel bases can be tiny. I like to make mine just big enough to be uploadable, but that isn't strictly necessary.
+  - teleporter
+  - landing pad (parts are available at any exchange)
+  - a few odds and ends to make it uploadable
 
 ## Traveler's Checklist
 
