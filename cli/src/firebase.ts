@@ -3,7 +3,7 @@ import process from "process";
 import { List } from "immutable";
 import { Platform, galaxies, coordinates, HOP } from "common";
 
-const WheresWaldo = "stars2";
+const WheresWaldo = "stars4";
 
 function env(variable: string): string {
     return (
