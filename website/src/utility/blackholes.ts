@@ -1,5 +1,5 @@
 import { download } from "./download";
-import { Hop, Platform, galaxies, System, coordinates, HOP } from "common";
+import { Hop, galaxies, System, coordinates, HOP } from "common";
 import { List } from "immutable";
 
 async function blackholes(): Promise<List<Hop>> {

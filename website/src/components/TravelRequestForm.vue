@@ -7,7 +7,7 @@
         @submit.prevent="submitForm"
       >
         <div class="pure-g">
-          <fieldset class="pure-u-1-2">
+          <fieldset class="pure-u-1-3">
             <div class="pure-control-group">
               <label for="starting-coordinates">Start</label>
               <input
@@ -36,7 +36,7 @@
               >
             </div>
           </fieldset>
-          <fieldset class="pure-u-1-2">
+          <fieldset class="pure-u-1-3">
             <div class="pure-controls" style="display: inline-block;">
               <label for="platform">Platform</label>
               <select id="platform" required v-model="formData.platform">
@@ -88,6 +88,9 @@
               </label>
             </div>
           </fieldset>
+          <div class="pure-u-1-3" style="min-width: 250px;">
+            <galaxy-map :blackholes="bhs" :exits="exs"/>
+          </div>
         </div>
         <div class="pure-g">
           <fieldset class="pure-u-1-2">
@@ -104,17 +107,31 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { coordinates, Platform, reCoordInput } from "common";
+import { coordinates, Platform, reCoordInput, Coordinates } from "common";
 import { routeEvents } from "../bus/RouteEvents";
 import { List } from "immutable";
 import { blackholes } from "../utility/blackholes";
 import { inputGalaxies } from "../utility/generated";
+import GalaxyMap from "./GalaxyMap.vue";
+
+interface IFormData {
+    startVal: string;
+    destVal: string;
+    galaxy: string;
+    platform: string;
+    maxJump: string;
+    optimization: string;
+}
 
 export default Vue.extend({
+    components: { GalaxyMap },
+
     data() {
         return {
             coordPattern: reCoordInput,
             galaxies: inputGalaxies,
+            bhs: [] as Coordinates[],
+            exs: [] as Coordinates[],
             formData: {
                 startVal: "",
                 destVal: "",
@@ -130,6 +147,7 @@ export default Vue.extend({
         formData: {
             handler() {
                 window.localStorage.setItem("TravelRequestForm_FormData", JSON.stringify(this.formData));
+                this.updateHopData();
             },
             deep: true,
         },
@@ -138,12 +156,64 @@ export default Vue.extend({
     mounted() {
         console.log("TravelRequestForm mounted");
 
-        if (window.localStorage.getItem("TravelRequestForm_FormData")) {
-            this.formData = JSON.parse(window.localStorage.getItem("TravelRequestForm_FormData")!);
+        const formData = this.getFormData();
+        if (formData) {
+            this.formData = formData;
         }
+
+        this.updateHopData();
     },
 
     methods: {
+        getFormData(): IFormData | null {
+            if (window.localStorage.getItem("TravelRequestForm_FormData")) {
+                return JSON.parse(window.localStorage.getItem("TravelRequestForm_FormData")!);
+            } else {
+                return null;
+            }
+        },
+
+        updateHopData(): void {
+            const formData = this.getFormData();
+            if (formData !== null) {
+                if (formData! && formData!.galaxy.trim().length > 0 && formData.platform.trim().length > 0) {
+                    const localHops = blackholes().then(bhs =>
+                        bhs
+                            .filter(hop => {
+                                return hop.galaxy === formData!.galaxy;
+                            })
+                            .filter(hop => {
+                                function tranlateHopPlatform(): number {
+                                    if (hop.platform === "PC") {
+                                        return 1;
+                                    } else if (hop.platform === "PS4") {
+                                        return 2;
+                                    } else {
+                                        throw new RangeError(hop.platform);
+                                    }
+                                }
+
+                                function translateInputPlatform(): number {
+                                    if (formData!.platform === "xbox") {
+                                        return 1;
+                                    } else if (formData!.platform === "ps4") {
+                                        return 2;
+                                    } else {
+                                        throw new RangeError(formData!.platform);
+                                    }
+                                }
+
+                                return tranlateHopPlatform() === translateInputPlatform();
+                            })
+                    );
+                    localHops.then(hops => {
+                        this.bhs = hops.map(h => h.blackhole.coords).toArray();
+                        this.exs = hops.map(h => h.exit.coords).toArray();
+                    });
+                }
+            }
+        },
+
         formatCoordinates() {
             function fc(coor: string): string | null {
                 try {

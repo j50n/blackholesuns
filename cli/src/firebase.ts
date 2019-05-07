@@ -43,7 +43,7 @@ async function main(): Promise<void> {
 
                 const exits = await db
                     .collection(coll)
-                    .where("exit", "==", true)
+                    //.where("exit", "==", true)
                     .get();
 
                 const exitsMap = new Map<String, firebase.firestore.QueryDocumentSnapshot>();
