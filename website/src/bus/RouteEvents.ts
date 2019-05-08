@@ -10,20 +10,20 @@ interface IRouteSubmit {
     dest: Coordinates;
 }
 
-const routeEvents = new Vue({
-    methods: {
-        raiseRouteSubmit(event: IRouteSubmit): void {
-            this.$emit("route-submit", event);
-        },
+// const routeEvents = new Vue({
+//     methods: {
+//         raiseRouteSubmit(event: IRouteSubmit): void {
+//             this.$emit("route-submit", event);
+//         },
 
-        listenRouteSubmit(listener: (event: IRouteSubmit) => void): void {
-            this.$on("route-submit", listener);
-        },
+//         listenRouteSubmit(listener: (event: IRouteSubmit) => void): void {
+//             this.$on("route-submit", listener);
+//         },
 
-        unlistenRouteSubmit(listener: (event: IRouteSubmit) => void): void {
-            this.$off("route-submit", listener);
-        },
-    },
-});
+//         unlistenRouteSubmit(listener: (event: IRouteSubmit) => void): void {
+//             this.$off("route-submit", listener);
+//         },
+//     },
+// });
 
-export { IRouteSubmit, routeEvents };
+// export { IRouteSubmit, routeEvents };

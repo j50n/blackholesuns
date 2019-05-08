@@ -20,7 +20,6 @@
                 placeholder="07FF:007F:07FF:017F"
                 @blur="formatCoordinates"
               >
-              <!-- <span class="pure-form-message-inline">This is a required field. BLAH</span> -->
             </div>
             <div class="pure-control-group">
               <label for="destination-coordinates">Destination</label>
@@ -102,17 +101,137 @@
         </div>
       </form>
     </div>
+    <!-- BEGINNING OF RESULTS TABLE -->
+    <template>
+      <div class="pure-g">
+        <div
+          v-for="message of messages"
+          :key="message.key"
+          :class="[message.type, 'message', 'pure-u-1-1']"
+        >{{message.text}}</div>
+      </div>
+      <br>
+      <div v-if="journey === null" class="pure-g">
+        <div class="pure-u-1">&nbsp;</div>
+      </div>
+      <template v-else>
+        <div class="pure-g">
+          <div class="pure-u-1" style="text-align: right;">
+            <button @click="toggleShowCoordinates" class="pure-button">
+              <template v-if="showCoordinates">Show Glyphs</template>
+              <template v-else>Show Coordinates</template>
+            </button>
+          </div>
+          <template v-if="this.windowWidth >= 639">
+            <div class="pure-u-1">
+              <table
+                class="pure-table pure-table-horizontal"
+                style="margin-left:auto; margin-right:auto; width: 100%;"
+              >
+                <thead>
+                  <tr>
+                    <th>&nbsp;</th>
+                    <th>Start / Exit</th>
+                    <th>Black Hole / Destination</th>
+                    <th>Directions</th>
+                    <th>Waypoint</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    v-for="leg of journey.legs()"
+                    :key="leg.index"
+                    :class="{'pure-table-odd': isOdd(leg.index) }"
+                  >
+                    <td>{{ leg.index + 1 }}</td>
+                    <td class="notranslate">{{ journey.desc(leg.start) }}</td>
+                    <td class="notranslate">{{ journey.desc(leg.dest) }}</td>
+                    <td>{{ leg.description }}</td>
+                    <td>
+                      <template v-if="showCoordinates">{{ leg.dest.coords }}</template>
+                      <template v-else>
+                        <span class="galactic-coordinates">
+                          <big>
+                            <big>
+                              <big>{{leg.dest.coords.galacticCoordinates(0).toUpperCase()}}</big>
+                            </big>
+                          </big>
+                        </span>
+                      </template>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </template>
+          <template v-else>
+            <div class="pure-u-1">
+              <table class="pure-table no-border" style=" width: 100%;">
+                <tr
+                  v-for="leg of journey.legs()"
+                  :key="leg.index"
+                  :class="{'pure-table-odd': isOdd(leg.index) }"
+                >
+                  <td class="no-padding no-border">
+                    <table class="pure-table no-border">
+                      <tr>
+                        <td class="key-cell">Route</td>
+                        <td class="value-cell">{{ leg.index + 1 }}</td>
+                      </tr>
+                      <tr>
+                        <td class="key-cell">
+                          <template v-if="leg.index === 0">Start</template>
+                          <template v-else>Exit</template>
+                        </td>
+                        <td class="value-cell notranslate">{{ journey.desc(leg.start) }}</td>
+                      </tr>
+                      <tr>
+                        <td class="key-cell">
+                          <template v-if="leg.index >= journey.legs().last().index">Destination</template>
+                          <template v-else>Black&nbsp;Hole</template>
+                        </td>
+                        <td class="value-cell notranslate">{{ journey.desc(leg.dest) }}</td>
+                      </tr>
+                      <tr>
+                        <td class="key-cell">Directions</td>
+                        <td class="value-cell">{{ leg.description }}</td>
+                      </tr>
+
+                      <tr>
+                        <td class="key-cell">Waypoint</td>
+                        <td class="value-cell">
+                          <template v-if="showCoordinates">{{ leg.dest.coords }}</template>
+                          <template v-else>
+                            <span
+                              class="galactic-coordinates-mobile"
+                            >{{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(0,6)}}</span>
+                            <br>
+                            <span
+                              class="galactic-coordinates-mobile"
+                            >{{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(6,12)}}</span>
+                          </template>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </template>
+        </div>
+      </template>
+    </template>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import { coordinates, Platform, reCoordInput, Coordinates } from "common";
-import { routeEvents } from "../bus/RouteEvents";
+import { coordinates, Coordinates, reCoordInput, galaxies, Hop, Platform, dijkstraCalculator, DijkstraCalculator } from "common";
 import { List } from "immutable";
 import { blackholes } from "../utility/blackholes";
-import { inputGalaxies } from "../utility/generated";
+import { inputGalaxies, GalaxyTuple } from "../utility/generated";
 import GalaxyMap from "./GalaxyMap.vue";
+import { Explanation, toJourney, IEndPoint } from "../utility/explanation";
 
 interface IFormData {
     startVal: string;
@@ -123,10 +242,37 @@ interface IFormData {
     optimization: string;
 }
 
+interface IRouteSubmit {
+    platform: string;
+    galaxy: string;
+    maxJump: number;
+    optimization: string;
+    start: Coordinates;
+    dest: Coordinates;
+}
+
+interface IMessage {
+    key: number;
+    type: string;
+    text: string;
+}
+
 export default Vue.extend({
     components: { GalaxyMap },
 
-    data() {
+    data(): {
+        coordPattern: string;
+        galaxies: GalaxyTuple[];
+        bhs: Coordinates[];
+        exs: Coordinates[];
+        formData: any;
+        route: IRouteSubmit | null;
+        journey: Explanation | null;
+        showCoordinates: Boolean;
+        messages: IMessage[];
+        messageKey: number;
+        windowWidth: number;
+    } {
         return {
             coordPattern: reCoordInput,
             galaxies: inputGalaxies,
@@ -140,6 +286,12 @@ export default Vue.extend({
                 maxJump: "2000",
                 optimization: "time",
             },
+            route: null,
+            journey: null,
+            showCoordinates: false,
+            messages: [],
+            messageKey: 0,
+            windowWidth: -1,
         };
     },
 
@@ -151,10 +303,22 @@ export default Vue.extend({
             },
             deep: true,
         },
+        route() {
+            if (this.route !== null) {
+                this.calculateTrip(this.route);
+            }
+        },
+    },
+
+    beforeDestroy() {
+        window.removeEventListener("resize", this.windowResizeEvent);
     },
 
     mounted() {
         console.log("TravelRequestForm mounted");
+
+        this.windowWidth = window.innerWidth;
+        window.addEventListener("resize", this.windowResizeEvent);
 
         const formData = this.getFormData();
         if (formData) {
@@ -165,6 +329,14 @@ export default Vue.extend({
     },
 
     methods: {
+        toggleShowCoordinates() {
+            this.showCoordinates = !this.showCoordinates;
+        },
+
+        isOdd(v: number): boolean {
+            return v % 2 !== 0;
+        },
+
         getFormData(): IFormData | null {
             if (window.localStorage.getItem("TravelRequestForm_FormData")) {
                 return JSON.parse(window.localStorage.getItem("TravelRequestForm_FormData")!);
@@ -230,31 +402,177 @@ export default Vue.extend({
 
         submitForm() {
             this.formatCoordinates();
+            this.messages = [];
 
-            routeEvents.raiseRouteSubmit({
+            this.route = {
                 platform: this.formData.platform,
                 galaxy: this.formData.galaxy,
                 maxJump: parseInt(this.formData.maxJump, 10),
                 optimization: this.formData.optimization,
                 start: coordinates(this.formData.startVal),
                 dest: coordinates(this.formData.destVal),
-            });
+            };
+        },
+
+        async calculateTrip(route: IRouteSubmit) {
+            this.journey = null;
+
+            if (route.start.dist2Center() * 400 < 3000) {
+                this.messages.unshift({
+                    key: this.messageKey++,
+                    type: "warning",
+                    text: "Start appears to be invalid. That point is in the void at the center of the galaxy.",
+                });
+                return;
+            }
+
+            if (route.dest.dist2Center() * 400 < 3000) {
+                this.messages.unshift({
+                    key: this.messageKey++,
+                    type: "warning",
+                    text: "Destination appears to be invalid. That point is in the void at the center of the galaxy.",
+                });
+                return;
+            }
+
+            const startDist = Math.floor(route.start.dist2Center() * 400);
+            const destDist = Math.floor(route.dest.dist2Center() * 400);
+            const delta = Math.abs(startDist - (destDist + 20000));
+
+            if (delta >= 30000) {
+                this.messages.unshift({
+                    key: this.messageKey++,
+                    type: "warning",
+                    text:
+                        `Start is ${startDist.toLocaleString()} LY from center. ` +
+                        `Destination is ${destDist.toLocaleString()} LY from center. ` +
+                        `For best results, find a start location that is ` +
+                        `just a little further away from center than the destination.`,
+                });
+            }
+
+            const platformFilter: (hop: Hop) => boolean = (function() {
+                if (route.platform == "ps4") {
+                    return (hop: Hop) => {
+                        return hop.platform === Platform.PS4;
+                    };
+                } else {
+                    return (hop: Hop) => {
+                        return hop.platform === Platform.PC;
+                    };
+                }
+            })();
+
+            const allHops: Hop[] = (await blackholes())
+                .filter(platformFilter)
+                .filter(hop => hop.galaxy === route.galaxy)
+                .toArray();
+
+            const shortest = dijkstraCalculator(allHops, route.maxJump, route.optimization).findRoute([{ label: "start", coords: route.start }], {
+                label: "destination",
+                coords: route.dest,
+            })[0];
+
+            this.journey = new Explanation(route.maxJump, toJourney(List(shortest.route)));
+
+            for (const leg of this.journey.legs()) {
+                console.log(leg.description);
+            }
+
+            const direct = dijkstraCalculator([], route.maxJump, route.optimization).findRoute([{ label: "start", coords: route.start }], {
+                label: "destination",
+                coords: route.dest,
+            })[0];
+            if (route.optimization === "fuel") {
+                this.messages.unshift({
+                    key: this.messageKey++,
+                    type: "information",
+                    text: `Estimate: This route uses ${shortest.score} fuel. The direct route would use ${direct.score} fuel.`,
+                });
+            } else {
+                const MinutesPerPoint = 62 / 38;
+
+                this.messages.unshift({
+                    key: this.messageKey++,
+                    type: "information",
+                    text:
+                        `Estimate: ` +
+                        `This route will take ${Math.round(MinutesPerPoint * shortest.score).toLocaleString()} minutes. ` +
+                        `The direct route would take ${Math.round(MinutesPerPoint * direct.score).toLocaleString()} minutes.`,
+                });
+            }
+        },
+
+        windowResizeEvent(ev: UIEvent) {
+            this.windowWidth = window.innerWidth;
         },
     },
 });
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 div.outer-div {
     margin-top: 30px;
-    //text-align: left;
     padding: 10px;
-    //border: 1px solid #ccc;
-    //box-shadow: 0px 3px 6px #ccc;
 }
 
 button.button-secondary {
     background: rgb(66, 184, 221) !important; /* this is a light blue */
+}
+
+div.outer-div {
+    margin-top: 30px;
+    text-align: center;
+    padding: 10px;
+}
+
+@font-face {
+    font-family: "nms-glyph";
+    src: url("/blackholesuns/NMS-Glyphs-Mono.ttf") format("truetype");
+}
+
+span.galactic-coordinates {
+    font-family: "nms-glyph";
+    font-size: large;
+}
+
+span.galactic-coordinates-mobile {
+    font-family: "nms-glyph";
+    font-size: x-large;
+}
+
+.message {
+    text-align: center;
+    padding: 10px;
+}
+.information {
+    color: blue;
+    background-color: #e4e8ff;
+}
+
+.warning {
+    color: red;
+    background-color: #ffc0c1;
+}
+
+.no-padding {
+    padding: 0px;
+}
+
+.no-border {
+    border-style: none;
+}
+
+td.key-cell {
+    font-weight: bold;
+    text-align: right;
+    border-style: none;
+    vertical-align: text-top;
+}
+
+td.value-cell {
+    text-align: left;
+    border-style: none;
+    vertical-align: text-top;
 }
 </style>

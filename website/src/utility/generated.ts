@@ -1,5 +1,6 @@
 /* Generated code. Do not edit. */
-const inputGalaxies = [
+type GalaxyTuple = [number, string];
+const inputGalaxies: GalaxyTuple[] = [
     [0, "Euclid"],
     [1, "Hilbert Dimension"],
     [2, "Calypso"],
@@ -17,4 +18,4 @@ const inputGalaxies = [
     [34, "Ijsenufryos"],
     [35, "Nipikulha"],
 ];
-export { inputGalaxies };
+export { inputGalaxies, GalaxyTuple };

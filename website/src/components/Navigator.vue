@@ -6,7 +6,7 @@
     </div>
 
     <travel-request-form/>
-    <route-finder/>
+    <!-- <route-finder/> -->
 
     <p style="text-align: center;">
       <a href="https://guide.blackholesuns.com/" target="_blank" rel="noopener">Travel Guide</a>
@@ -48,7 +48,7 @@
 import Vue from "vue";
 import { coordinates } from "common";
 import TravelRequestForm from "./TravelRequestForm.vue";
-import RouteFinder from "./RouteFinder.vue";
+// import RouteFinder from "./RouteFinder.vue";
 
 export default Vue.extend({
     //name: "HelloWorld",
@@ -62,7 +62,7 @@ export default Vue.extend({
     },
     components: {
         TravelRequestForm,
-        RouteFinder,
+        // RouteFinder,
     },
 });
 </script>

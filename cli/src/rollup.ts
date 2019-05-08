@@ -13,11 +13,11 @@ async function main(): Promise<void> {
         .map(a => [a, galaxies[a]])
         .toArray();
 
-    let source = [`/* Generated code. Do not edit. */`, `const inputGalaxies = [`];
+    let source = [`/* Generated code. Do not edit. */`, `type GalaxyTuple = [number, string];`, `const inputGalaxies: GalaxyTuple[] = [`];
 
     source = source.concat(selectableGalaxies.map(g => JSON.stringify(g).replace(/,/g, ", ")).map(g => `    ${g},`));
     source.push("];");
-    source.push("export { inputGalaxies };");
+    source.push("export { inputGalaxies, GalaxyTuple };");
 
     console.log(source.join("\n"));
 }
