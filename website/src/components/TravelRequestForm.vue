@@ -88,7 +88,7 @@
             </div>
           </fieldset>
           <div class="pure-u-1-3" style="min-width: 250px;">
-            <galaxy-map :blackholes="bhs" :exits="exs"/>
+            <galaxy-map :blackholes="bhs" :exits="exs" :explanation="journey"/>
           </div>
         </div>
         <div class="pure-g">

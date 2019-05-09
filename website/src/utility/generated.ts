@@ -15,6 +15,7 @@ const inputGalaxies: GalaxyTuple[] = [
     [19, "Doctinawyra"],
     [20, "Loychazinq"],
     [21, "Zukasizawa"],
+    [22, "Ekwathore"],
     [34, "Ijsenufryos"],
     [35, "Nipikulha"],
 ];

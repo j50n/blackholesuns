@@ -70,4 +70,4 @@ class Explanation {
     }
 }
 
-export { Explanation, toJourney, IEndPoint };
+export { Explanation, toJourney, IEndPoint, ILegOfJourney };
