@@ -87,9 +87,11 @@
               </label>
             </div>
           </fieldset>
-          <div class="pure-u-1-3" style="min-width: 250px;">
-            <galaxy-map :blackholes="bhs" :exits="exs" :explanation="journey"/>
-          </div>
+          <transition name="fade" mode="out-in" appear>
+            <div class="pure-u-1-3" style="min-width: 250px;" :key="graphCount">
+              <galaxy-map :blackholes="bhs" :exits="exs" :explanation="journey"/>
+            </div>
+          </transition>
         </div>
         <div class="pure-g">
           <fieldset class="pure-u-1-2">
@@ -261,6 +263,7 @@ export default Vue.extend({
     components: { GalaxyMap },
 
     data(): {
+        graphCount: number;
         coordPattern: string;
         galaxies: GalaxyTuple[];
         bhs: Coordinates[];
@@ -274,6 +277,7 @@ export default Vue.extend({
         windowWidth: number;
     } {
         return {
+            graphCount: 0,
             coordPattern: reCoordInput,
             galaxies: inputGalaxies,
             bhs: [] as Coordinates[],
@@ -298,11 +302,21 @@ export default Vue.extend({
     watch: {
         formData: {
             handler() {
+                const prev = this.getFormData();
+
                 window.localStorage.setItem("TravelRequestForm_FormData", JSON.stringify(this.formData));
-                this.updateHopData();
+
+                if (prev !== null) {
+                    if (prev!.galaxy !== this.formData.galaxy || prev!.platform !== this.formData.platform) {
+                        this.updateHopData();
+                        this.journey = null;
+                        this.messages = [];
+                    }
+                }
             },
             deep: true,
         },
+
         route() {
             if (this.route !== null) {
                 this.calculateTrip(this.route);
@@ -381,6 +395,8 @@ export default Vue.extend({
                     localHops.then(hops => {
                         this.bhs = hops.map(h => h.blackhole.coords).toArray();
                         this.exs = hops.map(h => h.exit.coords).toArray();
+                        this.graphCount += 1;
+                        console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaa");
                     });
                 }
             }
@@ -401,6 +417,9 @@ export default Vue.extend({
         },
 
         submitForm() {
+            this.graphCount += 1;
+            console.log("bbbbbbbbbbbbbbbbbb");
+
             this.formatCoordinates();
             this.messages = [];
 
@@ -511,6 +530,14 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+
 div.outer-div {
     margin-top: 30px;
     padding: 10px;

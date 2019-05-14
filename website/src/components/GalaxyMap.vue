@@ -18,8 +18,8 @@
         :y1="legA.dest.coords.z"
         :x2="legB.start.coords.x"
         :y2="legB.start.coords.z"
-        stroke="darkgray"
-        stroke-width="20"
+        stroke="black"
+        stroke-width="5"
         stroke-linecap="round"
       ></line>
     </template>
@@ -31,7 +31,7 @@
         :x2="leg.dest.coords.x"
         :y2="leg.dest.coords.z"
         stroke="darkred"
-        stroke-width="20"
+        stroke-width="5"
         stroke-linecap="round"
       ></line>
     </template>

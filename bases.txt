@@ -1,3 +1,4 @@
 0643:0081:01A1:0079 Portal Base 
 
 0000:0083:0515:0079 Rattle Spines at the Fade [871k]
+042F:0078:0D55:003C Hermit's Haulers at the Hub

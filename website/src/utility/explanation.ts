@@ -1,5 +1,5 @@
 import { List } from "immutable";
-import { isSameRegion, isSameStar, isAdjacentRegion, calcExpectedJumps,  Coordinates } from "common";
+import { isSameRegion, isSameStar, isAdjacentRegion, calcExpectedJumps, Coordinates } from "common";
 
 interface IEndPoint {
     label: string;
@@ -32,7 +32,7 @@ class Explanation {
             const [a, b] = leg;
 
             if (isSameStar(a.coords, b.coords)) {
-                return { index: i, start: a, dest: b, description: `Same star!` };
+                return { index: i, start: a, dest: b, description: `Same system!` };
             } else if (isSameRegion(a.coords, b.coords)) {
                 return { index: i, start: a, dest: b, description: `Same region.` };
             } else if (isAdjacentRegion(a.coords, b.coords)) {
