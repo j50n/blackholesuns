@@ -357,6 +357,7 @@
 [0,"PC","038A:007C:05BF:0079","Odrzela Shallows","Omoool-Niji","0C1E:007E:0548:0030","Wacomante Expanse","Epzingg-Ragat"]
 [0,"PC","038B:0080:0323:0079","Koonates Cluster","Tabasema","0829:007C:0175:0009","Eaumuy Sector","Obbiel-Ujiya"]
 [0,"PC","038D:0081:0E74:0079","Onlivas Cloud","Cessiugre","0E79:0082:03AC:0005","Yebang","Remosc-Axa"]
+[0,"PC","038E:007F:042B:0079","Bifrosuc Boundary","Ekarke-Aijon","022F:0082:07FB:0007","Fatesata Cluster","Tusyuste"]
 [0,"PC","0390:007F:0429:0079","Jabarao","Hokoshi","0DC8:0081:0794:005D","Alonitoal","Niwortway"]
 [0,"PC","0391:007F:0CA7:0079","Tatnerrai Cluster","Ludaobei","036B:007F:0392:0048","Lavogt Terminus","Towdza"]
 [0,"PC","0392:007F:0427:0079","Ikaturt Conflux","Jurong-Inm","0C3F:007F:040B:003A","Yamener Spur","Roveykin"]
