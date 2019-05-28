@@ -19,14 +19,6 @@ cd "$HERE/common" && (
     #  npm run generate-blackhole-data
  )
 
-#  cd "$HERE/common" && (
-#      npm run build
-#  )
-
-#  cd "$HERE/cli" && (
-#      npm run build
-#  )
-
 cd "$HERE/website" && (
     rm -rf "$HERE/website/node_modules/" 
     npm update

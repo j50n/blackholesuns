@@ -2,3 +2,15 @@
 
 0000:0083:0515:0079 Rattle Spines at the Fade [871k]
 042F:0078:0D55:003C Hermit's Haulers at the Hub
+
+081F:0083:07F3:0079 Null's End [13k]
+
+
+
+
+
+
+Qitanian Empire
+07FA:0081:07F9:0036 Qitand-Tus
+    base jumping station into a nice maze pyramid
+    lots of bases of various quality, some quite good

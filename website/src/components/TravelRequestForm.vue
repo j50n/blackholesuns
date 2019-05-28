@@ -553,11 +553,6 @@ div.outer-div {
     padding: 10px;
 }
 
-@font-face {
-    font-family: "nms-glyph";
-    src: url("/blackholesuns/NMS-Glyphs-Mono.ttf") format("truetype");
-}
-
 span.galactic-coordinates {
     font-family: "nms-glyph";
     font-size: large;
