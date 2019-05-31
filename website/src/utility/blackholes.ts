@@ -6,8 +6,8 @@ import { publicPath } from "../../vue.config";
 async function blackholes(): Promise<List<Hop>> {
     const data: List<string> = List((await download(`${publicPath}blackholes.txt`)).split(/\n/g));
     const tuples: List<HOP> = data
-        .filter(line => !line.match(/^\s*$/g))
-        .map(line => {
+        .filter((line: string) => !line.match(/^\s*$/g))
+        .map((line: string) => {
             try {
                 return JSON.parse(line);
             } catch (e) {
@@ -15,7 +15,7 @@ async function blackholes(): Promise<List<Hop>> {
             }
         });
 
-    return tuples.map(tuple => {
+    return tuples.map((tuple: HOP) => {
         return new Hop(
             tuple[1],
             galaxies[tuple[0]],

@@ -2,21 +2,27 @@
 set -e
 set -x
 
-TARGET="blackholesuns-staging.gh-pages"
+TARGET="blackholesuns.gh-pages"
+TARGET_STAGING="blackholesuns-staging.gh-pages"
+
 HERE="$(realpath $(dirname $0))"
 PAGES="$(realpath "$HERE/../$TARGET")"
+PAGES_STAGING="$(realpath "$HERE/../$TARGET_STAGING")"
 
 cd "$HERE/cli" && (
     npm run all   
 )
 
 cp "$HERE/website/public/blackholes.txt" "$PAGES/"
+cp "$HERE/website/public/blackholes.txt" "$PAGES_STAGING/"
 
 cd "$PAGES" && (
-    echo "ADDING...."
     git commit -am "data update `date`"
+    git push
+)
 
-    echo "PUSHING...."
+cd "$PAGES_STAGING" && (
+    git commit -am "data update `date`"
     git push
 )
 

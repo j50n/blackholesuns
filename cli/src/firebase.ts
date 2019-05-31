@@ -101,7 +101,17 @@ async function main(): Promise<void> {
                             console.error(`positive distance error: ${desc}`);
                         } else {
                             const ex = exitsMap.get(data.connection)!.data();
-                            jumps.push([galaxyIndex, platform, data.addr, data.reg, data.sys, ex.addr, ex.reg, ex.sys]);
+                            if (data.reg == null) {
+                                console.error(`BH region is null: ${desc}`);
+                            } else if (ex.reg == null) {
+                                console.error(`exit system is null: ${desc}`);
+                            } else if (data.sys == null) {
+                                console.error(`BH system is null: ${desc}`);
+                            } else if (ex.sys == null) {
+                                console.error(`exit system is null: ${desc}`);
+                            } else {
+                                jumps.push([galaxyIndex, platform, data.addr, data.reg, data.sys, ex.addr, ex.reg, ex.sys]);
+                            }
                         }
                     }
                 });
