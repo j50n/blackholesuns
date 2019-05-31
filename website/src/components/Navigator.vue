@@ -8,36 +8,30 @@
     <travel-request-form/>
     <!-- <route-finder/> -->
 
-    <p style="text-align: center;">
+    <!-- <p style="text-align: center;">
       <a href="https://guide.blackholesuns.com/" target="_blank" rel="noopener">Travel Guide</a>
-    </p>
+    </p>-->
     <div style="text-align: center;">
-      <h3>NMS Black Hole Suns</h3>
+      <!-- <h3>NMS Black Hole Suns</h3> -->
       <ul>
         <li>
-          <a
-            href="https://www.reddit.com/r/NMSBlackHoleSuns/"
-            target="_blank"
-            rel="noopener"
-          >Read on Reddit</a>
+          <a href="https://guide.blackholesuns.com/" target="_blank" rel="noopener">Guide</a>
         </li>
         <li>
-          <a
-            href="https://discord.blackholesuns.com"
-            target="_blank"
-            rel="noopener"
-          >Discuss on Discord</a>
+          <a href="https://www.reddit.com/r/NMSBlackHoleSuns/" target="_blank" rel="noopener">Reddit</a>
+        </li>
+        <li>
+          <a href="https://discord.blackholesuns.com" target="_blank" rel="noopener">Discord</a>
+        </li>
+        <li>
+          <a href="https://db.blackholesuns.com" target="_blank" rel="noopener">Contribute</a>
         </li>
       </ul>
     </div>
     <div style="text-align: center;">
       <ul>
         <li>
-          <a
-            href="https://github.com/j50n/blackholesuns/"
-            target="_blank"
-            rel="noopener"
-          >Project on Github</a>
+          <a href="https://github.com/j50n/blackholesuns/" target="_blank" rel="noopener">Project</a>
         </li>
       </ul>
     </div>

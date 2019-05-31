@@ -136,7 +136,7 @@
                     <th>Start / Exit</th>
                     <th>Black Hole / Destination</th>
                     <th>Directions</th>
-                    <th>Waypoint</th>
+                    <th>Custom Waypoint</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -155,7 +155,11 @@
                         <span class="galactic-coordinates">
                           <big>
                             <big>
-                              <big>{{leg.dest.coords.galacticCoordinates(0).toUpperCase()}}</big>
+                              <big>
+                                <span
+                                  class="galactic-coordinates-mobile"
+                                >{{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(0,4)}} {{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(4,8)}} {{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(8,12)}}</span>
+                              </big>
                             </big>
                           </big>
                         </span>
@@ -200,17 +204,13 @@
                       </tr>
 
                       <tr>
-                        <td class="key-cell">Waypoint</td>
+                        <td class="key-cell">Custom Waypoint</td>
                         <td class="value-cell">
                           <template v-if="showCoordinates">{{ leg.dest.coords }}</template>
                           <template v-else>
                             <span
                               class="galactic-coordinates-mobile"
-                            >{{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(0,6)}}</span>
-                            <br>
-                            <span
-                              class="galactic-coordinates-mobile"
-                            >{{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(6,12)}}</span>
+                            >{{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(0,4)}} {{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(4,8)}} {{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(8,12)}}</span>
                           </template>
                         </td>
                       </tr>
@@ -396,7 +396,6 @@ export default Vue.extend({
                         this.bhs = hops.map(h => h.blackhole.coords).toArray();
                         this.exs = hops.map(h => h.exit.coords).toArray();
                         this.graphCount += 1;
-                        console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaa");
                     });
                 }
             }
@@ -418,7 +417,6 @@ export default Vue.extend({
 
         submitForm() {
             this.graphCount += 1;
-            console.log("bbbbbbbbbbbbbbbbbb");
 
             this.formatCoordinates();
             this.messages = [];
@@ -560,7 +558,7 @@ span.galactic-coordinates {
 
 span.galactic-coordinates-mobile {
     font-family: "nms-glyph";
-    font-size: x-large;
+    font-size: xx-large;
 }
 
 .message {
