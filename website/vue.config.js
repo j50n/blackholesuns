@@ -1,5 +1,5 @@
 module.exports = {
-    publicPath: "/blackholesuns-staging/",
+    publicPath: "/blackholesuns/",
     configureWebpack: {
         module: {
             rules: [],
