@@ -1078,6 +1078,7 @@
 [0,"PC","071C:007F:0131:0079","Pianga Quadrant","Ighetsf","02BD:0080:03AB:0004","Buwilce Anomaly","Sibiliar"]
 [0,"PC","071C:0082:0E5E:0079","Kacifi Nebula","Suuraieu X","01A0:007C:07F3:004A","Kuforse Expanse","Odvinno-Inxi"]
 [0,"PC","071D:0082:06F3:0079","Wumoores Cluster","Eqinyai XIII","08AD:0082:06E1:0067","Ooveli","Zuxiangr"]
+[0,"PC","071F:007B:0EC8:0079","Selleg Band","Itajal","0B5E:0080:0DE3:0009","Jetiatia Anomaly","Uttunea-Roham"]
 [0,"PC","0722:007C:0800:0079","Damaric Spur","Uneapo","08AB:007E:086D:0070","Dezacha Shallows","Orlovo"]
 [0,"PC","0722:0080:0960:0079","Hidowei Shallows","Iacrom-Aom","067B:0080:0860:0067","Ifantil Instability","Pisemi-Tuov"]
 [0,"PC","0724:007D:0A7A:0079","Nokoje","Igusukiha","0A33:0080:06B1:005D","Lacyonyi","Obillisto"]
