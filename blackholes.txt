@@ -3511,6 +3511,7 @@
 [0,"PS4","0727:007D:0188:0079","Maartwehi Nebula","Asdusti-Lub V","0DEE:007C:0A89:0063","Prokkjub Spur","Miluodi"]
 [0,"PS4","0727:007D:0189:0079","Eigend Terminus","Ilgjen-Yuys","04A1:0082:0D83:0017","Aupain Shallows","Relatio-Dushn"]
 [0,"PS4","0727:007E:0871:0079","Auhein Shallows","Batzoutma","08A6:007C:0899:0077","Aavonli Mass","Ranoya"]
+[0,"PS4","0728:0080:0E5F:0079","Okwarel Shallows","Snarkl-Ost","0A22:0081:01FD:0014","Akians Band","Rincase X"]
 [0,"PS4","0729:007D:0706:0079","Oucair","Ednogo","0936:007F:07F0:0072","Boskis Adjunct","Duvanast XII"]
 [0,"PS4","0729:0080:014C:0079","Tosware Boundary","Asaoka","0DBA:0083:0B72:0050","Saakos Spur","Nadairakin"]
 [0,"PS4","072B:007C:0F39:0079","Muhaconch Boundary","Eprasta-/uoya","0A5E:007D:0ED1:000A","Wadbadar","Ewkeswadh"]
