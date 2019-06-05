@@ -4966,6 +4966,7 @@
 [0,"PS4","0E03:0080:06E4:0079","Isdomot Terminus","Turpana X System","0AE0:007C:02AA:0035","Dunoatl Fringe","Roxand System"]
 [0,"PS4","0E04:0081:06C4:0079","Twoodm","Rogunsan IV","07F8:007C:01E9:0035","Euphifu Void","Moskoyvi"]
 [0,"PS4","0E05:007B:082F:0079","Lodeli Sector","Bamenqj","0C8D:007D:0BDB:0031","Miatag Adjunct","Izuish-Teze"]
+[0,"PS4","0E05:007E:0A46:0079","Goynei Instability","Syostusan","0B34:007B:027D:0067","Ahgnow Terminus","Aleier-Cept"]
 [0,"PS4","0E06:007C:0B80:0079","Snjang Sector","Yebyesht","0E3B:0082:04FF:0019","Suomin Cloud","Imuras-Addur"]
 [0,"PS4","0E06:0080:07E2:0079","Gaatiu Terminus","Nofnuna-Ligr","02DD:007D:04EF:0005","Arorot Nebula","Agrino"]
 [0,"PS4","0E06:0080:0BFB:0079","Weleyderew Fringe","Liyille XVI","00D5:0082:07A4:0006","Ausrin Adjunct","Dolmas"]
