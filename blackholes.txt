@@ -5634,6 +5634,7 @@
 [9,"PC","0D7A:0082:0B75:0079","Ezaten Shallows","Kijuboe IX","0288:007C:0B63:0001","Oggien Fringe","Kijuboe IX"]
 [9,"PC","0D7C:0081:0ADD:0079","Inrogr Spur","Iwanqinz","0C91:007F:03E8:0030","The Arm of Hitones","Iwanqinz"]
 [9,"PC","0D93:007D:0974:0079","Udslat Expanse","Annantor","026B:007F:0932:004A","Aumatj Sector","Annantor"]
+[9,"PC","0DA6:007B:043A:0079","Reugan Supr","Notinsk","0D5C:007F:0C12:002F","Ibtrev Band","Rogenu-Gags XVII"]
 [9,"PC","0DA7:007F:0997:0079","Sea of Ruynich","Marsua XVIII","0B0E:007F:0CF0:0076","Lazkove Conflux","Marsua XVIII"]
 [9,"PC","0DA7:0080:0258:0079","Ernare Nebula","Oining","0605:007E:0FB1:0003","Aelabi Mass","Edranin"]
 [9,"PC","0DB8:0081:070C:0079","Uylkaid Fringe","Urumqi III","03BE:007F:0424:0038","Sikshuj Fringe","Urumqi III"]
