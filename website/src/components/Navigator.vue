@@ -24,7 +24,7 @@
           <a href="https://discord.blackholesuns.com" target="_blank" rel="noopener">Discord</a>
         </li>
         <li>
-          <a href="https://db.blackholesuns.com" target="_blank" rel="noopener">Contribute</a>
+          <a href="https://data.blackholesuns.com" target="_blank" rel="noopener">Contribute</a>
         </li>
       </ul>
     </div>
