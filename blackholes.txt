@@ -1476,6 +1476,7 @@
 [0,"PC","0936:0082:07A2:0079","Rudevog Sector","Ohamnusch II","0924:007E:07A2:0075","Ijbage Shallows","Eghami-Rusjur"]
 [0,"PC","0937:0080:0718:0079","Elyhock Terminus","Olzahnek","087A:0081:06A0:005E","Yudhur Conflux","Unnant-Odde"]
 [0,"PC","0938:007E:0EB9:0079","Nozard Boundary","Black Hole Portal Delta","0E8D:007F:09B6:004D","Ruchosy","Through the Nether"]
+[0,"PC","0939:007E:0DCF:0079","Iuonar Cluster","AGT Iseharas Black Hole","051B:0080:02E0:0051","Woburid Quadrant","AGT Rafjolfsaf"]
 [0,"PC","093D:0080:0D10:0079","Empland Cluster","Lausuu-Buka XIV","0AA9:007F:0C6B:0010","Anwu Boundary","Imblesh-Itee"]
 [0,"PC","093F:0081:0EFF:0079","Uvisci Mass","Menings","0EF5:007F:0929:0007","The Arm of Radroat","Pamilu VI"]
 [0,"PC","0940:007F:0134:0079","Upuyao","Dazawa","0928:0082:0EBE:0052","Sayayp Conflux","Oidenn-Apo XVII"]
