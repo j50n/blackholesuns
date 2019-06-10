@@ -5783,6 +5783,7 @@
 [9,"PS4","0B87:0082:0E0A:0079","Sea of Natpatopis","Rusamana","0912:007F:0125:0073","Luayank","Shviln-Sichri"]
 [9,"PS4","0B90:0078:022A:0079","Ruschay","ESNODL III","07E4:007D:0EC4:0066","Ityaza Boundary","ILANSK"]
 [9,"PS4","0E60:007D:0A12:0079","Vorayako Shallows","Daskrana XIX","0CF6:007E:0C6E:0001","Lishotra Sector","Tavofas"]
+[9,"PS4","0EA4:007F:0744:0079","Rakash Cluster","WONGJU","0DBE:0082:04B3:0043","Lipartyu Fringe","ICHIOTS"]
 [14,"PS4","02A3:007D:071D:0079","Inleavi Shallows","Somaiba XII","096C:0080:02D1:004A","Nadjuaf","Orcang"]
 [14,"PS4","03AE:007E:078F:0079","Atuvali Adjunct","Chardelah","0574:007C:0B71:0038","The Arm of Huzwangs","Entaito"]
 [14,"PS4","03F5:007A:06EA:0079","Doxuiat","Adivosh","0BA5:007C:0614:0045","Nieckvos Nebula","Bokuchu-Zulaty XII"]
