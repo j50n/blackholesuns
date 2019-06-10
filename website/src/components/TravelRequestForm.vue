@@ -220,6 +220,7 @@
               </table>
             </div>
           </template>
+          <route-summary :explanation="journey"></route-summary>
         </div>
       </template>
     </template>
@@ -233,6 +234,7 @@ import { List } from "immutable";
 import { blackholes } from "../utility/blackholes";
 import { inputGalaxies, GalaxyTuple } from "../utility/generated";
 import GalaxyMap from "./GalaxyMap.vue";
+import RouteSummary from "./RouteSummary.vue";
 import { Explanation, toJourney, IEndPoint } from "../utility/explanation";
 
 interface IFormData {
@@ -260,7 +262,7 @@ interface IMessage {
 }
 
 export default Vue.extend({
-    components: { GalaxyMap },
+    components: { GalaxyMap, RouteSummary },
 
     data(): {
         graphCount: number;
@@ -491,6 +493,7 @@ export default Vue.extend({
             })[0];
 
             this.journey = new Explanation(route.maxJump, toJourney(List(shortest.route)));
+            console.log(this.journey);
 
             for (const leg of this.journey.legs()) {
                 console.log(leg.description);
