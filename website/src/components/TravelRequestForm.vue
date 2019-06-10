@@ -105,6 +105,7 @@
     </div>
     <!-- BEGINNING OF RESULTS TABLE -->
     <template>
+      <route-summary :explanation="journey"></route-summary>
       <div class="pure-g">
         <div
           v-for="message of messages"
@@ -220,7 +221,7 @@
               </table>
             </div>
           </template>
-          <route-summary :explanation="journey"></route-summary>
+          <!-- <route-summary :explanation="journey"></route-summary> -->
         </div>
       </template>
     </template>

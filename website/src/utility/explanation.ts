@@ -70,6 +70,13 @@ class Explanation {
         }
     }
 
+    public hyperjumpReduction(): number {
+        const dTotal = this.directJumps();
+        const jTotal = this.journeyJumps();
+
+        return 1 - jTotal / (dTotal + jTotal);
+    }
+
     public legs(): List<ILegOfJourney> {
         return this.journey.map((leg, i) => {
             const [a, b] = leg;

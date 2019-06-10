@@ -15,22 +15,31 @@
           <td class="key-cell">Direct</td>
           <td
             class="value-cell"
-          >{{ expl.directDistanceLY().toLocaleString() }}&nbsp;LY {{ expl.directJumps().toLocaleString() }}&nbsp;jumps</td>
+          >{{ expl.directDistanceLY().toLocaleString() }}&nbsp;LY, or {{ expl.directJumps().toLocaleString() }}&nbsp;jumps</td>
         </tr>
         <tr>
           <td class="key-cell">Using&nbsp;DaRC</td>
-          <td
-            class="value-cell"
-          >{{ expl.journeyJumps().toLocaleString() }}&nbsp;jumps ({{ expl.journeyBlackHoles().toLocaleString() }}&nbsp;BHs)</td>
+          <td class="value-cell">{{ expl.journeyJumps().toLocaleString() }}&nbsp;jumps</td>
         </tr>
-        <template v-if="!isNaN(expl.speedup())">
+        <!-- <template v-if="!isNaN(expl.speedup())">
           <tr>
             <td class="key-cell">Speedup</td>
             <td
               class="value-cell"
             >{{Math.floor(expl.speedup() * 100).toLocaleString()}}%&nbsp;faster</td>
           </tr>
-        </template>
+        </template>-->
+        <tr>
+          <td class="key-cell">Jump&nbsp;Reduction</td>
+          <td class="value-cell">{{(expl.hyperjumpReduction() * 100).toFixed(2)}}%</td>
+        </tr>
+        <tr>
+          <td class="key-cell">Cornell Index</td>
+          <td
+            class="value-cell"
+          >{{ expl.journeyBlackHoles().toLocaleString() }}&nbsp;Black&nbsp;Holes</td>
+        </tr>
+
         <!-- <tr>
           <td class="key-cell">CORNELL INDEX (Number of Black Holes used for route)</td>
           <td class="value-cell">5</td>
