@@ -2210,6 +2210,7 @@
 [0,"PC","0E69:0080:08FA:0079","Opmansh Nebula","Naldin","0B41:007F:0D88:006F","Gawuli","Nonjosh-Tur VII"]
 [0,"PC","0E6B:007E:088C:0079","Uynice Fringe","Osloug-Gegeka","056C:007E:0DD6:0072","Syrild","Ridwigho"]
 [0,"PC","0E6C:007C:0624:0079","Sea of Naeborm","Ulsalk","0E72:007C:0983:0064","Brzemly Boundary","Zusumx XVI"]
+[0,"PC","0E6F:007F:09A0:0079","Wanowar Anomaly","Ungligen XVIII Ssystem // G9p","0D55:007C:0423:0011","Ratocus","Akomai IV System // G1pf // water"]
 [0,"PC","0E71:007C:06A2:0079","Dehmanj Conflux","Ibetsu","01BD:0081:09DA:004A","Nartwu Nebula","Xandaykh"]
 [0,"PC","0E72:007C:0983:0079","Brzemly Boundary","Ruteboux","0B66:007D:0261:0032","Alepch Shallows","Juahtungu III"]
 [0,"PC","0E73:007B:07DE:0079","Icjach","Furagia-Gorid","0307:0081:03F9:004F","Onmantj","Uginab-Guchi"]
