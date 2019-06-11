@@ -2288,6 +2288,7 @@
 [0,"PC","0EB9:007D:088F:0079","Julasho Adjunct","Gljufar-Abra","075F:0081:0EAA:0004","Gokobun Shallows","Tumeng-Nasre"]
 [0,"PC","0EC2:007D:05B1:0079","Suijikis Cluster","Macity-Iuan","00FA:007F:08E9:006B","Bakepatu Band","Rabbame"]
 [0,"PC","0EC2:007E:067E:0079","Wiraoui Anomaly","Tatlefarn","087A:007C:0127:0077","Nioldrumu","Arnanc-Ciusi XV"]
+[0,"PC","0EC3:0080:067D:0079","Coanna","Nifleenab","01E8:007E:0B2B:0075","Gashan","Sicansa-Lumu"]
 [0,"PC","0EC3:0081:0CC0:0079","Pitanik","Antamen-Tito","04C7:0082:0072:0044","Osztoc Cloud","Apporoz-Exam"]
 [0,"PC","0EC4:007C:0791:0079","Yaksha Mass","Wirteg","09AB:007B:0E84:0011","Edwenh Cloud","Mishios VII"]
 [0,"PC","0ECB:007C:07BD:0079","Cudanucyl","Stabref-Hubir","0B9C:007C:0DB3:0004","Shmidtum Instability","Dohamp-Daban"]
