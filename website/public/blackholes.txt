@@ -1627,6 +1627,7 @@
 [0,"PC","0A42:007D:0163:0079","Azyanskij Adjunct","Bigzhou-Upiv","0116:007E:0786:0043","Pomech Sector","Raduraa"]
 [0,"PC","0A43:007C:0164:0079","Oltrij Terminus","Zentak-Rikas","0931:007B:0ED0:0054","Sea of Hunsoeh","Giniar-Onub"]
 [0,"PC","0A43:007D:0162:0079","Avniab Quadrant","Geergu","0E6A:0081:0A9E:0041","Sulaec Void","Gidahlido"]
+[0,"PC","0A44:007C:0164:0079","Jibagei Conflux","Ullire XVI","0843:007C:0EED:0006","Aohikaa Cluster","Aylovshi"]
 [0,"PC","0A44:007D:0163:0079","Murtie Spur","Mobovkar","07BA:007F:0EED:0020","Slovani Terminus","Eastryt-Once"]
 [0,"PC","0A45:007C:0A3C:0079","Setyphuave Instability","Lizuka","0793:0080:0B19:0056","Najuloss Band","Wujang IX"]
 [0,"PC","0A4C:007E:01F6:0079","Aolasu","Bixian-Zaozy","0833:0082:019A:0042","Ospeser","Inninst"]

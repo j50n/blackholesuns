@@ -61,7 +61,7 @@
                 placeholder="Jump Range"
               >
             </div>
-            <div class="pure-control-group">
+            <!-- <div class="pure-control-group">
               <label for="optimize-time" class="pure-radio">
                 <input
                   id="optimize-time"
@@ -85,7 +85,7 @@
                 >
                 Fuel
               </label>
-            </div>
+            </div>-->
           </fieldset>
           <transition name="fade" mode="out-in" appear>
             <div class="pure-u-1-3" style="min-width: 250px;" :key="graphCount">
@@ -105,7 +105,7 @@
     </div>
     <!-- BEGINNING OF RESULTS TABLE -->
     <template>
-      <route-summary :explanation="journey"></route-summary>
+      <route-summary :explanation="journey" :estimate="timeEstimate"></route-summary>
       <div class="pure-g">
         <div
           v-for="message of messages"
@@ -236,6 +236,7 @@ import { blackholes } from "../utility/blackholes";
 import { inputGalaxies, GalaxyTuple } from "../utility/generated";
 import GalaxyMap from "./GalaxyMap.vue";
 import RouteSummary from "./RouteSummary.vue";
+import { ITimeEstimate } from "./RouteSummary.vue";
 import { Explanation, toJourney, IEndPoint } from "../utility/explanation";
 
 interface IFormData {
@@ -251,7 +252,6 @@ interface IRouteSubmit {
     platform: string;
     galaxy: string;
     maxJump: number;
-    optimization: string;
     start: Coordinates;
     dest: Coordinates;
 }
@@ -274,6 +274,7 @@ export default Vue.extend({
         formData: any;
         route: IRouteSubmit | null;
         journey: Explanation | null;
+        timeEstimate: ITimeEstimate | null;
         showCoordinates: Boolean;
         messages: IMessage[];
         messageKey: number;
@@ -291,10 +292,10 @@ export default Vue.extend({
                 galaxy: "01 Euclid",
                 platform: "ps4",
                 maxJump: "2000",
-                optimization: "time",
             },
             route: null,
             journey: null,
+            timeEstimate: null,
             showCoordinates: false,
             messages: [],
             messageKey: 0,
@@ -428,7 +429,6 @@ export default Vue.extend({
                 platform: this.formData.platform,
                 galaxy: this.formData.galaxy,
                 maxJump: parseInt(this.formData.maxJump, 10),
-                optimization: this.formData.optimization,
                 start: coordinates(this.formData.startVal),
                 dest: coordinates(this.formData.destVal),
             };
@@ -488,7 +488,7 @@ export default Vue.extend({
                 .filter(hop => hop.galaxy === route.galaxy)
                 .toArray();
 
-            const shortest = dijkstraCalculator(allHops, route.maxJump, route.optimization).findRoute([{ label: "start", coords: route.start }], {
+            const shortest = dijkstraCalculator(allHops, route.maxJump, "time").findRoute([{ label: "start", coords: route.start }], {
                 label: "destination",
                 coords: route.dest,
             })[0];
@@ -500,28 +500,29 @@ export default Vue.extend({
                 console.log(leg.description);
             }
 
-            const direct = dijkstraCalculator([], route.maxJump, route.optimization).findRoute([{ label: "start", coords: route.start }], {
+            const direct = dijkstraCalculator([], route.maxJump, "time").findRoute([{ label: "start", coords: route.start }], {
                 label: "destination",
                 coords: route.dest,
             })[0];
-            if (route.optimization === "fuel") {
-                this.messages.unshift({
-                    key: this.messageKey++,
-                    type: "information",
-                    text: `Estimate: This route uses ${shortest.score} fuel. The direct route would use ${direct.score} fuel.`,
-                });
-            } else {
-                const MinutesPerPoint = 62 / 38;
+            // if (route.optimization === "fuel") {
+            //     this.messages.unshift({
+            //         key: this.messageKey++,
+            //         type: "information",
+            //         text: `Estimate: This route uses ${shortest.score} fuel. The direct route would use ${direct.score} fuel.`,
+            //     });
+            // } else {
+            const MinutesPerPoint = 62 / 38;
 
-                this.messages.unshift({
-                    key: this.messageKey++,
-                    type: "information",
-                    text:
-                        `Estimate: ` +
-                        `This route will take ${Math.round(MinutesPerPoint * shortest.score).toLocaleString()} minutes. ` +
-                        `The direct route would take ${Math.round(MinutesPerPoint * direct.score).toLocaleString()} minutes.`,
-                });
-            }
+            this.timeEstimate = { route: MinutesPerPoint * shortest.score, direct: MinutesPerPoint * direct.score };
+            // this.messages.unshift({
+            //     key: this.messageKey++,
+            //     type: "information",
+            //     text:
+            //         `Estimate: ` +
+            //         `This route will take ${Math.round(MinutesPerPoint * shortest.score).toLocaleString()} minutes. ` +
+            //         `The direct route would take ${Math.round(MinutesPerPoint * direct.score).toLocaleString()} minutes.`,
+            // });
+            // }
         },
 
         windowResizeEvent(ev: UIEvent) {
