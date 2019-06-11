@@ -697,6 +697,7 @@
 [0,"PC","0436:007F:0D55:0079","Nensta","Eihiao-Hisom","075A:0081:0E72:0048","Cakainm Expanse","Heseath XII"]
 [0,"PC","0436:0080:0D54:0079","Uhrmer","Yotosa XVIII","026B:007B:0B4A:0054","Gemenzanom Band","Retynem-Bash"]
 [0,"PC","0436:0081:0449:0079","Uademo Cluster","Gurang XIX","093E:0080:0D16:0046","Uujjust Instability","Yonqui-Signup"]
+[0,"PC","0436:0082:0B31:0079","Iaveykovi Spur","Teyvkarod","0493:007C:047F:002F","Utranaut Terminus","Evdarge XIII"]
 [0,"PC","0436:0087:0384:0079","Oclusca","Asvenp","032F:0082:04C2:0076","Jaadar Adjunct","Orqugca-Pulom VI"]
 [0,"PC","0437:0079:0D52:0079","The Arm of Axterian","Fuansa","0CA1:0081:0C84:0031","Erhard Terminus","Wadach"]
 [0,"PC","0437:007C:0D53:0079","Sea of Skurnh","Zaqog","0333:007B:0C58:0043","Mobiilie Quadrant","Negwenco"]
