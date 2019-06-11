@@ -25,7 +25,57 @@ function toJourney(list: List<IEndPoint>): List<[IEndPoint, IEndPoint]> {
 }
 
 class Explanation {
-    constructor(public readonly maxJumpRange: number, public readonly journey: List<[IEndPoint, IEndPoint]>) {}
+    private flat: List<IEndPoint>;
+
+    constructor(public readonly maxJumpRange: number, public readonly journey: List<[IEndPoint, IEndPoint]>) {
+        this.flat = journey.flatMap((value: [IEndPoint, IEndPoint]) => value);
+    }
+
+    public get first(): IEndPoint {
+        return this.flat.first();
+    }
+
+    public get last(): IEndPoint {
+        return this.flat.last();
+    }
+
+    public directDistanceLY(): number {
+        return Math.floor(this.first.coords.dist2(this.last.coords) * 400);
+    }
+
+    public directJumps(): number {
+        return calcExpectedJumps(this.maxJumpRange, this.first.coords, this.last.coords);
+    }
+
+    public journeyJumps(): number {
+        return this.journey
+            .map((leg: [IEndPoint, IEndPoint]) => {
+                const [a, b] = leg;
+                return calcExpectedJumps(this.maxJumpRange, a.coords, b.coords);
+            })
+            .reduce((a: number, b: number) => a + b);
+    }
+
+    public journeyBlackHoles(): number {
+        return this.journey.size - 1;
+    }
+
+    public speedup(): number {
+        const dTotal = this.directJumps();
+        const jTotal = this.journeyJumps() + this.journeyBlackHoles();
+        if (jTotal === 0) {
+            return NaN;
+        } else {
+            return dTotal / jTotal;
+        }
+    }
+
+    public hyperjumpReduction(): number {
+        const dTotal = this.directJumps();
+        const jTotal = this.journeyJumps();
+
+        return 1 - jTotal / (dTotal + jTotal);
+    }
 
     public legs(): List<ILegOfJourney> {
         return this.journey.map((leg, i) => {
