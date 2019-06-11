@@ -1887,6 +1887,7 @@
 [0,"PC","0C39:007D:04EE:0079","Sea of Domytow","Anmute","02DD:0082:0776:005E","The Arm of Hagweiw","Zehkuzn"]
 [0,"PC","0C3D:007E:0CB4:0079","Umuirik","Umaelichu","0A57:007C:022D:0067","Giqingag Conflux","Busukuch"]
 [0,"PC","0C3D:0081:0836:0079","Sea of Mowamij","Piyevsky","06AB:007E:0405:002F","Heelops Fringe","Hagovoso"]
+[0,"PC","0C3F:0089:0559:0079","Sea of Putnal","Avgorsk-Aikaz","0436:0082:0B31:0028","Iaveykovi Spur","Tayskyvi"]
 [0,"PC","0C41:007E:0480:0079","Claika Spur","Ivilhe","0D15:0080:09F8:0013","Kawikwo Cloud","Lashimba X"]
 [0,"PC","0C41:007E:0481:0079","Udogow","Ogyaim-Pel","089F:007E:0D68:0040","Liquat Adjunct","2omondh-Odud X"]
 [0,"PC","0C42:0083:0510:0079","Etjepaw","Tantsov-Atan","0375:007D:0A5B:002E","Aongwa Nebula","Maelino-Rida XIX"]
