@@ -4,95 +4,44 @@
   <div class="pure-u-1 route-summary">
     <template v-if="expl != null">
       <table class="pure-table no-border" style=" width: 100%;">
-        <tr>
-          <th colspan="2">ROUTE SUMMARY</th>
-        </tr>
-
-        <tr>
-          <td class="key-cell">Direct</td>
-          <td class="value-cell">
-            {{ expl.directDistanceLY().toLocaleString() }}&nbsp;LY, or {{ expl.directJumps().toLocaleString() }}&nbsp;jumps
-            <span
-              v-if="est !== null"
-            >({{ directTimeFormatted }}&nbsp;minutes)</span>
-          </td>
-        </tr>
-        <tr>
-          <td class="key-cell">Using&nbsp;DaRC</td>
-          <td class="value-cell">
-            {{ expl.journeyJumps().toLocaleString() }}&nbsp;jumps
-            <span
-              v-if="est !== null"
-            >({{ routeTimeFormatted }}&nbsp;minutes)</span>
-          </td>
-        </tr>
-        <tr>
-          <td class="key-cell">Reduction</td>
-          <td class="value-cell">
-            {{(expl.hyperjumpReduction() * 100).toFixed(2)}}%&nbsp;fewer&nbsp;jumps,
-            <span>{{(timeReduction * 100).toFixed(2)}}%&nbsp;less&nbsp;time</span>
-          </td>
-        </tr>
-        <!-- <tr v-if="est !== null">
-          <td class="key-cell">Time&nbsp;Reduction</td>
-          <td class="value-cell">{{(timeReduction * 100).toFixed(2)}}%</td>
-        </tr>-->
-        <tr>
-          <td class="key-cell">Cornell Index</td>
-          <td
-            class="value-cell"
-          >{{ expl.journeyBlackHoles().toLocaleString() }}&nbsp;Black&nbsp;Holes</td>
-        </tr>
-
-        <!-- <tr>
-          <td class="key-cell">CORNELL INDEX (Number of Black Holes used for route)</td>
-          <td class="value-cell">5</td>
-        </tr>-->
-
-        <!-- <tr
-        v-for="leg of journey.legs()"
-        :key="leg.index"
-        :class="{'pure-table-odd': isOdd(leg.index) }"
-      >
-        <td class="no-padding no-border">
-          <table class="pure-table no-border">
-            <tr>
-              <td class="key-cell">Route</td>
-              <td class="value-cell">{{ leg.index + 1 }}</td>
-            </tr>
-            <tr>
-              <td class="key-cell">
-                <template v-if="leg.index === 0">Start</template>
-                <template v-else>Exit</template>
-              </td>
-              <td class="value-cell notranslate">{{ journey.desc(leg.start) }}</td>
-            </tr>
-            <tr>
-              <td class="key-cell">
-                <template v-if="leg.index >= journey.legs().last().index">Destination</template>
-                <template v-else>Black&nbsp;Hole</template>
-              </td>
-              <td class="value-cell notranslate">{{ journey.desc(leg.dest) }}</td>
-            </tr>
-            <tr>
-              <td class="key-cell">Directions</td>
-              <td class="value-cell">{{ leg.description }}</td>
-            </tr>
-
-            <tr>
-              <td class="key-cell">Custom Waypoint</td>
-              <td class="value-cell">
-                <template v-if="showCoordinates">{{ leg.dest.coords }}</template>
-                <template v-else>
-                  <span
-                    class="galactic-coordinates-mobile"
-                  >{{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(0,4)}} {{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(4,8)}} {{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(8,12)}}</span>
-                </template>
-              </td>
-            </tr>
-          </table>
-        </td>
-        </tr>-->
+        <thead>
+          <tr>
+            <th colspan="2">Route Summary</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="key-cell">Direct&nbsp;Route</td>
+            <td class="value-cell">
+              {{ expl.directDistanceLY().toLocaleString() }}&nbsp;LY, {{ expl.directJumps().toLocaleString() }}&nbsp;jumps
+              <span
+                v-if="est !== null"
+              >in&nbsp;{{ directTimeFormatted }}&nbsp;minutes</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="key-cell">Using&nbsp;DaRC</td>
+            <td class="value-cell">
+              {{ expl.journeyJumps().toLocaleString() }}&nbsp;jumps
+              <span
+                v-if="est !== null"
+              >in&nbsp;{{ routeTimeFormatted }}&nbsp;minutes</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="key-cell">Reduction</td>
+            <td class="value-cell">
+              {{(expl.hyperjumpReduction() * 100).toFixed(2)}}%&nbsp;fewer&nbsp;jumps,
+              <span>{{(timeReduction * 100).toFixed(2)}}%&nbsp;less&nbsp;time</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="key-cell">Cornell&nbsp;Index</td>
+            <td
+              class="value-cell"
+            >{{ expl.journeyBlackHoles().toLocaleString() }}&nbsp;Black&nbsp;Holes</td>
+          </tr>
+        </tbody>
       </table>
     </template>
   </div>
