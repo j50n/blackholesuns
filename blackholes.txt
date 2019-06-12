@@ -2380,6 +2380,7 @@
 [0,"PC","0F53:0080:092C:0079","Yudhei Instability","Holinch XI","0466:0080:0E6B:003E","Horygegv Cloud","Tochiz-Komat"]
 [0,"PC","0F62:0081:08B1:0079","Isnians Sector","Ronbruk-Aimi","0F11:007D:0A0F:0010","Oengira Sector","Uepinn-Aoj"]
 [0,"PC","0F64:007F:0782:0079","Splatug","Davlovom","037E:0082:022F:0024","Rareidjap Expanse","Rifika"]
+[0,"PC","0F68:008D:0415:0079","Suzonachti Fringe","Eyjarjest System","0FFE:0081:075E:0015","Superrite","Iettoxe-Kadur System"]
 [0,"PC","0F84:0080:0568:0079","Eztist","Kanerel-Stnev","0896:0080:001E:0015","Dezhda Cloud","Miotarut"]
 [0,"PC","0F84:0083:0612:0079","Waolab Instability","Ijonagoe XI","05AC:0080:00A7:004E","Ramstia Shallows","Dihurochwo"]
 [0,"PC","0F91:0081:0B77:0079","Asvare","Gacung-Tula","0EC3:0081:0CC0:0038","Pitanik","Ikangwo VII"]
