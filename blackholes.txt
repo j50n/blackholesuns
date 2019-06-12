@@ -104,6 +104,7 @@
 [0,"PC","0116:007F:0C10:0079","Uzhayy","Naciusi-Iue","007E:007F:055E:0074","Gaatist Adjunct","Netforth"]
 [0,"PC","0117:007C:081E:0079","Ewheeve","Lacheb","07C4:0080:0126:0030","Ziesse Terminus","Arenno XII"]
 [0,"PC","0118:007B:04DB:0079","Lelkeret Mass","Uksetue-Yiser","01BC:007C:0C2E:0011","Wofordi Fringe","Iaraummea XII"]
+[0,"PC","011A:0081:06ED:0079","Cuktham Void","Nitrogen home","0E6F:0082:0572:0008","Rorukage Fringe","Kungma-Yachi"]
 [0,"PC","011A:0082:06EC:0079","Jigaik Shallows ","Uverkku-Adfo II","0B14:007C:01CC:0013","Unhitei","Chnyev"]
 [0,"PC","011B:0080:06EB:0079","Buonka","Abulwe","0D50:0083:0C69:0061","Pointo Spur","Daliaiu"]
 [0,"PC","011B:0081:06EB:0079","Yadumli Mass","Iijincu-Asod","0A93:0080:0194:0032","Ahmeto Expanse","Nikarisc"]
