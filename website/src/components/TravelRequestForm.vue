@@ -575,8 +575,9 @@ span.galactic-coordinates-mobile {
 }
 
 .warning {
-    color: red;
-    background-color: #ffc0c1;
+    color: black;
+    background-color: #f2f2f2;
+    border: 1px solid lightgray;
 }
 
 .no-padding {
