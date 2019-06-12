@@ -74,7 +74,7 @@ class Explanation {
         const dTotal = this.directJumps();
         const jTotal = this.journeyJumps();
 
-        return 1 - jTotal / (dTotal + jTotal);
+        return 1 - jTotal / dTotal;
     }
 
     public legs(): List<ILegOfJourney> {
@@ -113,9 +113,9 @@ class Explanation {
 
     public desc(endpoint: IEndPoint): string {
         if (endpoint.coords.system === 0x79) {
-            return `${endpoint.label}`; // (${endpoint.coords})`;
+            return `${endpoint.label}`;
         } else {
-            return `${endpoint.label}`; // (${endpoint.coords})`;
+            return `${endpoint.label}`;
         }
     }
 }

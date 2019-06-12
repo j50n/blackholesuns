@@ -80,7 +80,7 @@ export default Vue.extend({
         },
 
         timeReduction(): number {
-            return 1 - this.est!.route / (this.est!.route + this.est!.direct);
+            return 1 - this.est!.route / this.est!.direct;
         },
     },
 });
