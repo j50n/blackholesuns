@@ -5060,6 +5060,7 @@
 [0,"PS4","0DA3:007E:02AE:0079","Nidikap Mass","Itkyar-Asu X","037F:0082:0E3D:0029","Susamayole Cloud","Luburgun"]
 [0,"PS4","0DA3:0080:0FFE:0079","Tadteli","Kihachi","0000:007C:0BA2:0054","Sulaya Instability","Yubamish"]
 [0,"PS4","0DA7:0081:060C:0079","Ehbocot Mass","Elxinold","08FA:007C:0DD5:006E","Ormacp","Yushude"]
+[0,"PS4","0DA8:007D:0BBB:0079","Wakanatuc","Imuroto","0438:0080:0D8E:0049","Aoisso","Fitsyuno XVI"]
 [0,"PS4","0DA8:007E:051D:0079","The Arm of Arunchi","Itsugain VI","035B:007D:0C3F:0049","Cocarne Nebula","Umdonq-Zudok XIX"]
 [0,"PS4","0DAA:007F:0942:0079","Doaesclon","[GNG] Fukuha-Tebos","0982:0081:0D8A:0053","Okrult","[GNG] Arjorg XII"]
 [0,"PS4","0DAA:0082:06E3:0079","The Arm of Eehoga","[GNG] Gamadac-Gade","0917:007E:0D9B:0052","Tesohli Mass","[GNG] Uzulukh-Memon"]
