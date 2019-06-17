@@ -1458,6 +1458,7 @@
 [0,"PC","0832:007C:0019:0079","Ahoment Nebula","Nacheg-Etpla","0C5B:007F:0E85:001B","Koenpe Boundary","Engist"]
 [0,"PC","0833:0082:019A:0079","Ospeser","Nateyuh-Ori","01F5:007F:09EF:001D","Odzernoet Sector","Nechatu-Cupi"]
 [0,"PC","0834:0083:0EB2:0079","Movolu Void","Kuerle-Rider XVI","0EA0:007F:0872:0041","Higwell Cloud","Onhaav-Jorg"]
+[0,"PC","083A:007F:0A83:0079","The Arm of Helutas","In 17","0A71:007B:084D:0053","Niczern","Out 17"]
 [0,"PC","083B:007D:01AD:0079","Tusyapoko Expanse","Amiawar-Sudom","01D9:0083:06D1:005D","Asbruch Band","Yobarreli"]
 [0,"PC","083D:007D:076E:0079","Lokuq","Uureyk-Eish","077D:007D:07CA:0074","Sardni Cluster","Onumrer-Oners XVII"]
 [0,"PC","083D:007E:083F:0079","Nadnevs","Rienthank","07B7:0081:07FB:0074","Nengursk Terminus","Clardonn"]
