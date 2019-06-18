@@ -2751,6 +2751,7 @@
 [0,"PS4","012D:007D:07FC:0079","Anqangya Mass","Umoisi-Ruiu","0D28:007B:03A1:0053","Payeku Fringe","Rotosu-Delin"]
 [0,"PS4","012E:007C:07FC:0079","Olbyuskr Expanse","Ilungq","0220:007E:0B59:0034","Divitra Conflux","Stjori-Tachin"]
 [0,"PS4","012E:007D:07FC:0079","Ephaelici","Steykkx","0AF4:0080:01E9:0006","Okstaart Sector","Ixungm-Togam"]
+[0,"PS4","012E:008C:06FB:0079","Duseke Terminus","Natomag-Hol SYstem // F4 // Water","01C5:0080:052F:004E","Sea of Horymoffu","Eniwak-Asaha Xi System // G3pf // Water"]
 [0,"PS4","0131:007C:04BF:0079","Jianova","Kortin IV","0152:007C:0B64:000F","Stineal Adjunct","Cimejes-Ioga"]
 [0,"PS4","0133:007F:085B:0079","Oquill Cloud","Gaqukanna","059A:007D:0E4E:0034","Wochuquer Expanse","Syegors-Nokye XVIII"]
 [0,"PS4","0133:0081:08C5:0079","Shberi Adjunct","Ihuini-Bum","0255:0083:0BBA:0035","Rorovoy Adjunct","Toruiteln I"]
