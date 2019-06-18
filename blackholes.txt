@@ -2114,6 +2114,7 @@
 [0,"PC","0C88:007D:03A3:0079","Beyleopol","Autuks-Eio IX","0BEE:0082:0CD6:0015","Yipatop","Giumfu-Tac"]
 [0,"PC","0C89:007D:083F:0079","Sanglobo Quadrant","Yinaksk","0C5C:007B:090F:0024","Hazinsl Instability","Sunneymedi"]
 [0,"PC","0C8D:0082:0C90:0079","Eidjaroia Expanse","Tushka-Gian","0CDE:007C:03DA:001E","Luklhaleun Fringe","Ajainag-Nuzaki XIX"]
+[0,"PC","0C8F:007E:0450:0079","Nutyres","Rogeshir","0B7F:007D:0357:0061","Kilytaen Boundary","Kihyanc"]
 [0,"PC","0C8F:0080:0DC4:0079","Degawa","Ahallri","05B4:0083:0110:0018","Stsego Nebula","Amatom-Idete XIV"]
 [0,"PC","0C92:007C:055B:0079","Iebara Conflux","Onosluza XVIII","06BC:007E:02ED:0025","Gumiusa Sector","Urston"]
 [0,"PC","0C92:007C:098C:0079","The Arm of Mabeek","Burtfal","0BEF:0083:0AB1:003C","Ocijoldis Cluster","Omutni"]
