@@ -372,6 +372,7 @@
 [0,"PC","0297:007D:0B6A:0079","Olasak Conflux","Nokawak-Neri","0417:007E:0302:0050","Imbula Boundary","Jiangy-Abar XVII"]
 [0,"PC","0299:0082:04B9:0079","Ravoora Adjunct","Nakinnarv XIX","01C1:007E:077C:0002","Leopozi Instability","Locedae"]
 [0,"PC","029B:0083:0C6A:0079","Enliux Void","Roshinjot III","090D:007D:012B:0052","Ugiunts Sector","Hebeit System"]
+[0,"PC","029B:0084:0C6A:0079","Drleyd Shallows","Itkyara-Atta","03EE:0080:0D97:0022","Arharwa Nebula","Okohashiv"]
 [0,"PC","029C:0081:0476:0079","Naphian Instability","Orendeyr","01A7:007E:0738:000B","Ogtiat Boundary","Topravl-Deiad"]
 [0,"PC","029D:007C:03C3:0079","Ozonai Band","Gamerin","0159:0081:095E:0056","Lisatel Band","Esbakkinl III"]
 [0,"PC","029D:0080:0C85:0079","Euleiad","Yiyppipolv VIII","0DED:007B:0451:0004","Epyaxa Instability","Liboen XV"]
