@@ -222,6 +222,7 @@
 [0,"PC","0194:0081:0970:0079","Choman Band","Akrama-Okaw XV","061A:0083:0E3A:006E","Hanluorap Quadrant","Ivuvero-Qay"]
 [0,"PC","0194:0083:07F3:0079","Yesuvit","Enport","0B12:0081:0D8F:006C","Yugawat-Uole","Ajasis Mass"]
 [0,"PC","0195:007F:0527:0079","Fabergus","Ligtown XVIII","01A8:007F:0AE1:0011","Ichawc Cloud","Beppus-Sef"]
+[0,"PC","0195:0082:0AD5:0079","Ivguin Sector","Onbetsu-Uon","0209:007E:0B92:0056","Ixenov-Fringe","Yakelds"]
 [0,"PC","0196:007F:09E1:0079","Stvanito Quadrant","Nenakash","0E2C:007E:059D:0056","Ocudano Fringe","Isflop-Efak"]
 [0,"PC","0196:0082:09E7:0079","Virayut","Birunoka III","09B5:0082:0197:003C","Kuchrys Instability","Loringa"]
 [0,"PC","0199:0083:0A40:0079","Zongoi Void","Qayugku","025A:007D:0456:003D","Rikabugu","Obinqe"]
