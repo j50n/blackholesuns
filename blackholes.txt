@@ -690,6 +690,7 @@
 [0,"PC","03E7:007F:03C9:0079","Eskiyac","Icutum III","0A11:0081:0D6D:0053","Jaelgi Maxx","Icutum III"]
 [0,"PC","03E7:0080:0B26:0079","Rosmarckie Cluster","Utashi","0CBB:007C:09E7:005E","Cutinephy","Ubeihe"]
 [0,"PC","03E8:0082:037C:0079","Hognes Boundary","Nennonsa","01FA:007E:079B:0038","The Arm of Tapare","Kaheernlu"]
+[0,"PC","03E8:0082:037D:0079","Odorst Adjunct","Jirant","0D8C:0080:05AB:0073","Inskay Nebula","Nudalien"]
 [0,"PC","03EA:007F:03CA:0079","Enocori","Rulyazi-Abu","05A1:007C:02B1:001E","Tinans","Rulyazi-Abu"]
 [0,"PC","03EC:007F:03C8:0079","Quessi Band","Dupprun-Hioj XI","06FF:0082:0DB5:0073","Evdoki Anomaly","Dupprun-Hioj XI"]
 [0,"PC","03EC:0081:034F:0079","Fekarak","Benocele","0DAC:0082:05A3:0068","Ruckmycu Cluster","Iurgha"]
