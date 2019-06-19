@@ -9,6 +9,7 @@
 [0,"PC","0000:0002:0FFA:0079","Japakot","Iuraka-Ugsv","0000:0080:0F19:0057","Wikirn Void","Ibma'agd"]
 [0,"PC","0000:0002:0FFB:0079","The Arm of Jajabe","Fremkhoy XIII","0CA4:0081:0000:001A","Kennessi Nebula","Aadirfl-Aka"]
 [0,"PC","0000:0002:0FFC:0079","Idlerc Cluster","Anoyam-Misom","0868:0082:0FFE:0056","Zahukchun","Kuzent"]
+[0,"PC","0000:0002:0FFD:0079","Mumboes Terminus","Vushcuhi","029D:007C:0000:001A","Yaevale","Ikovsk"]
 [0,"PC","0000:007E:0001:0079","Nutpaji Fringe","Kazixi-Puphe","0B02:007F:0000:003B","Sea of Etulla","Odderzhu"]
 [0,"PC","0000:007E:0002:0079","Auciates Nebula","Roezez","0FFE:007D:059E:0068","Noirei Fringe","Xabyai-Seve"]
 [0,"PC","0000:007F:0000:0079","Vedulay Cloud","Olenwag [Black Hole]","012D:007E:0000:006D","The Arm of Agnientge","Gulang"]
