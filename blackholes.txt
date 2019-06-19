@@ -323,6 +323,7 @@
 [0,"PC","0205:007E:0B3C:0079","Nevikal Cluster","Hicheo","0C1A:0080:0D57:003D","Mugaia","Atushan-Shida IX"]
 [0,"PC","0207:007B:0827:0079","Myisluge Boundary","Hoseahab III","026A:0080:09ED:0075","Sasten Expanse","Tamadym-Afut"]
 [0,"PC","0207:007F:0660:0079","Lufour Terminus","Eorgiyevs 79","0E1C:0082:0791:002C","Sea of Oochrel","Rikuch-Sti IX"]
+[0,"PC","0209:007E:0B93:0079","Ubboltz Shallows","Yudyon I","013C:007B:0957:002F","Gehsietet Quadrant","Amurob-Ibar X"]
 [0,"PC","020A:007D:0498:0079","Uambda Anomaly","Ratneyr","052E:007D:0E2E:0066","Tatreut Mass","Kukonkoh VII"]
 [0,"PC","020B:007D:09E4:0079","Hunayol Sector","Hobaya-Hida XVII","063C:0081:0DED:004E","Oakiuti","Dakyun-Tockt"]
 [0,"PC","020B:007E:0954:0079","Yelorayh","Agkamri","0E07:0083:07A4:003D","Oknari Sector","Urgatc-Gwi XV"]
