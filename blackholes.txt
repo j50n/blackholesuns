@@ -6135,6 +6135,7 @@
 [9,"PC","0C91:007F:03E8:0079","The Arm of Hitones","Diegor","05AC:007F:0262:0037","Uyenawy","Diegor"]
 [9,"PC","0CAB:0080:02EE:0079","Laknor Anomaly","Lopung","08A8:007C:0ED1:0054","Iweumiz","Lopung"]
 [9,"PC","0CB9:0080:0BAA:0079","Seas of Fozawak","Akimry","0DEB:0081:0852:0002","Elsiumfus Void","Akimry"]
+[9,"PC","0CBA:007B:0C53:0079","Behnell Fringe","Duhlekti","02E4:0082:0BCA:0003","Goulay Terminus","Akrotok-Obo"]
 [9,"PC","0CCC:007D:0B2F:0079","Nogputzi Adjunct","Lufallr-Kawag IX","0D86:0082:0697:004A","The Arm of Mejackc","Lufallr-Kawag IX"]
 [9,"PC","0CD9:007A:0358:0079","Idsongl Sector","Ladfotoka","0C7B:007F:030E:0004","Bihoteche","Arbrei-Inu XIV"]
 [9,"PC","0CE6:0080:0B3C:0079","Sea of Nawaima","Nadengbu","0D26:007C:0548:000E","Uygendo","Nadengbu"]
