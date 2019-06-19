@@ -159,6 +159,7 @@
 [0,"PC","0137:0081:071C:0079","Shonta","Seiyose-Imovs","0B85:007D:0235:0057","Lazunov Sector","Elisbrev"]
 [0,"PC","013A:007D:075E:0079","Jiganel","Gorekha-Tavof","0152:0081:08F2:0027","Jiantli","Ehemsuw"]
 [0,"PC","013A:0081:06A9:0079","Rummung Quadrant","Zahuglun I","0526:007B:01C6:003B","Earexe","Neungl"]
+[0,"PC","013C:007B:0957:0079","Gehsietet Quadrant","Kuchuore","0933:007F:0145:0053","Oudhur Sector","Olmasa"]
 [0,"PC","013C:007F:0964:0079","Pardohruv Boundary","Fujieda","032A:0081:0327:004C","Ehpmuti Sector","Raetsk-Lodo"]
 [0,"PC","0140:0083:08D8:0079","Ouhute Cluster","Aneiurom","049C:0083:022C:0055","Tatvash Void","Alynuymit XIII"]
 [0,"PC","0144:007F:07FC:0079","Yixidiu Band","Tateba","0BFE:007C:0D55:0055","Guguli Conflux","Gaqoil IX"]
