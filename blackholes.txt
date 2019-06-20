@@ -1675,6 +1675,7 @@
 [0,"PC","092B:0082:00FB:0079","Iuheik Expanse","Satota-Kao V","0194:007D:0AEB:0050","Vadols Nebula","Totawa-Keana VII"]
 [0,"PC","0930:007E:0000:0079","Rocmils Band","Naldin-Kisp","01C1:007F:0D09:0066","Bazhaol","Narondor I"]
 [0,"PC","0933:007E:09B0:0079","Mosemeow","Mopurus-Ivn XII","09F3:007F:087A:0064","Linarki Anomaly","Wubiggi"]
+[0,"PC","0933:007F:0145:0079","Oudhur Sector","Soilah-Moms","0BAC:007D:0DB0:0043","Kukjuba Adjunkt","Ivdanni-Kom VI"]
 [0,"PC","0933:0081:0803:0079","Utyson Terminus","Frsagsf","088D:007E:0701:0069","Lulkese Cloud","Erkess XVI"]
 [0,"PC","0934:007C:0686:0079","Wimerxia","Ozersk","08D4:007F:09A2:0078","Fossik Cloud","Reraeyja IX"]
 [0,"PC","0936:007E:02DE:0079","Nagrom Instability","Ixhamn-Oft","05B7:0080:0CAD:006C","The Arm of Temuthn","Gobaojiak"]
