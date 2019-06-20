@@ -325,6 +325,7 @@
 [0,"PC","01F8:0081:0A9D:0079","Leyssar Band","Inzadg X","0C54:0080:0CDE:0019","Sacelru Boundary","Mukosi"]
 [0,"PC","01F8:0083:0543:0079","Auacoman Void","Akumod-Bul","0DA4:0083:04A6:003A","Sea of Nicalcayl","Inzaka-Vate I"]
 [0,"PC","01F9:007B:0A00:0079","Sea of Iboltz","Kuitangxi","0969:007F:01DE:0042","Tetichup Nebula","Ualiopeto IV"]
+[0,"PC","01FA:007E:079B:0079","The Arm of Tapare","Boyaixi-Wera","0CD7:0082:0B7E:003F","Gothianso Band","Ioches"]
 [0,"PC","01FA:007F:079B:0079","Iswicky Band","Jonanj","0C44:0080:0C2C:0054","Uxelli Shadows","Balsan"]
 [0,"PC","01FB:007E:095D:0079","Uggamar Anomaly","Zemskyvin","0CFC:007B:0476:001B","Ekfurrame Anomaly","Sonoda"]
 [0,"PC","01FB:007E:09B2:0079","Reyszcz Mass","Hodadja-Aoan","0D34:0080:0B56:0071","Forwar Mass","Ussare"]
