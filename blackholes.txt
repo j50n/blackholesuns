@@ -6244,6 +6244,7 @@
 [9,"PC","0FBA:0080:0045:0079","Einhur Adjunct","Ebbamei","0364:0082:0FFE:0010","Rafarkat Void","Achaya"]
 [9,"PC","0FFD:0080:0001:0079","Nobayne Fringe","Yennecto","0554:007B:0FFE:0070","Sopwite","Oguahi-Kog"]
 [9,"PS4","0197:007C:05A3:0079","Oudrom Spur","Rigoffitt","0519:007B:01E0:001E","Ciorib Shallows","Rotuxual"]
+[9,"PS4","01D5:007C:0A0C:0079","Soszonya Mass","Haywarr","04F5:0080:0DAA:006C","Lasonto Conflux","Egnagin"]
 [9,"PS4","01FE:007F:048C:0079","Ranebuch Quadrant","Oaeyja-Menan","0294:0082:03C4:0003","Udwori Sector","Biogradur "]
 [9,"PS4","0236:007E:0BBC:0079","Agmani Adjunct","Monkxian","0197:007C:05A3:0047","Oudrom Spur","Aiutska"]
 [9,"PS4","0277:007D:0829:0079","Ruomuku","Ehuiju","098C:007F:0D3F:003B","Nobroual","Waffor-Ago"]
