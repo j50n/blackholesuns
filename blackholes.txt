@@ -5362,6 +5362,7 @@
 [0,"PS4","0D5C:007D:0B3B:0079","Uneate X","Hertyu Nebula","0D1B:0080:047D:0076","Flyysin","Omsoni Nebula"]
 [0,"PS4","0D5E:0080:03D0:0079","Tazinskim","[GNG] Epingh X","08BB:0080:0EB4:0042","Yokusub","[GNG] Aqoili-Dauri"]
 [0,"PS4","0D5F:007B:01AB:0079","Gautiiq Quadrant","Ebonique","0AB6:007D:0FC6:0068","Iscouguy Cluster","Aotieh VI"]
+[0,"PS4","0D5F:007C:05EF:0079","Sea of Gedoadar","Brence-Siiva XVI","0C5B:007E:0BA7:0076","Wetesinte Terminus","Ogisto-Kokon"]
 [0,"PS4","0D60:007D:0691:0079","Erulese Adjunct","[GNG] Ruakh-Koms IX","05B0:0080:02FF:0030","Eltrag Mass","[GNG] Akeren"]
 [0,"PS4","0D60:007F:0BA3:0079","Kehpm","Loperoya","0191:007C:07DB:0071","Radcliadj Quadrant","Atunutla"]
 [0,"PS4","0D62:0080:0C3F:0079","Ifferov Cloud","Fredart-Layhy","066F:007C:0E9C:0073","Ekdeko Fringe","Reykkil"]
