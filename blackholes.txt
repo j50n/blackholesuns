@@ -2352,6 +2352,7 @@
 [0,"PC","0DC8:007C:0BC8:0079","Iutully Mass","Iointi XVII","03ED:0080:0D85:0013","Loymedb Terminus","Omodem-Osk"]
 [0,"PC","0DC8:007F:0CCF:0079","Hupagaha Sector","Dapjon-Isum","0F4F:0082:0988:0012","Rytehos Terminus","Gljudu"]
 [0,"PC","0DC8:0081:0AFA:0079","Gevani Cluster","Oriyak-Rexan","049C:007E:0283:0054","Yiwriga","Ketoka-Abang XV"]
+[0,"PC","0DCB:007E:08CF:0079","Sopita Quadrant","Zuhuglu","0473:007B:036A:0033","Wixian","Wiverac"]
 [0,"PC","0DCC:0080:0000:0079","Kowsky","Jaoalf-Saari","0881:0080:0FFE:0016","Untien Void","Ryomskyvin"]
 [0,"PC","0DCE:007C:051A:0079","Axterai Quadrant","Kesenda","01AF:0080:06CB:0056","Obelet Instability","Peyrust-Gafiel"]
 [0,"PC","0DCE:007E:0936:0079","Geograab Terminus","Aagera-Lalrin","0233:0083:08E9:006F","Jujaras Cloud","Eddelb"]
