@@ -1877,6 +1877,7 @@
 [0,"PC","0A3F:00AB:015F:0079","Loroyuk Quadrant","Imitsu-Armen IV","01C5:0080:04F0:0053","Yeianv Sector","Adnaysk-Vol XVIII"]
 [0,"PC","0A40:007E:0E5A:0079","Vucasp Adjunct","Besanhao XVI","01CD:0082:057C:0039","Remondj Band","Tukomuli"]
 [0,"PC","0A40:0080:0A2F:0079","Xurobrer Expanse","Oyoulvin","0859:007D:04EF:003C","Mukarnut","Imaseb-Touso"]
+[0,"PC","0A40:00AA:015F:0079","Nufaxis","Eosanql","0DDC:0081:0447:0033","Ufongk Expanse","Skiptoniq I"]
 [0,"PC","0A40:00AB:015E:0079","Uyarrhey","Eboskin","0552:0082:0195:0024","Izomba Adjunct","Zugash-Ayos XIII"]
 [0,"PC","0A41:007C:0162:0079","Nidwara","Olgors XIV","0CB3:007E:0D18:001D","Uwirdhi","Otansas-Taina VII"]
 [0,"PC","0A41:007C:0163:0079","Pivana Spur","Toigaki XV","05AE:007C:0E85:0041","Jalpese Shallows","Brayacha-Zuwaj"]
