@@ -6048,6 +6048,7 @@
 [9,"PC","02AF:0083:04FD:0079","Ealerus","Uningt","0B25:0080:0D2A:0022","Dasayeka Instability","Uningt"]
 [9,"PC","02B2:007E:0AE0:0079","Luphry Quadrant","Deront I","08BE:007D:0DED:0025","Leafit","Deront I"]
 [9,"PC","02DC:0081:0B52:0079","Ritshid Terminus","Legorski","0E0D:007F:0810:0071","Huevital Spur","Legorski"]
+[9,"PC","02E4:0082:00BC:0079","Goulay Terminus","Sallma","01C6:007D:06F5:0012","Iformo Boundry","Etagahay X"]
 [9,"PC","033E:007E:03B1:0079","Sea of Rirhuhy","Emneor-Aily","0B3C:0082:0D79:0009","Sea of Gumarlt","Udachk"]
 [9,"PC","0345:0083:05E9:0079","Deholte Anomaly","Ijiraq","0BFC:0080:04D1:0068","Nisyolvana Nebula","Ieyang-Gagil"]
 [9,"PC","037D:0080:0D25:0079","Igyinne Nebula","Beatti-Aegur","084F:0082:0EC4:006C","Liaurini Shallows","Busana-Hio"]
