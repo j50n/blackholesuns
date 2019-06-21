@@ -3973,6 +3973,7 @@
 [0,"PS4","06B3:0082:01DF:0079","Fastab Mass","Adpise-Otur","0E31:0083:0849:002F","Kamycur Mass","Hoshizu IV"]
 [0,"PS4","06B5:007C:0AA1:0079","Caeren Nebula","Ayongm","0A42:007B:09C5:003E","Virietre","Merimatsu"]
 [0,"PS4","06B9:007E:0CE2:0079","Kowako Quadrant","Jizhar","0319:007E:08F3:0036","Manclau Cluster","Iigajray XIII"]
+[0,"PS4","06BA:0080:0E14:0079","Oqomanin","Volanianu XV","0D95:007B:056E:0071","Eforto Terminus","Ozovater VIII"]
 [0,"PS4","06BD:0083:0946:0079","Loddyal Adjunct","Imsbyt-Inn IX","06A4:0082:0911:0077","Qabalav Spur","Nipandli XVIII"]
 [0,"PS4","06BF:007C:09B7:0079","Benetiansi Adjunct","Iigashi","0717:007F:09DA:0057","Sea of Dogcuti","Onvols-Etian"]
 [0,"PS4","06BF:0081:09B2:0079","Dentzig Void","Abarnau-Sus System","09DF:007C:072B:0051","Iayambish Expanse","Ovskoye X System"]
