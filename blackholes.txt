@@ -211,6 +211,7 @@
 [0,"PC","016D:007B:0A67:0079","Sea of Ilment","Rouhek","0B47:007D:01E2:003E","Snicez Spur","Adjacu XVII"]
 [0,"PC","016D:0081:081C:0079","Wailun","Omakina-Dajupa","01D1:007E:05F3:005A","Owskia Nebula","Uroras"]
 [0,"PC","016E:007B:085F:0079","Ijkmas","Laossa-Anka","02F6:007F:0C21:0061","Jeffit","Lajodun"]
+[0,"PC","0172:007E:0580:0079","Bryazza","Ridevkazhid","0EDA:007E:06D5:0026","Nasvavro Quadrant","Risufil-Reritn"]
 [0,"PC","0173:007C:091A:0079","Yaayag Shallows","Okingt-Ceti I","01E3:007E:0591:0072","Gugsany Boundary","Ubtandin"]
 [0,"PC","0178:007C:084A:0079","Ahmatas Fringe","Myridas VII","0184:007F:07ED:000C","Rohlinna Anomaly","Samead-Serka"]
 [0,"PC","0178:0082:074B:0079","The Arm of Zayaeva","Mabaraos XVIII","0E28:007F:05E8:0054","Ciahay","Etskyv-Qeda II"]
