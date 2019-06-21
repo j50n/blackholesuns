@@ -6024,6 +6024,7 @@
 [9,"PC","01A3:0082:072B:0079","Ofgreg Cluster","Kumiot-Durs XII","04E3:0082:0276:0073","Gisanisle","Kumiot-Durs XII"]
 [9,"PC","01C0:0083:0791:0079","Syapem Mass","Makomoro","01DE:0081:0712:004B","Zechaqu Quadrant","Makomoro"]
 [9,"PC","01C4:007C:0691:0079","Emnoch Anomaly","Lozerzh","0C6A:0082:0C87:0075","Empsuto Terminus","Lozerzh"]
+[9,"PC","01C6:007D:06F5:0079","Iformo Boundry","Awaraoc-Olmer","0359:0082:0C2C:0049","Alysesalk","Zilyuc-Owc IX"]
 [9,"PC","01D0:0082:0ADC:0079","Sea of Neurra","Nudvikiu","0D0F:007F:0C7B:0006","Afooster Spur","Pizepa"]
 [9,"PC","01D1:0082:0ADC:0079","Oedscah Instability","Ekangju-Dize XVI","0DEF:0082:0B37:0031","Reonac Expanse","Uxainc"]
 [9,"PC","01D7:007E:06F1:0079","Kuolut Void","Mobould","04E8:0083:02A4:0056","Chyakonib","Mobould"]
