@@ -3578,6 +3578,7 @@
 [0,"PS4","0465:0080:0D73:0079","Gibsons Sector","Ujiedai XVIII","0CBB:007F:0396:005A","Wellang Anomaly","Yuxiam IX"]
 [0,"PS4","0467:0081:0217:0079","Hahgwelc Terminus","Lensor-Ezhon IX","0135:0082:08E4:006E","Sea of Haquerrow","Orellsest IV"]
 [0,"PS4","0467:0081:051D:0079","Ivikaz","Aingyu-Ekey VI","0C73:007E:08ED:003E","Sea of Elczyk","Shofnuni"]
+[0,"PS4","0469:0081:03BD:0079","Ortdamqua","Hirackro","04B2:0081:0C66:0067","Ebyerk Terminus","Lahshi-Owbri"]
 [0,"PS4","046A:007F:0ECD:0079","The Arm of Ragskirke","Tangebok","0BD5:007B:0167:0007","Efischu","Rechny-Atka"]
 [0,"PS4","046B:007D:0DB8:0079","Ouhoto Instability","Bratig System","0D64:0081:0BF6:001B","Gombaud Boundary","Saurora-Kod System"]
 [0,"PS4","046C:007B:02B6:0079","Tizsichm Adjunct","Adrinsk","0E50:007F:084E:0026","Ubeirogr Boundary","Ibetsu-Ujino IX"]
