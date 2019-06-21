@@ -6375,6 +6375,7 @@
 [9,"PS4","0317:007D:0471:0079","Butisle","Gubanov-Nodaba","07D6:0080:0DFF:002B","Enmyoin","Uwainfie"]
 [9,"PS4","034A:0082:0B78:0079","Helevac Expanse","Nayazhod XV","0268:0081:0679:0029","Hoveno Spur","Ovgrad"]
 [9,"PS4","042E:0077:0D54:0079","Otreie Void","[HUB27-79] Kizawa","01D5:007C:0A0C:005D","Soszonya Mass","Biorian-Kai"]
+[9,"PS4","042F:0078:0D54:0079","Omskio Instability","Useiyos-Geyl VII","0D88:0080:049B:0057","Urphak","Pelunguzho"]
 [9,"PS4","042F:0078:0D55:0079","Riwala","[HUB1-!-79] Ementtib","0A91:007F:0DF9:000C","Eiadim Sector","Anagif-Uku XVIII"]
 [9,"PS4","04F6:0080:0DA9:0079","Osnate","Utonya-Noporp","0D87:007F:04DB:006C","Eoniij Mass","Uulaohu-Ryu XVI"]
 [9,"PS4","0519:007B:01E1:0079","Eforci Expanse","Anuwaii","0E5F:007D:0A12:0074","Yoidani Anomaly","Sukiham"]
