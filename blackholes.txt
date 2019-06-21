@@ -177,6 +177,7 @@
 [0,"PC","0147:0082:0711:0079","Orrite Void","Gohuadi","01A5:0081:0A35:003B","Ovskyam Instability","Ikkedea XII"]
 [0,"PC","0148:007D:0778:0079","Sowilae Terminus","Moptorran","028B:007F:0428:0075","Evskitas Nebula","Kielind-Olu"]
 [0,"PC","0148:0082:08FF:0079","Bubinne Terminus","Ulovod XVII","0490:007C:0DC9:002A","Jisune Spur","Futirpr"]
+[0,"PC","014A:0081:0918:0079","Umbwend Void","Tulebye-Edvi","041B:007C:0D7D:006F","Macince","Einoslo"]
 [0,"PC","014C:0077:0726:0079","Westaiy Spur","Darkest Light","07BC:0080:0EB1:0015","Leynnami","Rudnya"]
 [0,"PC","014C:007C:07B1:0079","Cuskay Sector","Lusiden-Ivels","0E89:007F:093B:0006","Peding","Dorlusk-Hira XI"]
 [0,"PC","014C:007D:08E3:0079","Flhelff Shallows","Ubimuru-Ineu XVI","0223:007C:0B41:001F","Irethe Cloud","Aneius-Tajim"]
