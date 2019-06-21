@@ -4003,6 +4003,7 @@
 [0,"PS4","06E9:007F:003D:0079","Iessov Adjunct","Mopainr IX","00BC:0081:0536:0035","The Arm of Nujemar","Shampus II"]
 [0,"PS4","06EE:007D:015F:0079","Sea of Naybelza","Treasure System","0771:0083:0EA0:002D","The Arm of Xinape","Maqvisvel XV"]
 [0,"PS4","06EE:007E:012B:0079","Nequet Boundary","Naqjins-Man","02FA:007C:0355:0044","Wagnit Cluster","Dazandain"]
+[0,"PS4","06EF:007E:0DFB:0079","Exejtol Sector","Nadpis-Yas IX","01FA:0081:082D:0030","Nujunasti Fringe","Oainen XIV"]
 [0,"PS4","06F1:0080:0CA7:0079","Kaxira Mass","Orinba","05FC:0081:03BB:0040","Ikkaidz Cluster","Zayorma-Ges"]
 [0,"PS4","06F4:009A:06F4:0079","Axawege Nebula","Arakas","090B:0081:070C:0063","Ouws","Lufannur"]
 [0,"PS4","06F9:007C:0756:0079","Kikalaham Mass","Just passing through v22","0736:0081:0727:006B","Repahylde Nebula","Dawachihi"]
