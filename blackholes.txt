@@ -5019,6 +5019,7 @@
 [0,"PS4","0B2C:0078:0208:0079","Eeredku Cloud","Pezethy-Vagr","0554:007D:01DB:0063","Gisteau","Barasuka"]
 [0,"PS4","0B2D:0080:0EFF:0079","Adesatol Adjunct","Safradu-Ezh","08F5:007D:006B:0003","Shrito","Asukhlo"]
 [0,"PS4","0B2F:007E:0D6D:0079","Ugdunu Spur","Gakhan-Lushe","0765:0083:0E34:003A","Dedekou Quadrant","Smulaita"]
+[0,"PS4","0B2F:0081:020F:0079","Ehtond Cloud","Shleek System // F0pf // Water","0A20:0082:01AC:006D","The Arm of Utunhi ","Cuomul-Miami XI System // G4f // Water"]
 [0,"PS4","0B2F:0081:0253:0079","Lingiko Adjunct","Tebashi-Uoz","0B56:0081:027C:005E","Sea of Jachev","Acquel"]
 [0,"PS4","0B2F:0082:0211:0079","Kipitae Void","Biawso-Uwana System // F2pf // Water","0CDA:0081:0C93:003C","Naksmites Boundary","Izloynsk System // F4f // Water"]
 [0,"PS4","0B31:007D:05E3:0079","Livsjog","Dahakaynt","0A22:007C:0B18:0070","Watians Void","Narrhus"]
