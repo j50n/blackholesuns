@@ -6389,6 +6389,7 @@
 [9,"PS4","042F:0077:0D54:0079","Nijhwal Boundary","[HUB20-79] Hitimpse XIX","05C1:007D:0E19:000F","Laftara Nebula","Goyeruk"]
 [9,"PS4","042F:0078:0D54:0079","Omskio Instability","Useiyos-Geyl VII","0D88:0080:049B:0057","Urphak","Pelunguzho"]
 [9,"PS4","042F:0078:0D55:0079","Riwala","[HUB1-!-79] Ementtib","0A91:007F:0DF9:000C","Eiadim Sector","Anagif-Uku XVIII"]
+[9,"PS4","0430:0077:0D56:0079","Zahrel Expanse","[HUB23-79]","0AC6:0082:0DE1:001B","Oryechy Shallows","Megion-Poyong"]
 [9,"PS4","0430:0078:0D54:0079","Marcki","Fotoi-Waxun","0862:0080:0E7C:000A","Mipbelynuc","Kameras-Enpok I"]
 [9,"PS4","0430:0078:0D55:0079","Anolamga Spur","Lilinhe-Uoy","0185:007E:0774:0036","Epomech Expanse","Suurag-Sur"]
 [9,"PS4","0430:0078:0D56:0079","Sea of Zonyayp","Sascruxe V","0976:007D:01AB:0063","Miwambh Shallows","Fiksovet"]
