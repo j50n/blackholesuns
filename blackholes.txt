@@ -3702,6 +3702,7 @@
 [0,"PS4","04AC:007E:04EC:0079","Naquelc","Imiamid-Magang XI","0483:007F:0AC8:0074","Bavara Cluster","Edingo XIX"]
 [0,"PS4","04AD:007C:0FFE:0079","Kausas","Kobindbi","00EA:0080:0CE2:0012","Uuahtun Fringe","Karats-Losh"]
 [0,"PS4","04B5:007F:0288:0079","Iborin Cloud","Uhbeytz","0BB9:007B:02E5:0044","Crafuji Void","Mabatlin V"]
+[0,"PS4","04B6:0081:0C63:0079","Irhear","Kuomin VI","0293:0082:083D:0039","Ucpheo Cluster","Doriyam-Notri"]
 [0,"PS4","04B7:0080:0DF7:0079","Yarsadali Nebula","Uejeele","0BB0:007D:0257:003B","Cuagee Cluster","Pomorge-Hijia"]
 [0,"PS4","04B8:007C:023F:0079","Sea of Poella","Manogo-Xan IV System","019C:007F:0981:002C","Irpinto","Konvor System"]
 [0,"PS4","04BC:007E:0D4A:0079","Mupkean","Tiamia VI","0999:007D:020C:0030","Tanevsk","Antanym"]
