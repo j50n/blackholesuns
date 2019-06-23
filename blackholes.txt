@@ -6482,6 +6482,7 @@
 [9,"PS4","0D85:007F:04D6:0079","Pezicna Expanse","Nodzhira","01B1:0080:07C2:001F","Xurobell Mass","Abhani-Popa"]
 [9,"PS4","0D8D:0081:094D:0079","Hiniugo","Ufarha","0C6A:0081:0478:000F","Jeleonana","Uuraia VIII"]
 [9,"PS4","0DB5:007D:06D2:0079","Sehebk","Kakega-Iur","02F8:0081:0AD3:0053","Duysaner","Deneta-Ladbar XIX"]
+[9,"PS4","0DBE:0082:04B3:0079","Lipartyu Fringe","SARAZU","08BE:0081:017A:005C","The Arm of Yekleid","USCATIOC"]
 [9,"PS4","0E2C:007C:07D0:0079","Retmout","Mupusta","08C1:007F:01EE:0071","Qeterr","Yaronq-Hasuk"]
 [9,"PS4","0E60:007D:0A12:0079","Vorayako Shallows","Daskrana XIX","0CF6:007E:0C6E:0001","Lishotra Sector","Tavofas"]
 [9,"PS4","0EA4:007F:0744:0079","Rakash Cluster","WONGJU","0DBE:0082:04B3:0043","Lipartyu Fringe","ICHIOTS"]
