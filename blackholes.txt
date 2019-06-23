@@ -6104,6 +6104,7 @@
 [3,"PS4","082E:0082:0B80:0079","Kregnews","Redela System ","0AD4:007C:0607:004E","Muvaba Nebula ","Ekiosc System "]
 [3,"PS4","0B40:0081:064E:0079","Emytia Fringe","Xexunde System","0B48:0080:0680:0036","Otzice System","Gucheng System"]
 [3,"PS4","0B42:0080:0680:0079","Wiyanwargi ","Erubba System ","082E:0082:0B86:0039","Epomann","Yebnoye-Gade System "]
+[6,"PC","067F:0081:0222:0079","Mocarji Quadrant","Yawago","0A09:007B:025D:005F","Difredavoid ","Kuehek XII"]
 [6,"PC","0699:007C:07C3:0079","Lolunnro Cluster","Bolkho","07F7:0080:06A5:0078","Venchiris","Urumqi"]
 [6,"PC","06D0:0081:085C:0079","Nenusas","Focaea-Lata","0907:0081:088E:0071","Gemindbiha Fringe","Wakkai VI"]
 [6,"PC","0710:0081:097C:0079","Uindweil","Amuusan-Noh","09A5:007D:0861:005A","Aeminitke","Zigonq-Nuksj III"]
