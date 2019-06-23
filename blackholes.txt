@@ -104,6 +104,7 @@
 [0,"PC","00C6:007F:0B26:0079","Chtigatag","Uobramidad","0DBD:007C:02AD:000E","Gibsonoss","Tairos-Niia II"]
 [0,"PC","00C7:0000:0F39:0079","Famall Spur","Atsumazun","0FFE:0082:03CA:0053","Woshamb","Lagodarn"]
 [0,"PC","00C7:0000:0F3A:0079","Edbryn Fringe","Vaskur-Rive","0194:007B:0FE5:0017","Ekwatel","Ritiner-Begr"]
+[0,"PC","00C8:0000:0F39:0079","Onlivirta Adjunct","Ajoitus","0491:0083:0FFE:0005","Tarhyuro Cluster","Yovushc XV"]
 [0,"PC","00C8:0001:0F39:0079","Modesc Terminus","Komorigu","0751:007F:0000:004D","Usemepanj Shallows","Sebasippe"]
 [0,"PC","00CA:007F:0B94:0079","Gumatseolt","Yasnoy X","015C:007C:0C72:0028","Gosburo","Yauzarut XIV"]
 [0,"PC","00D9:0080:0811:0079","Lewheela Nebula","Iinsky-Meiy XVI","0A7C:0080:0EA3:002B","Fadiesk Adjunct","Ijonak"]
