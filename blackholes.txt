@@ -3745,6 +3745,7 @@
 [0,"PS4","04A1:0082:0D83:0079","Aupain Shallows","Faborgag","08F3:0081:0E56:0010","Acek Mass","Hucomne"]
 [0,"PS4","04A2:007C:0BFF:0079","Ulotlam Fringe","Alogta-Zehonq","0CF2:007C:097A:003A","Niteman Cluster","Tuyabinost"]
 [0,"PS4","04A4:007E:09F5:0079","Lescingi Band","Valuxiam","0B31:007D:05E3:0046","Livsjog","Erquel"]
+[0,"PS4","04A6:0077:0218:0079","Niykhoid Spur","Uqinhua-Edexo","0D2E:007F:03B5:0038","Yiwessz Terminus","Tizyh XVIII"]
 [0,"PS4","04A6:007D:08F4:0079","Atoluno Instability","Gorigusu","0842:007C:0B68:005E","The Arm of Lizernimo","Toones VII"]
 [0,"PS4","04A9:0080:0BC7:0079","Oturbo Shallows","Ozhoulaa","066B:007C:0345:0043","Toarkpo Fringe","Unlare"]
 [0,"PS4","04AC:007E:04EC:0079","Naquelc","Imiamid-Magang XI","0483:007F:0AC8:0074","Bavara Cluster","Edingo XIX"]
