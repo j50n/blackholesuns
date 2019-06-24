@@ -6211,6 +6211,7 @@
 [9,"PC","02E4:0082:00BC:0079","Goulay Terminus","Sallma","01C6:007D:06F5:0012","Iformo Boundry","Etagahay X"]
 [9,"PC","033E:007E:03B1:0079","Sea of Rirhuhy","Emneor-Aily","0B3C:0082:0D79:0009","Sea of Gumarlt","Udachk"]
 [9,"PC","0345:0083:05E9:0079","Deholte Anomaly","Ijiraq","0BFC:0080:04D1:0068","Nisyolvana Nebula","Ieyang-Gagil"]
+[9,"PC","035D:0082:0C28:0079","Crucien Sector","Nichit","0DF7:007E:098B:0058","Oqomch Sector","Agning-Hita"]
 [9,"PC","037D:0080:0D25:0079","Igyinne Nebula","Beatti-Aegur","084F:0082:0EC4:006C","Liaurini Shallows","Busana-Hio"]
 [9,"PC","0398:007C:0BF9:0079","Anasyu","Todonniu V","0DA7:007F:0997:0020","Sea of Ruynich","Todonniu V"]
 [9,"PC","03A9:007F:0D21:0079","Gechit Spur","Ozhoskyviu","0DA1:0082:0B8A:0068","Zuyaricke Spur","Ozhoskyviu"]
