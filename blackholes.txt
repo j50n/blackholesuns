@@ -4178,6 +4178,7 @@
 [0,"PS4","071A:007D:08F9:0079","Zivorsep","Jagganu XV","0706:007C:08CC:006E","Litian Conflux","Uojelus II"]
 [0,"PS4","071A:007E:012C:0079","Akitenyu","Luzhou-Sett","014E:0080:06AA:003B","Mehneme Cluster","Aeseon-Guish"]
 [0,"PS4","071B:007E:01CB:0079","Ranfest Cluster","Lufjords XIV","01C8:007B:07F8:0015","Tryampt Spur","Suwaku-Idgno"]
+[0,"PS4","071B:007F:0E85:0079","Itravu Nebula","Riqule-Amen","0795:0083:017E:006D","Awceto Shallows","Xaxato XI"]
 [0,"PS4","071D:007F:0E6C:0079","Telith Shallows","Kabandk-Hensk","02B8:0082:0BAD:0014","Uzco�iodm","Kotuello"]
 [0,"PS4","0720:007F:01A0:0079","Kidekka Quadrant","Shogaw-Pagri I","0970:0082:01CB:0059","Dadoda Spur","Wataga-Saraz XI"]
 [0,"PS4","0721:007F:098B:0079","Riusal Mass","Retsivi-Essbe System","0707:0080:0968:005A","Raiochn Mass","Dunekam-Nema System"]
