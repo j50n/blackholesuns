@@ -3192,6 +3192,7 @@
 [0,"PS4","01F5:007C:0AD2:0079","Iayaso Cloud","Lillust-Eoal","0175:0081:0900:000C","Cuhuah Terminus","Jainal"]
 [0,"PS4","01F6:0082:04C3:0079","Narown Shallows","Hitsii-Zadg","06CD:0083:0EAE:0030","Sklovye","Ovuttin"]
 [0,"PS4","01F8:007F:082E:0079","Mirogl","Gosendab","086C:007F:0DF3:004C","Lancian","Tajima"]
+[0,"PS4","01F8:0084:0504:0079","Akvasyelv Mass","Tosuka VIII","0C12:0082:02B9:0053","The Arm of Raavandre","Atogqe-Bia"]
 [0,"PS4","01FA:007C:0A9F:0079","Ictani Quadrant","Bechleyb","0D65:007E:0BA0:0064","Isquez","Lagang-Pa"]
 [0,"PS4","01FB:007D:0594:0079","Bunetskian Instability","Ixoisa-Rig","01DD:0082:09E8:0048","Saaihe Expanse","Lokusfjo"]
 [0,"PS4","01FC:0081:0543:0079","Ucosyn Nebula","Roishik","0798:0080:0177:0053","Zeelenoi Instability","Mashel-Edc"]
