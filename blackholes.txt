@@ -6277,6 +6277,7 @@
 [9,"PC","0419:007C:041E:0079","Gilggaki Nebula","Aticaye-Kohuny XVIII","0798:0082:0294:0071","Rayati Void","Oiqiao-Faun"]
 [9,"PC","0420:0082:0D4E:0079","Uaveld Void","Egoren","0B2C:0082:0DB0:0011","The Arm of Joleodz","Teyin"]
 [9,"PC","0425:007E:0D51:0079","Noannab","Oganei-Niyer VIII","0DB3:007E:04DE:004E","Rohuldi Shadows","Itchus"]
+[9,"PC","042A:007D:0D83:0079","Urghar Band","Koheeoo XVIII","01CD:007F:058E:0039","Zicnii Cluster","Ooruiu"]
 [9,"PC","042C:0078:0D56:0079","Oktisase Spur","Ruregiosus","0A49:007D:01E7:0032","Pushdow Adjunct","Iyevsk"]
 [9,"PC","042D:0078:0D56:0079","Sucututa Nebula","Hijonam","08DA:0081:018D:0053","Inradsk","Idutab"]
 [9,"PC","042D:0079:0D56:0079","Acolemit Mass","Rosakht-Hoya","09CA:007D:0E41:002C","Putisak Band","Reesbo XVII"]
