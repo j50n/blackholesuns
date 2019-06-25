@@ -965,6 +965,7 @@
 [0,"PC","0487:007F:0499:0079","Uuguyengh Void","Sworikswo","0B99:007C:04D5:0067","Sruszeb Fringe","Kevich-Gisarg"]
 [0,"PC","0488:0083:0DDB:0079","Lolouye Spur","Hunatori","0B14:0081:01FF:0055","Hobbela","Rubinkar I"]
 [0,"PC","048C:0082:0D41:0079","Dohinonhang Terminus","[GNG] Pamelban","0D4E:007E:04BF:0064","Nagmaanga Void","[GNG] Ebinanai VI"]
+[0,"PC","048E:0000:0B73:0079","Peyrinj Anomaly","Nofirme-Yushy","0C86:007E:09B9:0014","Miwobo","Ualack-Los XIII"]
 [0,"PC","048F:007B:025A:0079","Shbetsi Sector","Iseppumid XII","09E1:0080:01B8:002A","Oenglo Cloud","Oorsfi-Dix"]
 [0,"PC","048F:007C:09D1:0079","Eechta","Ukhbaat","07BA:007C:0BD1:003F","Bihrimpox Spur","Aliykkt-Rakki VII"]
 [0,"PC","048F:0081:0EE6:0079","Ikemessar Adjunct","Shvamm-Braat","0911:007D:0F95:0003","Amayac Anomaly","Lomorsko XIII"]
