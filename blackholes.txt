@@ -1978,7 +1978,6 @@
 [0,"PC","0A3E:007D:0310:0079","Kimeshuldr Boundary","Davlek","042E:0082:043A:001D","Retoniac","Needhakar"]
 [0,"PC","0A3E:007D:0311:0079","Ernaqu","Izawaj-Gah","098C:0080:02DE:004A","Pehaedit","Erzhok"]
 [0,"PC","0A3E:007D:0312:0079","Oghenge Adjunct","Othwel-Qudo","0D3F:007E:06FB:0077","Erodiae Spur","Lolocha-Sal"]
-[0,"PC","0A3E:007F:0162:0079","Yawriggi Boundary","Zuhchikho","0112:007B:07C8:002C","Giphonodhs Cloud","Ryonubic"]
 [0,"PC","0A3F:007E:015C:0079","Ioball Terminus","Ompainron","0986:007E:0137:003A","Raschad Terminus","Luykin"]
 [0,"PC","0A3F:00AB:015F:0079","Loroyuk Quadrant","Imitsu-Armen IV","01C5:0080:04F0:0053","Yeianv Sector","Adnaysk-Vol XVIII"]
 [0,"PC","0A3F:00AC:015E:0079","Advinne","Tumenz","0D5A:007C:0393:0041","Dezhdan","Raldenata IV"]
