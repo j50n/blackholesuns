@@ -967,6 +967,7 @@
 [0,"PC","0490:007C:0DC9:0079","Jisune Spur","Izabet VIII","09FF:0080:0E5F:0005","Uvuniemed","Acungg VII"]
 [0,"PC","0493:007C:047F:0079","Utranaut Terminus","Zelenogo","0676:007B:0368:001E","Elkinian Nebula","Payevka IX"]
 [0,"PC","0496:007F:01FA:0079","Sydonn","Eelzebu IV","0D74:0081:03D9:0068","Fuelash Band","Rugaseo-Mizuo"]
+[0,"PC","0497:007F:0203:0079","Sezmyatra","Kotenr-Hat","0ED1:007F:0841:0055","Yotaiy Cloud","Hygesso-Rivoi"]
 [0,"PC","049B:007C:0156:0079","Emglav","Ijapik-Eyii","0F53:0080:092C:0013","Yudhei Instability","Igangm-Bitho"]
 [0,"PC","049C:007E:0283:0079","Yiwriga","Ekretek-Vior","0298:0082:0494:0006","Modeav Spur","Nezelei-Wachi XVIII"]
 [0,"PC","049C:0083:022C:0079","Tatvash Void","Deymkargu VIII","0545:0082:01E5:0021","Ruszeipni","Fusfjogur XIV"]
