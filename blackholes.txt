@@ -5901,6 +5901,7 @@
 [0,"PS4","0EB4:007D:08A3:0079","Vizcat Spur","Andont IV","0E33:0082:0A76:0058","Aumoxos Nebula","Styuzhn"]
 [0,"PS4","0EB4:0082:0426:0079","Exeyba Sector","Amnyang-Ruenn XVI","0F3F:007E:0A84:0036","Muprisa Nebula","Rylaio XVIII"]
 [0,"PS4","0EB5:007F:06CB:0079","Luwydam Fringe","Zeyakht","0EC2:0083:07DF:0022","Henzanifl Anomaly","Irakik-Elop"]
+[0,"PS4","0EB8:007B:07F3:0079","Xaliaur Cluster","Ewkeswor XIX","0751:007E:0E9F:0069","Rethaus Terminus","Reutokota"]
 [0,"PS4","0EBA:0082:0929:0079","Oubeth","Tetsigr IX","0BBA:0080:0256:0012","Tejeto Sector","Yokoro-Ent"]
 [0,"PS4","0EBB:007B:099B:0079","Oscsabalt Spur","Ankaneb IV","0E54:0082:0AA7:0045","Seymniat Terminus","Uyungt-Ose VI"]
 [0,"PS4","0EBC:0083:083D:0079","Iayatad","Iabetto","03A3:007E:0D0F:0068","Goibni Instability","Shlifsb-Netyin"]
