@@ -4011,6 +4011,7 @@
 [0,"PS4","058F:007D:0D94:0079","Kevasus","Abrampashe","0E05:007B:082F:0076","Lodeli Sector","Emannga"]
 [0,"PS4","0590:00AE:0590:0079","Eorind Mass","Kuchin-Hikh IV","04AB:007E:089C:0058","Onburr Conflux","Kestopk-Ule XV"]
 [0,"PS4","0591:0081:011E:0079","Cajacos Sector","Aendo","0F35:007B:08AD:0015","Lateirrem Nebula","Pohoeni"]
+[0,"PS4","0592:0083:0DDF:0079","Twersta Boundary","Amigawac X","0DED:007C:0A1A:0054","Ripurna Nebula","Kaichima X"]
 [0,"PS4","0595:007F:0289:0079","Lisundros","Sibaye","07A4:0083:0217:001B","Mancloukhe Spur","Hilberg-Elun"]
 [0,"PS4","0596:0082:025A:0079","Ivkato","Abydon-Ryug","0E10:0081:0835:0074","Camagd Sector","Owentic XI"]
 [0,"PS4","0599:007E:0E4E:0079","Owliko Boundary","Anbeihar","0E38:007C:0A74:003F","Nodnera Sector","Aterinu-Med"]
