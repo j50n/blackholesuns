@@ -6514,6 +6514,7 @@
 [9,"PS4","02F7:0081:0AD2:0079","Buileu","Aiwaku I","0D8D:0081:094E:0055","Ieshol","Toyamer-Ziha"]
 [9,"PS4","0317:007D:0471:0079","Butisle","Gubanov-Nodaba","07D6:0080:0DFF:002B","Enmyoin","Uwainfie"]
 [9,"PS4","034A:0082:0B78:0079","Helevac Expanse","Nayazhod XV","0268:0081:0679:0029","Hoveno Spur","Ovgrad"]
+[9,"PS4","042C:0078:0D53:0079","Lolmamovo Anomaly","Yovykyv","0E27:0081:05E7:0023","Rogela Terminus","Kogawa-Ainka IV"]
 [9,"PS4","042E:0077:0D54:0079","Otreie Void","[HUB27-79] Kizawa","01D5:007C:0A0C:005D","Soszonya Mass","Biorian-Kai"]
 [9,"PS4","042E:0077:0D55:0079","Etmarao","[HUB26-79] Refjogu","06D8:0082:0197:0011","Iyahua Quadrant","Ninduilin"]
 [9,"PS4","042E:0077:0D56:0079","Cuculta","Zonghu-Kum","0E7F:0081:07C6:003E","Yetansan Quadrant","Waseong"]
