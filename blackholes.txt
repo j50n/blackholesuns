@@ -7758,6 +7758,7 @@
 [24,"PS4","06A5:007F:04C7:0079","Naysato Expanse","Butura-Musak","0B63:007F:0884:0050","Poqomch Adjunct","Tibhreiden"]
 [24,"PS4","06FA:007F:0C33:0079","Eiweil Fringe","Nustava","03D8:0081:0700:0027","Oklinz Quadrant","Wuhail X"]
 [24,"PS4","073E:0082:0239:0079","Peyevie","Itogorsk","049E:007F:0CAB:002A","Gudoaes Band","Kushibe"]
+[24,"PS4","074E:0080:0B3F:0079","Olangpo","Ovisteri","09B9:007B:0AC3:005A","Wuhymno Quadrant","Lumavir"]
 [24,"PS4","0750:007E:0106:0079","Sea of Hevilip","Biraet","0DD9:0082:0BBF:002F","Sowisigi Quadrant","Zuohek-Chm"]
 [24,"PS4","07F9:007B:046C:0079","Orfergan","Stjortti","06A2:0080:04C2:0055","Amaychr","Iglazo-Ond"]
 [24,"PS4","0831:007D:0E14:0079","Lamahi Boundary","Amugarbo","0DA5:007C:0A19:0040","Kekuantsu Band","Guginara"]
