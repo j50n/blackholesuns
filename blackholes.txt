@@ -5764,6 +5764,7 @@
 [0,"PS4","0DDC:0080:0A29:0079","Upakhme","Fellogi-Duho","08E4:0081:0E21:0005","Ewberl Expanse","Ozlovo"]
 [0,"PS4","0DDE:007C:0646:0079","Guxiani Sector","Surganr","08CA:007F:01FC:0027","Purruni Band","Ettsuk-Inoga"]
 [0,"PS4","0DE0:0080:08E5:0079","Iayamb","Keholdb","0309:0081:0B2F:0005","Kryiszc Conflux","Kangyua-Argut"]
+[0,"PS4","0DE0:0083:0B16:0079","Ranema","Osluzhcah VIII","02D7:007E:03E6:0025","Oitbil Nebula","Ixardene"]
 [0,"PS4","0DE1:007F:0554:0079","Sulffur Spur","Suinin XIV","0A1D:007D:01F5:0041","Relynia Terminus","Roviat-Daar"]
 [0,"PS4","0DE1:0081:0607:0079","Quorneykho Terminus","Ewkeswo-Ukoy","075C:007F:0E1A:006F","Droahyd Instability","Yilasr-Fata"]
 [0,"PS4","0DE3:007D:068D:0079","Ezonat Fringe","Aajalossi","0E02:007C:080B:0018","Atviat","Agraixa"]
