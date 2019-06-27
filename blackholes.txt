@@ -6254,6 +6254,7 @@
 [2,"PC","0B1E:0080:0DED:0079","Fuforrer","Miglino-Apape XII","094A:007F:0E84:001A","Xocesci Shallows","Dahinnian I"]
 [2,"PC","0B62:0083:038E:0079","The Arm of Dolock","Siville","0ACF:007C:033F:0073","Ebeste Terminus","Yishuo"]
 [2,"PC","0BFB:007B:030F:0079","Tuyukaigal Quadrant","Durhamno VIII","0436:0081:02FC:0071","Umusgr Terminus","Ridakam-Gam"]
+[2,"PC","0C92:0081:0C2B:0079","Tougel Boundary","Fateriaatl System","0B8E:0081:02FF:000C","The Arm of Shdoung","Nudholm System"]
 [2,"PC","0C99:007B:0486:0079","Weavis Cloud","Ukuyamato","0DA5:007C:0733:0053","Netsib","Uozulukhl"]
 [2,"PC","0D10:0080:09AB:0079","Ayrhodh Void","Ibilda IV","0572:0080:035F:0015","Eozawa Nebula","Adkoms-Kiha"]
 [2,"PC","0DA2:0081:097B:0079","Ronsaxa","Yuzhih","0DC2:007B:0859:0038","Ketankl Band","Renhea"]
