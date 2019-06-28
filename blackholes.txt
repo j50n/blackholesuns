@@ -993,6 +993,7 @@
 [0,"PC","0463:0081:0B5B:0079","Setskuh Spur","Idakad-Huo XI","08A1:0081:0CD3:004A","Efscohuant","Zovsky XIV"]
 [0,"PC","0464:0082:035E:0079","Sedelyelo","Perezno XIX","0689:007E:025F:002C","Rathim Sector","Nukerre-Esqu"]
 [0,"PC","0465:0081:041C:0079","Nimoffut Conflux","Ottori","0941:007D:0D14:005D","Imyrom Terminus","Teyisay"]
+[0,"PC","0465:0082:0DD6:0079","Arm of Ewpean","[UTA1-0079] Vaskoga","07CC:007C:0131:0021","Arpuley Fringe","Gathug"]
 [0,"PC","0466:007F:0D65:0079","Emtazin","Jehhoell IX","0361:007F:0386:003F","Noneky Boundary","Encens VI"]
 [0,"PC","0466:0080:0E6B:0079","Horygegv Cloud","Awajimato XVIII","0CF6:0082:02A5:004F","Ayrhou Quadrant","Snotenda"]
 [0,"PC","0466:0082:035D:0079","Unamer Sector","Nuohek-Bea","0552:007E:0D26:0045","Yedporz Boundary","Oxetebo-Jav"]
