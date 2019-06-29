@@ -6470,6 +6470,7 @@
 [2,"PC","0E5F:007D:0A11:0079","Taygan Adjunct","Ameshma","0489:0083:0252:0022","Esbury Fringe","Mequkanql"]
 [2,"PC","0E6A:007B:0889:0079","Juhteinmu Complex","Kurayasu System","074E:007F:01A8:0053","Figniu","Eiusipe-Head System"]
 [2,"PS4","0000:0077:0517:0079","Teterdor","Rembihnu","064A:007B:0000:0015","Litsugua Cluster","Uyskyvi XIII"]
+[2,"PS4","011D:007C:0727:0079","Odfree Sector","Yacoreha","0EB9:0080:0699:0071","Hunkelni Cloud","Izkimr"]
 [2,"PS4","011F:007F:045F:0079","Egheke","Ulompe","0E36:0082:0370:0061","Simand Anomaly","Riglazov IX"]
 [2,"PS4","02D4:007C:0E0B:0079","Sea of Busongold","Omatom-Enkye","03F5:007F:0138:0060","Rekutsk Conflux","Pishieme"]
 [2,"PS4","03F5:007F:0138:0079","Rekutsk Conflux","Gavang XVIII","08C4:0082:0FCB:0027","Koupat Terminus","Rinald-Ejes II"]
