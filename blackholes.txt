@@ -3982,6 +3982,7 @@
 [0,"PS4","0438:0082:0D92:0079","Huuahar Instability","Upshern","0D1C:007F:03B5:003C","Sea of Ugps","Eritaro-Livon"]
 [0,"PS4","043C:007F:0366:0079","Pemora Quadrant","Infengy-Ent","02C4:0081:0AB1:0031","Icnair Adjunct","Nemans"]
 [0,"PS4","043D:007F:0EEF:0079","Omegre","Tologrivo XIX","0A82:007D:0093:0027","Bebegua Cloud","Tosowel"]
+[0,"PS4","043E:0074:0D44:0079","Rimyerr Instability","Harashi-Teyv XV","079E:007F:0E65:0052","Cuyraea Sector","Ugulya-Hab X"]
 [0,"PS4","043E:0081:0D25:0079","Ivyatsuc","Hizent","068B:0083:0E23:0056","Cisochl","Nayingm-Auc XV"]
 [0,"PS4","043F:0081:038E:0079","Mexico Nebula","Qixius-Iuya XV","073C:007D:024B:0048","Axwelc Mass","Vokatal-Spati"]
 [0,"PS4","0440:007F:0D62:0079","Oharve Sector","Yugawag-Yuban I","0E6B:0080:06FD:0049","Rosantiiq","Aishin-Yul XIX"]
