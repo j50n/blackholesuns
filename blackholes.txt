@@ -6488,6 +6488,7 @@
 [2,"PS4","0EB3:0080:069A:0079","Yacemadn Terminus","Adachi IX","0EC6:0082:0846:005C","Hulegeziu Mass","Idovura XVII"]
 [2,"PS4","0F82:0082:0976:0079","Ropovii Band","Ijainth","0443:0080:0E9E:0016","Zumiata","Mirakam-Noksj"]
 [3,"PS4","04FE:007E:090D:0079","Rofogam System ","Pueblo-Dun System ","071C:0082:0501:0061","Irbyish Quadrant ","Srondun-Fug XVI System "]
+[3,"PS4","071E:0082:0507:0079","Jusitel system","Iomiya System ","060E:0082:0A54:0059","Dossom fringe","Taskokoel System "]
 [3,"PS4","082E:0082:0B80:0079","Kregnews","Redela System ","0AD4:007C:0607:004E","Muvaba Nebula ","Ekiosc System "]
 [3,"PS4","0996:007E:0524:0079","Nejhwargh Shallows","Katdoss System ","04F9:007E:090F:0057","Uuangat Fringe","Iryugar System "]
 [3,"PS4","0AD1:007C:0609:0079","Xisraelin Cluster","Shindig-Bin XV System","0B5F:007E:07FC:0048","Ifexelizho Adjunct","Kielig - Adsk XI System"]
