@@ -2061,6 +2061,7 @@
 [0,"PC","09A9:0082:0088:0079","Lusbartarz Fringe","Wottony-Sial","0118:007B:04DB:006B","Lelkeret Mass","Dahlidovo"]
 [0,"PC","09AB:007B:0E84:0079","Edwenh Cloud","Kurazuk-Lalst IV","028C:007F:0427:0055","Liyevir Band","Ucsony"]
 [0,"PC","09AC:0080:0EB1:0079","Huhyushi Sector","Inciperk VIII","0C4C:0080:02AA:000D","Bugarakk Anomaly","Otozhiz"]
+[0,"PC","09AD:0076:0E48:0079","Mizelindu Shallows","Rahald VII {Hexigon Planet n' Black Hole}","0A30:007D:0E11:0001","Edritte","Mupenso-Uker"]
 [0,"PC","09AD:007C:0E67:0079","Egradu Terminus","Colafj","01DB:0082:05AA:0016","Ictinr","Toftusa-Hijo"]
 [0,"PC","09AE:0081:016C:0079","Ginadu Anomaly","Anmuto","0E88:0082:0995:004F","Nowaik","Yovayev XII"]
 [0,"PC","09AF:0080:061F:0079","Saviit Cluster","Ujimas-Giono","0A6B:007C:086C:0057","Eporaswe Band","Otlesi XVIII"]
