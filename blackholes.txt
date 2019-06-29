@@ -5175,6 +5175,7 @@
 [0,"PS4","09D3:007C:0D75:0079","Uekatj","Sestal-Sod II","0759:0080:0254:0024","Kiffeye Terminus","Mehirdal XII"]
 [0,"PS4","09D5:0082:0E2A:0079","Laycoch Expanse","Ajingd-Algo","0E2F:0081:0988:0041","Yivitchis Instability","Jimizur"]
 [0,"PS4","09D8:007D:01FB:0079","Arrays Instability","Orshan-Nuketi","048B:0083:02D0:0064","Wathbu Shallows","Riquel"]
+[0,"PS4","09D8:0080:01B1:0079","Lekitsu Sector","Niiuskuch","0187:007C:0738:0002","Ziwicat","Auraga"]
 [0,"PS4","09DA:007C:072E:0079","Zavionn Cluster","Isshihac System","095B:007C:096A:0055","Hemait Mass","Injotu System"]
 [0,"PS4","09DE:007B:019B:0079","Bethetzi Anomaly","Ogiumf-Sash XII","035E:007F:034D:006F","Neferus","Taktsaya VI"]
 [0,"PS4","09DF:0081:0BA0:0079","Xohosga Quadrant","Derakl","0A3F:0081:0B55:004F","Elbishn Spur","Ellagina-Vorol IX"]
