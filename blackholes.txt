@@ -6366,6 +6366,7 @@
 [1,"PS4","0E3F:0083:04E9:0079","Vequatze Anomaly","[GNG] Magnusc-Noakh XVIII","0127:007C:070F:0064","Naduyche Spur","[GNG] Ueqiny-Perm XIV"]
 [1,"PS4","0E3F:0084:04E8:0079","Nawasin Instability","[GNG] Fontigo","0678:007B:0EBB:0071","Usbarl Sector","[GNG]  Shcuhel-Ookay"]
 [1,"PS4","0E3F:0084:04E9:0079","Kakerro Void","[GNG] Bonugsha","0CC9:0080:0CFB:0034","Mijaois Quadrant","[GNG] Yarden-Orlus X"]
+[1,"PS4","0E40:0082:04E7:0079","Ontiiq Mass","[GNG] Migasa I","0129:0082:06F3:0049","Defowle Spur","[GNG] Osusia-Kumu VIII"]
 [1,"PS4","0E40:0082:04E8:0079","Iksikohl Conflux","[GNG] Isnivel","035B:007F:0D23:000C","Abjauji Mass","[GNG] Rubche"]
 [1,"PS4","0E40:0083:04E7:0079","Hitinah Shallows","[GNG] Ejneringj","039A:0081:0D58:0017","Sea of Dunahutt","[GNG] Ejneringj"]
 [1,"PS4","0E40:0083:04E8:0079","Peiriyar","[GNG] Ezawaji-Gaomo","0A0B:007D:0E9A:0053","Anfort Nebula","Ukserv"]
