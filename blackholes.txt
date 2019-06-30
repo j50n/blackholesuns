@@ -6181,6 +6181,7 @@
 [0,"PS4","0E6B:0080:06FD:0079","Rosantiiq","Rishiga","075F:007E:0196:004E","Mijarol Mass","Zeergu-Uga XVI"]
 [0,"PS4","0E71:007F:0716:0079","Litmantau Anomaly","Tawagoe","0B54:007C:027A:004B","Orwate-Bak","Wixilaen Spur"]
 [0,"PS4","0E75:0082:0764:0079","Orcaec Fringe","Akures-Yokjal","0E23:0082:09E4:0052","Eawessz Fringe","Echippi-Iruno"]
+[0,"PS4","0E76:007E:05E8:0079","Nagkaria Terminus","Yamsletta","0EB3:007D:074C:0013","Vadisaha Fringe","Arioni-Kaksh"]
 [0,"PS4","0E76:007F:0821:0079","Rydias","Ximussan","0E30:007D:065C:0061","Cornar Expanse","Ooafjalf"]
 [0,"PS4","0E76:0080:07CA:0079","Viruppy","Tebayab-Tashi X","0B5A:007C:028A:0050","Sea of Duxfor","Akkelt"]
 [0,"PS4","0E76:0082:0613:0079","Yeraelspuro Fringe","Alplansse","0E7B:007C:09A7:0012","Anmaeh Spur","Grendum-Nazr"]
