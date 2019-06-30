@@ -6487,6 +6487,7 @@
 [2,"PS4","0E36:0082:0370:0079","Simand Anomaly","Amonov-Uodal XVII","0F82:0082:0976:001E","Ropovii Band","Rubrik"]
 [2,"PS4","0EA1:007F:0350:0079","Hughna Fringe","Giseppu-Udut","0871:0081:0FFE:0027","Dehriska Fringe","Devuiu-Name"]
 [2,"PS4","0EB3:0080:069A:0079","Yacemadn Terminus","Adachi IX","0EC6:0082:0846:005C","Hulegeziu Mass","Idovura XVII"]
+[2,"PS4","0EC0:0081:0845:0079","Jilngap","Tifika","0BE2:0083:0288:000A","Iobertam Expanse","Oranoy-Aey"]
 [2,"PS4","0F82:0082:0976:0079","Ropovii Band","Ijainth","0443:0080:0E9E:0016","Zumiata","Mirakam-Noksj"]
 [3,"PS4","04FE:007E:090D:0079","Rofogam System ","Pueblo-Dun System ","071C:0082:0501:0061","Irbyish Quadrant ","Srondun-Fug XVI System "]
 [3,"PS4","0612:0082:0A50:0079","Koimurt","Pajulas-Esumx XV System ","071A:007E:052E:003C","Xuhuara Nebula ","Olenie System "]
