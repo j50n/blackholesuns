@@ -6002,6 +6002,7 @@
 [0,"PS4","0DFE:0080:09CB:0079","Xihuacos","Avna'esos","0DB1:007B:0A77:001B","Liyhuymedz","Rozawara"]
 [0,"PS4","0DFF:0082:0C79:0079","Haureapu Adjunct","Amugarm II","0EF5:0080:0A96:0040","Downbe","Poroza-Egea"]
 [0,"PS4","0E00:007C:061C:0079","Amrievich","Goshobam","0867:007E:0E37:0052","Luwerber Fringe","Mikhabaka"]
+[0,"PS4","0E01:007D:0B8B:0079","Eagleth void","aMAZing ","02D6:0081:0C9D:0010","Vitzer sector","Abariyaw"]
 [0,"PS4","0E01:007E:0C43:0079","Royukab Expanse","Oprudny-Lets","01F4:007D:03E1:0030","Jetesusa Boundary","Izents-Yako"]
 [0,"PS4","0E02:007C:080B:0079","Atviat","Darkann-Lomura","0B08:0080:0D1E:003E","Nowarro Mass","Netskyv-Ryon VII"]
 [0,"PS4","0E02:0080:09F0:0079","Yacronke Shallows","Joundg","0313:0082:0BE0:000A","Mibrongon","Negotak-Omn XVIII"]
