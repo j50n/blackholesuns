@@ -8018,6 +8018,7 @@
 [22,"PS4","0D4D:0083:06C7:0079","Keiter Band","Jagkarm-Ibos","02CF:007E:0971:0036","Odvoraj","Aryang-Nedb XII"]
 [22,"PS4","0DDB:007C:04FD:0079","Xikeeve","Ratebus XI","08BE:0083:0183:003A","Diperin Instability","Eochen IX"]
 [22,"PS4","0E37:007D:073A:0079","Tengau Adjunct","Shingba","099C:007E:0200:0034","Micnaiva Conflux","Atenha-Aika"]
+[22,"PS4","0E90:0076:094A:0079","Gacrui Sector","Begraf","0DA2:0080:0B82:000F","Coxetell Conflux","Aitunggu X"]
 [23,"PS4","016F:007F:06B6:0079","Uchangol Cloud","Ashenn IV","0D7E:0080:0BB4:003B","Oliz Terminus","Uzawagu-Obil XIII"]
 [23,"PS4","027B:0081:079B:0079","Nishistof Instability","Akunsh-Aks","0D45:007C:0975:0039","Salara Quadrant","Telinez-Otf V"]
 [23,"PS4","02DC:0082:0679:0079","The Arm of Akmorta","Nosant","03A4:0080:04FC:006A","Opetiak","Jishii X"]
