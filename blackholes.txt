@@ -6798,6 +6798,7 @@
 [9,"PC","0C73:007E:02EF:0079","Eiross Instability","Taterin-Lot","0E99:007C:06EC:0016","Itdamoo Spur","Yoskyv"]
 [9,"PC","0C76:0081:0803:0079","Endanim Expnase","Affugt-Nogul","0AE2:0082:0B53:003A","Zeyerkto Conflux","Yushyirh X"]
 [9,"PC","0C78:007F:0312:0079","Boea'iau","Osural VI","0E92:007E:08A0:0002","Libruxe Anomaly","Uusand XVI"]
+[9,"PC","0C79:0080:0BF3:0079","Ijolly Mass","Mamakone","0286:007F:05C4:005C","Aughna Adjunct","Mudaobin"]
 [9,"PC","0C83:0083:0851:0079","Invenoc Terminus","Geyodat-Nidik","0C76:0081:0804:005A","Latunsesu","Ungote-Nie"]
 [9,"PC","0C8E:007D:0CD6:0079","Atsairog","Redkor-Hinq","09FE:0081:01B7:0044","Owtyulzbe Spur","Redkor-Hinq"]
 [9,"PC","0C8E:007E:08B3:0079","Fishir","Nockpo","06E2:007E:0C68:0073","Caneuv Expanse","Fuyang"]
