@@ -8470,7 +8470,7 @@
 [0,"PC","0CBD:0082:076A:0079","Mysehaj Fringe","Uojennel XIX","0B04:007C:045D:0017","Wolita Fringe","Lonwick XVII"]
 [0,"PC","0CBE:007C:0CF9:0079","Umveli Void","Luycianym","062A:007F:0170:0077","Amkara Expanse","Reliett-Kett XIV"]
 [0,"PC","0CBF:007B:040B:0079","JOENOCE CLOUD","HULYMIS-NIW","0CDE:0081:0BB6:001A","THE ARM OF EAUMERLO","KAYOTAW-NOSYILV"]
-[0,"PC","0CC1:007F:03B9:0079","Lagichu Adjunct","Piprasem XVIII","0431:0070:02EB:0001","Obmocdo","Oqenxionq XIII"]
+[0,"PC","0CC1:007F:03B9:0079","Lagichu Adjunct","Piprasem XVIII","0431:007D:02EB:0001","Obmocdo","Oqenxionq XIII"]
 [0,"PC","0CC1:0080:0329:0079","Neiklin Boundary","Myonio XI","0BEA:007F:0D74:0069","Nelttosjo Instability","Eeyiij"]
 [0,"PC","0CC2:0080:0329:0079","Pisner","Meshma-Ouyun","0B26:007F:0DF2:001B","Dilicer Terminus","Erusan"]
 [0,"PC","0CC3:006F:0A4B:0079","Pamicti Cluster","Eohione-Uok","02DB:0081:08EE:0073","Uefuelcia Spur","Nichiz XV"]
