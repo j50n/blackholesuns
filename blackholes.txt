@@ -20033,6 +20033,7 @@
 [10,"PC","0754:0080:0627:0079","The Arm of Ooynen","Abokuv III","091C:007E:0676:0063","Ranobog","Ganudad-Uve"]
 [10,"PC","079F:007F:0647:0079","Udmiri","Ickiev-Maybar","06F9:0080:0959:0074","Ecimin Cloud","Cogges"]
 [10,"PC","07B6:007B:0A5C:0079","Dezoavia","Petimos XIV","05B8:007D:0794:0076","Norrouw Band","Oroksvi"]
+[10,"PC","082D:007C:08AC:0079","The Arm of Lopolyx","Iistof-Rope","082F:007E:089A:006D","Ageigh Band","Tikalug V"]
 [10,"PC","0832:007F:0516:0079","Telyadus Nebula","Guntagxi","05C0:0083:09C1:0063","Kulaymsl Cluster","Eugenixo VII"]
 [10,"PC","0842:007C:0979:0079","Hefussi Cloud","Atonsa-Nuheat","091F:0082:08E2:0071","Chyashila Boundary","Unatok-Zodoki"]
 [10,"PC","085D:007E:08F4:0079","Isgaara Adjunct","Edhonkaa","0725:0081:0871:006A","Aegler Anomaly","Niyancamc"]
