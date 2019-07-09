@@ -18049,6 +18049,7 @@
 [7,"PS4","09BD:007C:04C7:0079","Yuvatiq Cloud","Zeleyak","0B97:007C:07DD:006B","Cienses Adjunct","Glebeytz"]
 [7,"PS4","0ACE:0081:0BCB:0079","Sakadoun Conflux","Zaqog","0CA2:0081:077C:003F","Sea of Niticht","Binudgra"]
 [7,"PS4","0ADA:0081:0AC5:0079","Gehebar Anomaly","Ugulkev-Glad IV","0496:0081:0610:0047","Gihezale Void","Fulbar-Yoko"]
+[7,"PS4","0B01:0082:0664:0079","Anklimo","Yotaruga","0B4A:007C:0765:0059","Mufrie Band","Veremkh-Rani XII"]
 [7,"PS4","0B82:007F:097F:0079","Smiinarei Anomaly","Oudarvell","0960:0081:0B7F:002C","Liydangma Adjunct","Golodem-Arey V"]
 [7,"PS4","0B91:007C:07DD:0079","Oximatum Band","Kuspridsl","0834:007C:047D:0037","Imhill Fringe","Gliches-Ayank"]
 [7,"PS4","0BA1:0080:0A27:0079","Forchi Boundary","Emendele VI","06AE:007C:040C:0049","Vihury Band","Ewporthuw"]
