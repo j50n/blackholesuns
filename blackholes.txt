@@ -18027,6 +18027,7 @@
 [7,"PS4","0826:007E:0DF5:0079","Hesuanech Band","Andaise-Kill","0D7F:007D:0A23:0051","Ligupta","Neysanoa II"]
 [7,"PS4","0851:0083:024A:0079","Teinmichi Boundary","Idninal-Nam","059D:007F:0D22:000F","Ogtian Shallows","Ucianara"]
 [7,"PS4","087E:007F:0E06:0079","Eimsvo Expanse","Etiany-Tegr","0826:007E:0DFB:0047","Oabydo Shallows","Rakiya-Hey"]
+[7,"PS4","0935:0080:03DD:0079","Uepete Conflux","Arutong-Ninvor","0BA6:0080:0A2A:004F","Zeyena Mass","Buqenzh-Rig XIV"]
 [7,"PS4","0972:007C:03C5:0079","The arm of Xusumatha","Hirafia-Nonj","0C39:007E:0942:0037","Goandr Conflux","Emblemy XV"]
 [7,"PS4","0989:007F:0E04:0079","Rosuket Sector","Yolvansc","0E10:0080:0701:0073","Duvinnutli Void","Diyangf III"]
 [7,"PS4","0ACE:0081:0BCB:0079","Sakadoun Conflux","Zaqog","0CA2:0081:077C:003F","Sea of Niticht","Binudgra"]
