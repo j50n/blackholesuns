@@ -16271,6 +16271,7 @@
 [1,"PC","054A:007E:0BED:0079","Driater Shallows","Zidesno-Karm","0612:007B:03B1:0028","The Arm of Shji'ezv","Skjolu-Lump"]
 [1,"PC","0567:007F:0B0D:0079","The Arm of Cirtones","Ayeryo-Adan","0B2F:0082:0A54:0034","Pokinicaur Fringe","Gocodoij III"]
 [1,"PC","056B:007F:065D:0079","Uduman","Sumoirife","0AA1:007D:0693:004A","Ankows","Mitosak-Zaye"]
+[1,"PC","056E:007D:02B1:0079","Yucaecil Mass","Dilarivo","054B:0082:0D29:0064","Uhlauson Spur","Maetsk"]
 [1,"PC","0582:007F:0CAE:0079","Sthaisl","Ohamurob XVI","0D22:007E:06F5:0057","Izcatun","Oniuhe"]
 [1,"PC","058A:0081:0D0C:0079","Mulantan Spur","Staizhe","05EC:007D:0D27:0046","Ritlewis","Danings-Nay XVIII"]
 [1,"PC","05B6:007F:0B18:0079","Qualmein Quadrant","Aquardon","0833:0083:0437:0064","Apmann","Riatali"]
