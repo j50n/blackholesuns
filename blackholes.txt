@@ -18042,6 +18042,7 @@
 [7,"PS4","0989:007F:0E04:0079","Rosuket Sector","Yolvansc","0E10:0080:0701:0073","Duvinnutli Void","Diyangf III"]
 [7,"PS4","0ACE:0081:0BCB:0079","Sakadoun Conflux","Zaqog","0CA2:0081:077C:003F","Sea of Niticht","Binudgra"]
 [7,"PS4","0ADA:0081:0AC5:0079","Gehebar Anomaly","Ugulkev-Glad IV","0496:0081:0610:0047","Gihezale Void","Fulbar-Yoko"]
+[7,"PS4","0B82:007F:097F:0079","Smiinarei Anomaly","Oudarvell","0960:0081:0B7F:002C","Liydangma Adjunct","Golodem-Arey V"]
 [7,"PS4","0BA1:0080:0A27:0079","Forchi Boundary","Emendele VI","06AE:007C:040C:0049","Vihury Band","Ewporthuw"]
 [7,"PS4","0BAE:007F:0B61:0079","Kryace","Nojosh","0432:0083:04D7:0053","Wufeltini Terminus","Yoluettiv"]
 [7,"PS4","0C33:007E:0940:0079","Ewpean Instability","Sichuzh-Noomo VI","0937:0080:03D8:0032","Pobeech Instability","Nenacup-Loth"]
