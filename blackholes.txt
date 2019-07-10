@@ -4309,6 +4309,7 @@
 [0,"PC","0762:007F:084B:0079","Ojinan Mass","Yargospe","083D:007D:076E:0071","Lokuq","Ninslondv"]
 [0,"PC","0764:007A:0370:0079","Ighialia Terminus","Sahikik-Rolag XVII","037B:007D:0871:0056","Zusprim Sector","Shalyn"]
 [0,"PC","0764:007F:0776:0079","Dekorell Void","Najaoalk V","0884:007C:0777:006C","Udyget Instability","Isrome"]
+[0,"PC","0764:0080:0000:0079","Velyako Sector","[shb] Yulansra III","0B0E:007B:00A4:000E","Erjull Shallows ","[shb] Oelmin-Heang"]
 [0,"PC","0764:0081:0227:0079","Sea of Ratvega","Ebskau-Ekan I","022E:0082:07C7:001A","Ebereb Terminus","Dawate-Yazi"]
 [0,"PC","0764:0082:08DA:0079","Sea of Warigoscheu","Uginoh-Rom","0708:007D:07CE:0074","Nufimoch Shallows","Nadopot-Aru"]
 [0,"PC","0765:007D:04FC:0079","Joiente Cloud","In8","07B1:007C:0AFE:004C","Zeyenn Spur","Out8"]
