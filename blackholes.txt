@@ -18122,6 +18122,7 @@
 [7,"PS4","071C:007C:0D67:0079","Yindheilo","Hakasmo-Amias","058F:007D:0CD4:0069","Upresh Mass","Izbere"]
 [7,"PS4","071F:007F:0995:0079","Futumu","Unissh-Irosa I","0852:007D:09B6:0073","Sea of Rapaiph","Retown-Jecha"]
 [7,"PS4","0745:007B:0589:0079","Jayskyam Sector","Kumago-Yibir","0584:007F:0853:005B","Wachuss Fringe","Onvill-Ondo"]
+[7,"PS4","077C:007E:06D0:0079","Ukasigu Terminus","Endussio","0914:0081:076B:0064","Bikhasan Mass","Apydeu-Fifugt"]
 [7,"PS4","078E:007D:03F6:0079","Zunekon Quadrant","Desnost","0ADE:0081:0ACA:0029","Lidyaksh Sector","Gemise-Bam"]
 [7,"PS4","07DE:0083:09E3:0079","Guschuva Adjunct","Uzdaln-Kar ","071C:007F:099A:0053","Dejonga Fringe","Redninga VII"]
 [7,"PS4","080C:0081:05EC:0079","Uczkyirpo Band","Dosayac","08D2:0083:09D4:0067","Sea of Pafurab","Oigakis I"]
