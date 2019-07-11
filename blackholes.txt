@@ -19025,6 +19025,7 @@
 [9,"PC","07E6:007A:0E55:0079","Wumanzona Instability","Hihamni-Lov System","0E2A:007E:0923:006B","Onbaand Instability","Kuhlovo-Acero System"]
 [9,"PC","07E6:007A:0E56:0079","Famannesh","Urbash-Lawai System","09DD:007C:0E00:0020","Uhnein Conflux","Egurois-Kita System"]
 [9,"PC","07E6:007A:0E57:0079","Aorioso Sector","Ikkoly-Rayam System","02D3:0080:0B91:004C","Toangpa","Hiungcodo System"]
+[9,"PC","07E6:007A:0E6A:0079","Fiendt ","Erimanai","0581:0081:0226:0057","Mylynh Conflux","Kosjoutu "]
 [9,"PC","07E6:007A:0E6B:0079","Fielsb","Ligjene-Bumgy","0C04:007F:030E:000C","Weguojiuy Expanse","Masjoun-Ladean"]
 [9,"PC","07E6:007A:0E6D:0079","Fjetovae Instability","Acuset-Neob System","09CB:0083:0E1B:0066","Gajdar Void","Yandanss System"]
 [9,"PC","07E6:007A:0E6E:0079","Dutjal Boundary","Hulistr-Vuslu System","036C:0081:0C71:001A","Nazyulsr Fringe","Usettes-Orma System"]
