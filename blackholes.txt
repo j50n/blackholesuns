@@ -18123,6 +18123,7 @@
 [7,"PS4","07DE:0083:09E3:0079","Guschuva Adjunct","Uzdaln-Kar ","071C:007F:099A:0053","Dejonga Fringe","Redninga VII"]
 [7,"PS4","080C:0081:05EC:0079","Uczkyirpo Band","Dosayac","08D2:0083:09D4:0067","Sea of Pafurab","Oigakis I"]
 [7,"PS4","0826:007E:0DF5:0079","Hesuanech Band","Andaise-Kill","0D7F:007D:0A23:0051","Ligupta","Neysanoa II"]
+[7,"PS4","0833:007D:0676:0079","The arm of Ubliso","Mograni-Ded","088E:0083:095F:0062","Lesbarily Void","Resanov"]
 [7,"PS4","0834:007C:0483:0079","Apaila Nebula","Uttsuk-Ecti","0B06:0082:0661:004D","Urtuureri Cloud","Kaytet XVII"]
 [7,"PS4","0851:007D:09B0:0079","Ritwusule","Altays-Buy XIV","06FC:0080:094F:0057","Goehde Instability","Olusias-Rords XI"]
 [7,"PS4","0851:0083:024A:0079","Teinmichi Boundary","Idninal-Nam","059D:007F:0D22:000F","Ogtian Shallows","Ucianara"]
