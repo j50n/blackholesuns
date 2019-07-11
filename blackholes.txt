@@ -18116,6 +18116,7 @@
 [7,"PS4","06AF:007C:0412:0079","Lolebigor Quadrant","Severomar XIII","078D:0007:03F0:0030","Aevant Conflux","Ebetsuji XII"]
 [7,"PS4","06CD:007F:0CF0:0079","Imstarr Terminus","Bengja","0BB2:007F:0B65:0045","Fittxa","Robildi"]
 [7,"PS4","071C:007C:0D67:0079","Yindheilo","Hakasmo-Amias","058F:007D:0CD4:0069","Upresh Mass","Izbere"]
+[7,"PS4","071F:007F:0995:0079","Futumu","Unissh-Irosa I","0852:007D:09B6:0073","Sea of Rapaiph","Retown-Jecha"]
 [7,"PS4","0745:007B:0589:0079","Jayskyam Sector","Kumago-Yibir","0584:007F:0853:005B","Wachuss Fringe","Onvill-Ondo"]
 [7,"PS4","078E:007D:03F6:0079","Zunekon Quadrant","Desnost","0ADE:0081:0ACA:0029","Lidyaksh Sector","Gemise-Bam"]
 [7,"PS4","07DE:0083:09E3:0079","Guschuva Adjunct","Uzdaln-Kar ","071C:007F:099A:0053","Dejonga Fringe","Redninga VII"]
