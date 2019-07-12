@@ -18177,6 +18177,7 @@
 [7,"PS4","071C:007C:0D67:0079","Yindheilo","Hakasmo-Amias","058F:007D:0CD4:0069","Upresh Mass","Izbere"]
 [7,"PS4","071F:007F:0995:0079","Futumu","Unissh-Irosa I","0852:007D:09B6:0073","Sea of Rapaiph","Retown-Jecha"]
 [7,"PS4","0728:0082:08BC:0079","Gabetur","Ufannsoh","08F9:007C:0799:0069","Lofussacho Conflux","Aijapik"]
+[7,"PS4","0736:007B:077A:0079","Rofjort Shallows","Bojanh-Habir X","08AE:0082:088B:0070","Micnadach Cluster","Reutor-Aoji"]
 [7,"PS4","0745:007B:0589:0079","Jayskyam Sector","Kumago-Yibir","0584:007F:0853:005B","Wachuss Fringe","Onvill-Ondo"]
 [7,"PS4","077C:007E:06D0:0079","Ukasigu Terminus","Endussio","0914:0081:076B:0064","Bikhasan Mass","Apydeu-Fifugt"]
 [7,"PS4","078E:007D:03F6:0079","Zunekon Quadrant","Desnost","0ADE:0081:0ACA:0029","Lidyaksh Sector","Gemise-Bam"]
