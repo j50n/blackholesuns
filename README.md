@@ -103,23 +103,23 @@ Okay, let's assume you know where you are starting from and where you want to go
 042F:0079:0D55:006A Galactic Hub (Euclid - New Lennon)
 042F:0078:0D55:01E0 Galactic Hub (Hilbert)
 042F:0078:0D55:00E4 Oxalis Hotel Budullangr
-042F:0078:0D55:006A Oxalis Hotel Euclid  
-043D:0072:0D44:001C Alliance of Galactic Travellers  
-0204:0078:0B3E:00B1 Arcadian Republic  
-0EBD:0080:065A:008A Artifices Caeli  
-0435:007F:0D54:0079 Black Hole Suns HQ (Einstein Gamma)  
-038C:007E:039E:0079 Black Hole Suns (Alpha)  
-0D14:0081:03F5:0079 Black Hole Suns (Beta)  
+042F:0078:0D55:006A Oxalis Hotel Euclid
+043D:0072:0D44:001C Alliance of Galactic Travellers
+0204:0078:0B3E:00B1 Arcadian Republic
+0EBD:0080:065A:008A Artifices Caeli
+0435:007F:0D54:0079 Black Hole Suns HQ (Einstein Gamma)
+038C:007E:039E:0079 Black Hole Suns (Alpha)
+0D14:0081:03F5:0079 Black Hole Suns (Beta)
 0E1F:007E:09FE:0079 Black Hole Suns (Delta)
-0643:0081:01A1:0079 BHS (Pilgrim Star Research Center)  
-07EB:007D:0E88:00AB Colonial Fleet  
-0804:007B:0804:008B Dopelord Confederacy  
-0FE2:0004:0FFB:017F (EPIC) Empire of Pirates and Independent Cartels  
-01A0:00AF:0543:0119 Eyfert Khannate  
-0430:0078:0D56:011C Galactic Hub (Eissentam)  
-0E40:0083:04E8:001C Geknip Gang Hub  
+0643:0081:01A1:0079 BHS (Pilgrim Star Research Center)
+07EB:007D:0E88:00AB Colonial Fleet
+0804:007B:0804:008B Dopelord Confederacy
+0FE2:0004:0FFB:017F (EPIC) Empire of Pirates and Independent Cartels
+01A0:00AF:0543:0119 Eyfert Khannate
+0430:0078:0D56:011C Galactic Hub (Eissentam)
+0E40:0083:04E8:001C Geknip Gang Hub
 0FE2:0004:0FFB:010E Hanging Gardens of Suasura (Euclid/PS4/Normal)
-043D:0072:0D44:0116 Hexagon Peak  
+043D:0072:0D44:0116 Hexagon Peak
 042D:007F:0D54:007E Londinium
-064A:0082:01B9:009A Pilgrim Star  
+064A:0082:01B9:009A Pilgrim Star
 0DF2:0080:055C:012F Wastelanders
