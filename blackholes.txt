@@ -8648,7 +8648,7 @@
 [0,"PC","0CBA:0080:09FB:0079","Tigendt","Yohara-Zohn","0A48:007B:0C85:004E","Mytona","Iibaylio"]
 [0,"PC","0CBA:0081:0BCB:0079","Boquim Sector","Xipian XV","081B:007C:0E01:0031","Cabungban Anomaly","Coknina-Epo"]
 [0,"PC","0CBB:007C:09E7:0079","Cutinephy","Aleten-Mab","0CFF:0083:08AC:0048","Ooctillav Expanse","Ketter-Laytka VI"]
-[0,"PC","0CBC:0080:0FC1:0079","Sea of Hutigur","AGT Henuryn FIN172","0961:0080:0302:006D","Sihtran Shallows","AGT Auknin-Eil XI FIN173"]
+[0,"PC","0CBC:0080:05C1:0079","Sea of Hutigur","AGT Henuryn FIN172","0961:0080:0302:006D","Sihtran Shallows","AGT Auknin-Eil XI FIN173"]
 [0,"PC","0CBC:0082:090C:0079","Acqueo Cloud","Fenhui-Mosto","0CCA:0081:082F:003B","Yennaque Boundary","Aebash-Yumk"]
 [0,"PC","0CBC:0083:0784:0079","Onpondhi Fringe","Goyena","09DE:0081:0C50:002C","Niboodsark Anomaly","Sicarl-Lig"]
 [0,"PC","0CBD:007C:0A1C:0079","Iaguts","Nedmarg","0CBB:007F:09FB:0035","Oegiraja Void","Agradn"]
