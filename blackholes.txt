@@ -8932,6 +8932,7 @@
 [0,"PC","0D4E:0080:03F1:0079","Sea of Botrens","Abashy-Nemon","098D:0083:018F:0028","Uhlabie Instability","Iigaur-Rober VII"]
 [0,"PC","0D4E:0080:04DD:0079","Vundaw Conflux","[shb] Rinestb-Ory","05B3:007D:0DA5:006D","Anarezi Nubular","[shb] Teudeln"]
 [0,"PC","0D4E:0081:0CBF:0079","Anteshi Instability","Uvarovo-Menogo","03F0:007C:0DC8:0020","Cinamat Void","Lanotka"]
+[0,"PC","0D4F:007D:08D3:0079","Acuchow","Lanqab","0B5E:007F:0C1C:003C","Snoquit Instability","Gormar-Shv"]
 [0,"PC","0D4F:007E:049A:0079","Asinib","Nukovsk I","0232:007F:05AC:0021","Zayaeve Terminus","Zabelet-Omut"]
 [0,"PC","0D4F:007E:0B40:0079","Tasicul Adjunct","Sidney","0A08:007D:0DD1:0066","The Arm of Tarezsch","Suzanoo"]
 [0,"PC","0D50:007B:0BAC:0079","Yawali Shallows","Aikiku-Yalu","06A5:0083:01BD:0055","Hochatr Mass","Dennemg-Hooe XII"]
