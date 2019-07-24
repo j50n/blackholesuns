@@ -11943,6 +11943,7 @@
 [0,"PS4","053C:0081:0609:0079","Noling Cloud","Urskyv VI System ","0891:0082:04B8:0056","Ijunom Cloud ","Tuureri System"]
 [0,"PS4","053C:0082:0D29:0079","Nindezh","Dasmularn","0B87:007C:0C9B:0007","Ovnadipik","Aurrku-Heysi XVII"]
 [0,"PS4","053D:007E:0233:0079","Arsong Terminus","Fufugtn XI","08D3:007F:0E4F:000A","Cukyerr Adjunct","Daporth"]
+[0,"PS4","053D:007F:0C78:0079","Sequiv Cloud","Tachenq-lud","09DB:0080:0325:0035","Weyerri Spur","Kihach-Volz"]
 [0,"PS4","053D:007F:0F85:0079","Macquaa","Oxiongk V","0545:007F:007A:003F","Motindper Sector","Hugarbi V"]
 [0,"PS4","053D:0081:0C2F:0079","Foalsc Shallows","Shoyanti","079A:007E:030E:0021","Awurriv Cloud","Uulanga-Ona"]
 [0,"PS4","053E:0082:0AED:0079","Okowag Cloud","Ticsushim","0A9B:007C:0505:0060","Ledung Cloud","Tusowelle"]
