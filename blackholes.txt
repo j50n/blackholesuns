@@ -14351,6 +14351,7 @@
 [0,"PS4","09DA:0082:06DD:0079","Eikapti Anomaly","Fuefuka-Kenu","0893:007E:0A07:005E","Izunus","Usashiw-Hatsu"]
 [0,"PS4","09DA:0082:09ED:0079","Rasepaw Cloud","Ezakik-Net","08C3:007F:0A7F:005C","Yonnemakus","Kuksering III"]
 [0,"PS4","09DB:007C:061E:0079","Ixchene Adjunct","Wutong-Piru","099F:007C:05FE:0066","Zitistha","Zehokub"]
+[0,"PS4","09DB:0080:0326:0079","Oniusabik Boundary","Umgilsf","0C47:007E:0528:0012","Onceniij Boundary","Izepart"]
 [0,"PS4","09DB:0081:0E70:0079","The Arm of Varayha","Shiren-Yum","0A17:0082:01B2:0071","Eeticusp Cloud","Ravourane"]
 [0,"PS4","09DC:007C:0194:0079","Uugunwick Spur","Hyperte","0593:007F:0E2B:0018","Mibutan Anomaly","Imengxi"]
 [0,"PS4","09DC:0082:073E:0079","Fischat Expanse","Lucyatc-Imjea","060E:007E:07DD:0062","Tabarad Band","Hilmatt-Inxi"]
