@@ -21445,6 +21445,7 @@
 [9,"PS4","0962:007C:036E:0079","Lucianom Conflux","Goyankarn","05FB:007D:0C40:0076","Zevorgortr Fringe","Yemskyviu"]
 [9,"PS4","0972:0080:0DA8:0079","Basinkt","Daejee-Susa","0B25:007D:0CD9:0046","Himanja Nebula","Amrami"]
 [9,"PS4","0975:007E:0846:0079","Iomusac Instability","Funjoski","08DB:007D:06DC:005C","Palanian","Eshoumar"]
+[9,"PS4","0977:007D:034A:0079","Coweik Adjunct","Mandengca System // F9f // Water","0340:007B:06E8:0045","Onlivahn","Oncepti-Cogou System // F7f // Water"]
 [9,"PS4","098C:007C:0B6A:0079","Ueelea","Tiundex-Aires XVI","0937:007B:0B7C:002E","Kubuteru Shallows","Yeferdi-Ripren"]
 [9,"PS4","098C:007E:0D3F:0079","Tazinqol","Ekanda-Nena","0ABA:0082:0CAD:0020","Serrion","Nohara"]
 [9,"PS4","098C:0082:0E42:0079","Rofustru Spur","Aokame","0DA7:007E:0AF8:0054","Minclap Expanse","Ringsim"]
