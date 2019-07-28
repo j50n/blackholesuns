@@ -21360,6 +21360,7 @@
 [9,"PS4","04B3:0085:058D:0079","Gollan Terminus","Zannin System//F1p","0C03:0081:0781:0041","Zerneste Anomaly","Viysoko-Yeov System//F0//Water"]
 [9,"PS4","04BF:007A:06A3:0079","Usbaca Void","Uktorien","04E9:0081:0991:003A","Ilbismi Terminus","Futtsu"]
 [9,"PS4","04D4:007B:0317:0079","Uaoakioss Cloud","Kavkara-Uite XVIII","041D:0080:0C49:0020","Tutvaas Quadrant","Izesig"]
+[9,"PS4","04E0:0082:0B86:0079","Nitzili Expanse","Legartl-lzuho System // F1p // Water","0360:0082:0879:0062","Umvellam Band","Maelis V System // G0p // Water"]
 [9,"PS4","04E1:0080:0E23:0079","Bejiric Quadrant","Yimskyv XV","0E60:0080:058E:001E","Dacandril","Kasmins"]
 [9,"PS4","04E9:007F:0990:0079","Uahasa","Ukidiu-Imk VI","0877:007C:0B5E:0036","Luterdha","Aijona-Ablet"]
 [9,"PS4","04F4:007C:095F:0079","Dipatar Cloud","Aakiry","0B46:0082:0803:0051","Deparnep Nebula","Aktora-Gri"]
