@@ -21403,6 +21403,7 @@
 [9,"PS4","06E9:007D:085A:0079","Yokovsk Band","Aviter VIII","08F3:0080:087F:006D","Gevasoort Adjunct","Napinni-Greip"]
 [9,"PS4","06FF:0083:09D5:0079","Lldenst Cloud","Guyob-Karsk","06D9:0082:0654:006E","Iijies Sector","Viyazarii"]
 [9,"PS4","0708:007E:03AA:0079","Anheri Void","Udachik","09F0:007C:0BEC:0045","Xawemp Spur","Gladuz-Ovs"]
+[9,"PS4","0722:0082:0CB4:0079","Sea of Mosaka","Hongcah System // G1 // Water","04DD:0082:0B89:003D","Ryanst","Loshino System //F3p // Water"]
 [9,"PS4","0739:0082:0EA6:0079","Gasteuc Quadrant","Tochik","0BA0:007F:0271:0058","Sierci Boundary","Ogwang"]
 [9,"PS4","0753:0081:0E1B:0079","Fajongg Ajunct","Hedsafj-Actr I","067B:007D:0DE6:000A","Jobart Cluster","Gayanney"]
 [9,"PS4","0757:007F:07EA:0079","Aobrigel","Tergats","07AA:0081:0780:0075","Ginnit Mass","Inhala"]
