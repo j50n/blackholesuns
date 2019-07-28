@@ -21646,6 +21646,7 @@
 [10,"PS4","024F:0099:0678:0079","Dokian Cloud ","Avkarovny xv system ","0D5F:007C:0A46:0019","Egustanc Anomaly ","Telaker-Erd "]
 [10,"PS4","02E1:0081:0858:0079","Gajelloy nebula","Raberts system","04D4:007F:0409:0034","Pisonte fringe","Tashtyo system"]
 [10,"PS4","05FC:0080:02AB:0079","Ulelybi instability","Evjournal system //G8 // Water ","0928:007C:0D84:0013","Bishat instability ","Oxunga-adf IV system //G2"]
+[10,"PS4","088B:008A:03BF:0079","Itvard quadrant ","Nitaitomi system","04F3:007F:0512:004F","Cuniiji shallows","Ragoffma XIii System "]
 [10,"PS4","0926:007B:0D7F:0079","Muburoju","Brexit-is-best// Water ","0A97:0080:0313:0025","Kabiab sector ","Erjojel system "]
 [10,"PS4","0934:007E:0394:0079","Aihozoi fringe ","Oryiggn system ","089A:0081:0384:0038","Xakarey boundary ","Oidenu-ast system"]
 [10,"PS4","0A93:0080:0316:0079","Etforesi sector","Milestone 7 system //F2f//Water ","0B88:0081:0C33:001A","Auerop conflux","Milestone 8 system //F3pf//Water "]
