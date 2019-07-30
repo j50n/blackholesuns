@@ -19372,6 +19372,7 @@
 [9,"PC","0635:0082:0D6B:0079","Iquerod Band","Nuduxie II","09B2:007E:029D:0070","Ehperrid Cloud","Nuduxie II"]
 [9,"PC","0636:0080:0796:0079","Nozaralle Cloud","Dapeto IX","087F:0082:09B1:006B","Giputas Shallows","Rovsko XIX"]
 [9,"PC","0638:007D:0ADF:0079","Yilwic Boundary","Itelok XIV","0B05:0081:06A2:005D","Edzicna","Enxois-Vul"]
+[9,"PC","063A:0083:087C:0079","Hikosr Quadrant","Luykseyo","063F:0080:07B8:005D","Cempdo","Dutgae"]
 [9,"PC","063C:0081:04F8:0079","Sea of Sosbeta","Arveyko","05EC:0083:0ABD:0061","Dozumelu Cloud","Yavonno IV"]
 [9,"PC","063D:007C:0B88:0079","Neasator Terminus","Ornyag-Tupi","0428:0082:0762:0050","Ibbsekyla Expanse","Budulym-Neka"]
 [9,"PC","063D:007E:057A:0079","Mupoxamhe","Odegawa IV","0AF0:007E:075C:004F","Sea of Izcate","Orgiyev"]
