@@ -1,0 +1,6 @@
+New data sources.
+
+https://us-central1-nms-bhs.cloudfunctions.net/getBases?u=Bad%20Wolf&g=Calypso&p=PC-XBox
+https://us-central1-nms-bhs.cloudfunctions.net/getDARC?g=Euclid&p=PC-XBox
+https://us-central1-nms-bhs.cloudfunctions.net/getGPList
+https://us-central1-nms-bhs.cloudfunctions.net/getPOI
