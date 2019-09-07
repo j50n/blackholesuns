@@ -13,17 +13,14 @@
     "author": "Jason Smith",
     "license": "ISC",
     "dependencies": {
-        "@types/event-stream": "3.3.34",
-        "@types/node": "11.13.8",
+        "@types/event-stream": "~3.3",
+        "@types/node": "~12.7",
         "common": "file:../common",
-        "csv-parse": "4.4.1",
-        "event-stream": "4.0.1",
-        "firebase": "5.11.0",
-        "grpc": "1.20.2",
+        "csv-parse": "~4.4",
+        "event-stream": "~4.0",
+        "firebase": "~6.6",
+        "grpc": "~1.23",
         "immutable": "4.0.0-rc.12"
-    },
-    "devDependencies": {
-        "typescript": "3.4.5"
     },
     "prettier": {
         "trailingComma": "es5",

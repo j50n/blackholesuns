@@ -32,11 +32,11 @@ class Explanation {
     }
 
     public get first(): IEndPoint {
-        return this.flat.first();
+        return this.flat.first<IEndPoint>();
     }
 
     public get last(): IEndPoint {
-        return this.flat.last();
+        return this.flat.last<IEndPoint>();
     }
 
     public directDistanceLY(): number {

@@ -6,25 +6,27 @@
         "serve": "NODE_OPTIONS=--max_old_space_size=4096 vue-cli-service serve",
         "build": "NODE_OPTIONS=--max_old_space_size=4096 vue-cli-service build",
         "lint": "vue-cli-service lint",
-        "help": "vue-cli-service help build"
+        "help": "vue-cli-service help build",
+        "stage-copy": "( cd ../../blackholesuns-staging.gh-pages/ && rm -rf * ) && rsync -av ./dist/ ../../blackholesuns-staging.gh-pages/",
+        "stage-commit": "( cd ../../blackholesuns-staging.gh-pages/ && git add . && (git commit -m 'staging `date`' || true)  && git push )",
+        "stage": "npm run stage-copy && npm run stage-commit"
     },
     "dependencies": {
-        "@babel/polyfill": "7.4.4",
+        "@babel/polyfill": "~7.6",
         "common": "file:../common",
         "immutable": "4.0.0-rc.12",
-        "tinyqueue": "2.0.2",
-        "vue": "2.6.10"
+        "tinyqueue": "~2.0",
+        "vue": "~2.6"
     },
     "devDependencies": {
-        "@vue/cli": "3.7.0",
-        "@vue/cli-plugin-babel": "3.7.0",
-        "@vue/cli-plugin-typescript": "3.7.0",
-        "@vue/cli-service": "3.7.0",
-        "core-js": "2.6.9",
-        "node-sass": "4.12.0",
-        "sass-loader": "^7.1.0",
-        "typescript": "3.4.5",
-        "vue-template-compiler": "2.6.10"
+        "@vue/cli": "~3.11",
+        "@vue/cli-plugin-babel": "~3.11",
+        "@vue/cli-plugin-typescript": "~3.11",
+        "@vue/cli-service": "~3.11",
+        "core-js": "~2.6",
+        "node-sass": "~4.12",
+        "sass-loader": "~8.0",
+        "vue-template-compiler": "~2.6"
     },
     "postcss": {
         "plugins": {

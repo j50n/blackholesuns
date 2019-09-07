@@ -15,17 +15,16 @@
     "author": "Jason Smith",
     "license": "ISC",
     "devDependencies": {
-        "@types/tape": "4.2.33",
-        "tape": "4.10.1",
-        "ts-node": "8.1.0",
-        "typescript": "3.4.5"
+        "@types/tape": "~4.2",
+        "tape": "~4.11",
+        "ts-node": "~8.3"
     },
     "dependencies": {
-        "@types/deep-equal": "1.0.1",
-        "deep-equal": "1.0.1",
+        "@types/deep-equal": "~1.0",
+        "deep-equal": "~1.1",
         "immutable": "4.0.0-rc.12",
-        "p-iteration": "1.1.8",
-        "tinyqueue": "2.0.2"
+        "p-iteration": "~1.1",
+        "tinyqueue": "~2.0"
     },
     "prettier": {
         "trailingComma": "es5",

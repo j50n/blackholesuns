@@ -9,6 +9,6 @@
   "author": "Jason Smith",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "3.3.4000"
+    "typescript": "~3.6"
   }
 }
