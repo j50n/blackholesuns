@@ -20,7 +20,7 @@ async function blackholes(): Promise<List<Hop>> {
             tuple[1],
             galaxies[tuple[0]],
             new System(tuple[3], tuple[4], coordinates(tuple[2])),
-            new System(tuple[6], tuple[7], coordinates(tuple[5]))
+            new System(tuple[6], tuple[7], coordinates(tuple[5])),
         );
     });
 }

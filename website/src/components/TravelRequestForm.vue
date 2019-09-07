@@ -1,67 +1,67 @@
 <template>
-  <div class="outer-div" style="text-align: center;">
-    <div style="display: inline-block;">
-      <form
-        class="pure-form pure-form-stacked"
-        style="text-align: left;"
-        @submit.prevent="submitForm"
-      >
-        <div class="pure-g">
-          <fieldset class="pure-u-1-3">
-            <div class="pure-control-group">
-              <label for="starting-coordinates">Start</label>
-              <input
-                id="starting-coordinates"
-                class="pure-input-rounded"
-                type="text"
-                v-model.trim="formData.startVal"
-                :pattern="coordPattern"
-                required
-                placeholder="07FF:007F:07FF:017F"
-                @blur="formatCoordinates"
-              >
-            </div>
-            <div class="pure-control-group">
-              <label for="destination-coordinates">Destination</label>
-              <input
-                id="destination-coordinates"
-                type="text"
-                class="pure-input-rounded"
-                v-model.trim="formData.destVal"
-                :pattern="coordPattern"
-                required
-                placeholder="07FF:007F:07FF:017F"
-                @blur="formatCoordinates"
-              >
-            </div>
-          </fieldset>
-          <fieldset class="pure-u-1-3">
-            <div class="pure-controls" style="display: inline-block;">
-              <label for="platform">Platform</label>
-              <select id="platform" required v-model="formData.platform">
-                <option value="ps4">PS4</option>
-                <option value="xbox">PC / XBox</option>
-              </select>
-            </div>
-            <div class="pure-controls" style="display: inline-block;">
-              <label for="galaxy">Galaxy</label>
-              <select id="galaxy" required v-model="formData.galaxy">
-                <option v-for="g of galaxies" :key="g[0]" :value="g[1]">{{ g[1] }}</option>
-              </select>
-            </div>
-            <div class="pure-control-group">
-              <label for="maximum-jump-range">Jump Range</label>
-              <input
-                id="maximum-jump-range"
-                type="number"
-                v-model.trim="formData.maxJump"
-                required
-                min="200"
-                max="3000"
-                placeholder="Jump Range"
-              >
-            </div>
-            <!-- <div class="pure-control-group">
+    <div class="outer-div" style="text-align: center;">
+        <div style="display: inline-block;">
+            <form
+                class="pure-form pure-form-stacked"
+                style="text-align: left;"
+                @submit.prevent="submitForm"
+            >
+                <div class="pure-g">
+                    <fieldset class="pure-u-1-3">
+                        <div class="pure-control-group">
+                            <label for="starting-coordinates">Start</label>
+                            <input
+                                id="starting-coordinates"
+                                class="pure-input-rounded"
+                                type="text"
+                                v-model.trim="formData.startVal"
+                                :pattern="coordPattern"
+                                required
+                                placeholder="07FF:007F:07FF:017F"
+                                @blur="formatCoordinates"
+                            />
+                        </div>
+                        <div class="pure-control-group">
+                            <label for="destination-coordinates">Destination</label>
+                            <input
+                                id="destination-coordinates"
+                                type="text"
+                                class="pure-input-rounded"
+                                v-model.trim="formData.destVal"
+                                :pattern="coordPattern"
+                                required
+                                placeholder="07FF:007F:07FF:017F"
+                                @blur="formatCoordinates"
+                            />
+                        </div>
+                    </fieldset>
+                    <fieldset class="pure-u-1-3">
+                        <div class="pure-controls" style="display: inline-block;">
+                            <label for="platform">Platform</label>
+                            <select id="platform" required v-model="formData.platform">
+                                <option value="ps4">PS4</option>
+                                <option value="xbox">PC / XBox</option>
+                            </select>
+                        </div>
+                        <div class="pure-controls" style="display: inline-block;">
+                            <label for="galaxy">Galaxy</label>
+                            <select id="galaxy" required v-model="formData.galaxy">
+                                <option v-for="g of galaxies" :key="g[0]" :value="g[1]">{{ g[1] }}</option>
+                            </select>
+                        </div>
+                        <div class="pure-control-group">
+                            <label for="maximum-jump-range">Jump Range</label>
+                            <input
+                                id="maximum-jump-range"
+                                type="number"
+                                v-model.trim="formData.maxJump"
+                                required
+                                min="200"
+                                max="3000"
+                                placeholder="Jump Range"
+                            />
+                        </div>
+                        <!-- <div class="pure-control-group">
               <label for="optimize-time" class="pure-radio">
                 <input
                   id="optimize-time"
@@ -85,163 +85,165 @@
                 >
                 Fuel
               </label>
-            </div>-->
-          </fieldset>
-          <transition name="fade" mode="out-in" appear>
-            <div class="pure-u-1-3" style="min-width: 250px;" :key="graphCount">
-              <galaxy-map :blackholes="bhs" :exits="exs" :explanation="journey"/>
-            </div>
-          </transition>
+                        </div>-->
+                    </fieldset>
+                    <transition name="fade" mode="out-in" appear>
+                        <div class="pure-u-1-3" style="min-width: 250px;" :key="graphCount">
+                            <galaxy-map :blackholes="bhs" :exits="exs" :explanation="journey" />
+                        </div>
+                    </transition>
+                </div>
+                <div class="pure-g">
+                    <fieldset class="pure-u-1-2">
+                        <div class="pure-controls" style="text-align: right">
+                            <button button="pure-button-primary pure-button ">Go!</button>
+                        </div>
+                    </fieldset>
+                    <fieldset class="pure-u-1-2">&nbsp;</fieldset>
+                </div>
+            </form>
         </div>
-        <div class="pure-g">
-          <fieldset class="pure-u-1-2">
-            <div class="pure-controls" style="text-align: right">
-              <button button="pure-button-primary pure-button ">Go!</button>
+        <!-- BEGINNING OF RESULTS TABLE -->
+        <template>
+            <route-summary :explanation="journey" :estimate="timeEstimate"></route-summary>
+            <div class="pure-g">
+                <div
+                    v-for="message of messages"
+                    :key="message.key"
+                    :class="[message.type, 'message', 'pure-u-1-1']"
+                >{{message.text}}</div>
             </div>
-          </fieldset>
-          <fieldset class="pure-u-1-2">&nbsp;</fieldset>
-        </div>
-      </form>
-    </div>
-    <!-- BEGINNING OF RESULTS TABLE -->
-    <template>
-      <route-summary :explanation="journey" :estimate="timeEstimate"></route-summary>
-      <div class="pure-g">
-        <div
-          v-for="message of messages"
-          :key="message.key"
-          :class="[message.type, 'message', 'pure-u-1-1']"
-        >{{message.text}}</div>
-      </div>
-      <br>
-      <div v-if="journey === null" class="pure-g">
-        <div class="pure-u-1">&nbsp;</div>
-      </div>
-      <template v-else>
-        <div class="pure-g">
-          <!-- <div class="pure-u-1" style="text-align: right;">
+            <br />
+            <div v-if="journey === null" class="pure-g">
+                <div class="pure-u-1">&nbsp;</div>
+            </div>
+            <template v-else>
+                <div class="pure-g">
+                    <!-- <div class="pure-u-1" style="text-align: right;">
             <button @click="toggleShowCoordinates" class="pure-button">
               <template v-if="showCoordinates">Show Glyphs</template>
               <template v-else>Show Coordinates</template>
             </button>
-          </div>-->
-          <template v-if="this.windowWidth >= 639">
-            <div class="pure-u-1">
-              <table
-                class="pure-table pure-table-horizontal"
-                style="margin-left:auto; margin-right:auto; width: 100%;"
-              >
-                <thead>
-                  <tr>
-                    <th>&nbsp;</th>
-                    <th>Start / Exit</th>
-                    <th>Black Hole / Destination</th>
-                    <th>Directions</th>
-                    <th>Custom Waypoint</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr
-                    v-for="leg of journey.legs()"
-                    :key="leg.index"
-                    :class="{'pure-table-odd': isOdd(leg.index) }"
-                  >
-                    <td>{{ leg.index + 1 }}</td>
-                    <td class="notranslate">
-                      {{ journey.desc(leg.start) }}
-                      <br>
-                      <small>{{ `${leg.start.coords}`}}</small>
-                    </td>
-                    <td class="notranslate">
-                      {{ journey.desc(leg.dest) }}
-                      <br>
-                      <small>{{ `${leg.dest.coords}`}}</small>
-                    </td>
-                    <td>{{ leg.description }}</td>
-                    <td>
-                      <!-- <template v-if="showCoordinates">{{ leg.dest.coords }}</template> -->
-                      <!-- <template v-else> -->
-                      <span class="galactic-coordinates">
-                        <big>
-                          <big>
-                            <big>
-                              <span
-                                class="galactic-coordinates-mobile"
-                              >{{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(0,4)}} {{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(4,8)}} {{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(8,12)}}</span>
-                            </big>
-                          </big>
-                        </big>
-                      </span>
-                      <!-- </template> -->
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </template>
-          <template v-else>
-            <div class="pure-u-1">
-              <table class="pure-table no-border" style=" width: 100%;">
-                <tr
-                  v-for="leg of journey.legs()"
-                  :key="leg.index"
-                  :class="{'pure-table-odd': isOdd(leg.index) }"
-                >
-                  <td class="no-padding no-border">
-                    <table class="pure-table no-border">
-                      <tr>
-                        <td class="key-cell">Route</td>
-                        <td class="value-cell">{{ leg.index + 1 }}</td>
-                      </tr>
-                      <tr>
-                        <td class="key-cell">
-                          <template v-if="leg.index === 0">Start</template>
-                          <template v-else>Exit</template>
-                        </td>
-                        <td class="value-cell notranslate">
-                          {{ journey.desc(leg.start) }}
-                          <br>
-                          <small>{{ `${leg.start.coords}`}}</small>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="key-cell">
-                          <template v-if="leg.index >= journey.legs().last().index">Destination</template>
-                          <template v-else>Black&nbsp;Hole</template>
-                        </td>
-                        <td class="value-cell notranslate">
-                          {{ journey.desc(leg.dest) }}
-                          <br>
-                          <small>{{ `${leg.dest.coords}` }}</small>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="key-cell">Directions</td>
-                        <td class="value-cell">{{ leg.description }}</td>
-                      </tr>
+                    </div>-->
+                    <template v-if="this.windowWidth >= 639">
+                        <div class="pure-u-1">
+                            <table
+                                class="pure-table pure-table-horizontal"
+                                style="margin-left:auto; margin-right:auto; width: 100%;"
+                            >
+                                <thead>
+                                    <tr>
+                                        <th>&nbsp;</th>
+                                        <th>Start / Exit</th>
+                                        <th>Black Hole / Destination</th>
+                                        <th>Directions</th>
+                                        <th>Custom Waypoint</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                        v-for="leg of journey.legs()"
+                                        :key="leg.index"
+                                        :class="{'pure-table-odd': isOdd(leg.index) }"
+                                    >
+                                        <td>{{ leg.index + 1 }}</td>
+                                        <td class="notranslate">
+                                            {{ journey.desc(leg.start) }}
+                                            <br />
+                                            <small>{{ `${leg.start.coords}`}}</small>
+                                        </td>
+                                        <td class="notranslate">
+                                            {{ journey.desc(leg.dest) }}
+                                            <br />
+                                            <small>{{ `${leg.dest.coords}`}}</small>
+                                        </td>
+                                        <td>{{ leg.description }}</td>
+                                        <td>
+                                            <!-- <template v-if="showCoordinates">{{ leg.dest.coords }}</template> -->
+                                            <!-- <template v-else> -->
+                                            <span class="galactic-coordinates">
+                                                <big>
+                                                    <big>
+                                                        <big>
+                                                            <span
+                                                                class="galactic-coordinates-mobile"
+                                                            >{{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(0,4)}} {{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(4,8)}} {{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(8,12)}}</span>
+                                                        </big>
+                                                    </big>
+                                                </big>
+                                            </span>
+                                            <!-- </template> -->
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </template>
+                    <template v-else>
+                        <div class="pure-u-1">
+                            <table class="pure-table no-border" style=" width: 100%;">
+                                <tr
+                                    v-for="leg of journey.legs()"
+                                    :key="leg.index"
+                                    :class="{'pure-table-odd': isOdd(leg.index) }"
+                                >
+                                    <td class="no-padding no-border">
+                                        <table class="pure-table no-border">
+                                            <tr>
+                                                <td class="key-cell">Route</td>
+                                                <td class="value-cell">{{ leg.index + 1 }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="key-cell">
+                                                    <template v-if="leg.index === 0">Start</template>
+                                                    <template v-else>Exit</template>
+                                                </td>
+                                                <td class="value-cell notranslate">
+                                                    {{ journey.desc(leg.start) }}
+                                                    <br />
+                                                    <small>{{ `${leg.start.coords}`}}</small>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="key-cell">
+                                                    <template
+                                                        v-if="leg.index >= journey.legs().last().index"
+                                                    >Destination</template>
+                                                    <template v-else>Black&nbsp;Hole</template>
+                                                </td>
+                                                <td class="value-cell notranslate">
+                                                    {{ journey.desc(leg.dest) }}
+                                                    <br />
+                                                    <small>{{ `${leg.dest.coords}` }}</small>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="key-cell">Directions</td>
+                                                <td class="value-cell">{{ leg.description }}</td>
+                                            </tr>
 
-                      <tr>
-                        <td class="key-cell">Custom Waypoint</td>
-                        <td class="value-cell">
-                          <!-- <template v-if="showCoordinates">{{ leg.dest.coords }}</template> -->
-                          <!-- <template v-else> -->
-                          <span
-                            class="galactic-coordinates-mobile"
-                          >{{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(0,4)}} {{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(4,8)}} {{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(8,12)}}</span>
-                          <!-- </template> -->
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </template>
-          <!-- <route-summary :explanation="journey"></route-summary> -->
-        </div>
-      </template>
-    </template>
-  </div>
+                                            <tr>
+                                                <td class="key-cell">Custom Waypoint</td>
+                                                <td class="value-cell">
+                                                    <!-- <template v-if="showCoordinates">{{ leg.dest.coords }}</template> -->
+                                                    <!-- <template v-else> -->
+                                                    <span
+                                                        class="galactic-coordinates-mobile"
+                                                    >{{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(0,4)}} {{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(4,8)}} {{leg.dest.coords.galacticCoordinates(0).toUpperCase().slice(8,12)}}</span>
+                                                    <!-- </template> -->
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </template>
+                    <!-- <route-summary :explanation="journey"></route-summary> -->
+                </div>
+            </template>
+        </template>
+    </div>
 </template>
 
 <script lang="ts">
@@ -408,7 +410,7 @@ export default Vue.extend({
                                 }
 
                                 return tranlateHopPlatform() === translateInputPlatform();
-                            })
+                            }),
                     );
                     localHops.then(hops => {
                         this.bhs = hops.map(h => h.blackhole.coords).toArray();
@@ -485,8 +487,8 @@ export default Vue.extend({
                 });
             }
 
-            const platformFilter: (hop: Hop) => boolean = (function() {
-                if (route.platform == "ps4") {
+            const platformFilter: (hop: Hop) => boolean = (() => {
+                if (route.platform === "ps4") {
                     return (hop: Hop) => {
                         return hop.platform === Platform.PS4;
                     };

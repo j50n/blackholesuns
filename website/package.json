@@ -8,8 +8,8 @@
         "lint": "vue-cli-service lint",
         "help": "vue-cli-service help build",
         "stage-copy": "( cd ../../blackholesuns-staging.gh-pages/ && rm -rf * ) && rsync -av ./dist/ ../../blackholesuns-staging.gh-pages/",
-        "stage-commit": "( cd ../../blackholesuns-staging.gh-pages/ && git add . && (git commit -m 'staging `date`' || true)  && git push )",
-        "stage": "npm run stage-copy && npm run stage-commit"
+        "stage-commit": "( cd ../../blackholesuns-staging.gh-pages/ && git add . && ( git commit -m 'staging `date`' || true ) && git push )",
+        "stage": "npm run build && npm run stage-copy && npm run stage-commit"
     },
     "dependencies": {
         "@babel/polyfill": "~7.6",
@@ -39,7 +39,7 @@
         "not ie <= 8"
     ],
     "prettier": {
-        "trailingComma": "es5",
+        "trailingComma": "all",
         "tabWidth": 4,
         "semi": true,
         "printWidth": 160

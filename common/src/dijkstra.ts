@@ -62,7 +62,7 @@ class DijkstraShortestPathSolver {
 
         while (pq.length !== 0) {
             const shortestStep = pq.pop();
-            const currentNode = shortestStep.node;
+            const currentNode = shortestStep!.node;
 
             this.adjacencyList[currentNode].forEach(neighbor => {
                 const weight = weights[currentNode] + neighbor.weight;
