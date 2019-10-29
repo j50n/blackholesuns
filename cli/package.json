@@ -16,7 +16,7 @@
         "@types/event-stream": "3.3.34",
         "@types/node": "11.13.8",
         "common": "file:../common",
-        "csv-parse": "4.4.1",
+        "csv-parse": "4.4.6",
         "event-stream": "4.0.1",
         "firebase": "5.11.0",
         "grpc": "1.20.2",
